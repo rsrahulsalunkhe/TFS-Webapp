@@ -1,0 +1,18 @@
+{
+    "welcome": "मेरे ऐप में आपका स्वागत है",
+    "description": "यह एक बहुभाषी ऐप है।",
+    "language": "भाषा",
+    "english": "अंग्रेज़ी",
+    "hindi": "हिन्दी",
+    "account": {
+        "app_related": {
+            "change_language": "भाषा बदलें",
+            "change_theme": "थीम बदलें"
+        },
+        "about-mandi_central": {
+            "about_us": "हमारे बारे में",
+            "other": "अन्य"
+        }
+    }
+  }
+  

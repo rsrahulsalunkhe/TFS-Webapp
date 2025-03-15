@@ -1,15 +1,10 @@
-import Footer from './components/Footer';
-import Header from './components/Header';
-import AppRouter from './router';
+import AppRouter from './router'
+import './styles/_theme.scss'
 
 const App = () => {
   return (
-    <div>
-      <Header />
       <AppRouter />
-      <Footer />
-    </div>
-  );  
+  )
 }
 
-export default App;
+export default App

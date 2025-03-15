@@ -1,0 +1,95 @@
+// Main theme color
+$primary: #E5811E;
+
+// Light Theme
+$light-primary-bg: #FFFFFF;
+$light-secondary-bg: #F0F0F0;
+$light-tertiary-bg: #F6F6F6;
+$light-primary-text: #000000;
+$light-secondary-text: #5E5E5E;
+
+// Dark Theme
+$dark-primary-bg: #293549;
+$dark-secondary-bg: #1E293B;
+$dark-tertiary-bg: #1E293B;
+$dark-primary-text: #FFFFFF;
+$dark-secondary-text: #FFFFFFB3;
+
+:root {
+  --primary: #{$primary};
+  --primary-bg: #{$light-primary-bg};
+  --secondary-bg: #{$light-secondary-bg};
+  --tertiary-bg: #{$light-tertiary-bg};
+  --primary-text: #{$light-primary-text};
+  --secondary-text: #{$light-secondary-text};
+
+  --green: #016C1F;
+  --red: #FF0000;
+}
+
+[data-theme="dark"] {
+  --primary-bg: #{$dark-primary-bg};
+  --secondary-bg: #{$dark-secondary-bg};
+  --tertiary-bg: #{$dark-tertiary-bg};
+  --primary-text: #{$dark-primary-text};
+  --secondary-text: #{$dark-primary-text};
+}
+
+// Apply globally
+body {
+  background: var(--primary-bg);
+  color: var(--primary-text);
+  transition: background 0.3s ease, color 0.3s ease;
+  padding: 0;
+  margin: 0;
+}
+
+.button {
+  background-color: var(--primary);
+  color: var(--primary-text);
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.container {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}
+
+.bg-primary {
+  background-color: var(--primary-bg) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-bg) !important;
+}
+
+.bg-tertiary {
+  background-color: var(--tertiary-bg);
+}
+
+.bg-header {
+  background-color: var(--secondary-bg) !important;
+}
+
+.bg-footer {
+  background-color: var(--secondary-bg) !important;
+}
+
+.text-primary {
+  color: var(--primary-text) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-text) !important;
+}
+
+.gray-100 {
+
+}

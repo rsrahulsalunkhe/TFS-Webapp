@@ -1,43 +1,66 @@
-import React from 'react';
-import logo from './../assets/logo.svg'
-import whatsapp from './../assets/whatsapp.svg'
-import phone from './../assets/phone.svg'
-import { useNavigate, useParams, useLocation  } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { WhatsappShareButton } from "react-share";
-import './style.css'
+import backIcon from './../assets/back.svg';
+import logo from './../assets/logo.svg';
+import whatsapp from './../assets/whatsapp.svg';
+import phone from './../assets/phone.svg';
+import './style.scss';
+import ThemeToggle from './ThemeToggle';
 
-const Header = (props) => {
+const Header = () => {
   const navigate = useNavigate();
-  const { categorieType } = useParams();
   const location = useLocation();
+  
+  // Extract dynamic route name from pathname
+  const dynamicRoute = location.pathname.substring(1); // Removes "/"
+  
+  // Predefined titles for fixed routes
+  const routeTitles = {
+    "/home": "HOME",
+    "/futures": "FUTURES",
+    "/account": "ACCOUNT",
+  };
 
-  const title = location.pathname === "/home" ? "HOME" : props.title === 'detail' ? props.title : categorieType;
+  // State to hold header title
+  const [title, setTitle] = useState(routeTitles[location.pathname] || "");
+
+  useEffect(() => {
+    if (routeTitles[location.pathname]) {
+      setTitle(routeTitles[location.pathname]); // Fixed route name
+    } else if (dynamicRoute) {
+      setTitle(dynamicRoute.charAt(0).toUpperCase() + dynamicRoute.slice(1)); // Capitalize dynamic route
+    } else {
+      setTitle("HOME"); // Default
+    }
+  }, [location.pathname]); // Update when pathname changes
+
+  // Define routes where the logo should be shown
+  const logoRoutes = ["/home", "/futures", "/account"];
+  const showLogo = logoRoutes.includes(location.pathname);
 
   return (
-    <header className='container d-flex align-items-center px-4 py-3'>
-        <div 
-          style={{ width: '38px', height: '38px', cursor: 'pointer' }} 
-          onClick={() => navigate('/')}
-        >
-          <img className='w-100 h-100' src={logo} alt="logo" />
-        </div>
+    <header className='d-flex align-items-center px-4 py-2 bg-secondary'>
+      {/* Show back button if it's a dynamic route, else show logo */}
+      
+      <img onClick={showLogo ? () => navigate('/') : () => navigate(-1)} src={showLogo ? logo : backIcon} alt={showLogo ? "Logo" : "Back"} />
 
-        <div className='ms-2' style={{ lineHeight: 1 }}>
-            <span style={{ fontSize: '20px', textTransform: 'capitalize', color: '#E5811E', fontWeight: '500' }}>{title}</span>
-            {(title !== "HOME" && title !== "detail" && title !== "categorie") && (
-            <span style={{ fontSize: '20px', textTransform: 'capitalize', color: '#E5811E', fontWeight: '500' }}>{title}</span>
-            )}
-        </div>
+      {/* Show dynamic title */}
+      <div className='ms-3' style={{ lineHeight: 1 }}>
+        <span className='fw-bold' style={{ fontSize: '20px', textTransform: 'capitalize', color: 'var(--primary)', fontWeight: '500' }}>
+          {title}
+        </span>
+      </div>
 
-        <div className='d-flex align-items-center ms-auto icons'>
-          <WhatsappShareButton url={window.location.href}>
-            <img style={{width: "30px", height: '30px'}} src={whatsapp} alt="Share on WhatsApp" />
-          </WhatsappShareButton>
-
-          <a className='ms-4' href="tel:+91 9172680961">
-            <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
-          </a>
+      <div className='d-flex align-items-center ms-auto icons'>
+        <ThemeToggle />
+        <WhatsappShareButton url={window.location.href}>
+          <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
+        </WhatsappShareButton>
+        <div className='ms-4' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
+          <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
         </div>
+      </div>
     </header>
   );
 };

@@ -1,0 +1,18 @@
+{
+    "welcome": "Welcome to My App",
+    "description": "This is a multilingual app.",
+    "language": "Language",
+    "english": "English",
+    "hindi": "हिन्दी",
+    "account":  {
+        "app_related": {
+            "change_language": "Change Language",
+            "change_theme": "Change Theme"
+        },
+        "about-mandi_central": {
+            "about_us": "About Us",
+            "other": "Other"
+        }
+    }
+  }
+  

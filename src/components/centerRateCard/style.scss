@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
+
+.date {
+    color: var(--primary);
+    background-color: rgba($color: #E25100, $alpha: 0.2);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.status {
+    margin-inline-start: auto;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--green);
+}
+
+.location {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: 18px;
+        font-weight: 900;
+        color: var(--blue);
+    }
+
+    span {
+        font-weight: 600;
+        // color: #252323;
+        margin-top: -5px;
+    }
+}
+
+.price {
+    display: flex;
+    margin-inline-start: auto;
+    font-family: 'Work Sans';
+
+    .price-range {
+        font-size: 20px;
+        font-weight: 700;
+        // color: #191919;
+    }
+
+    .up-down {
+        margin-inline-start: 0.75rem;
+        .up-down1 {
+            color: #FFFFFF;
+            background-color: var(--green);
+            padding-left: 0.3rem/* 8px */;
+            font-size: 18px;
+            font-weight: 500;
+            padding-right: 0.5rem/* 8px */;
+        }
+    }
+}
+
+.divider1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+
+    span {
+        font-size: 12px;
+        font-weight: 800;
+    }
+}
+
+.gradient-background1 {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 92, 0, 1));
+    width: 58px;
+    height: 1.75px;
+}
+
+.gradient-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #FF5C00;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.gradient-background2 {
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 92, 0, 1));
+    width: 58px;
+    height: 1.75px;
+} 
+
+.price-status {
+    text-align: left;
+    // width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    span {
+        margin-top: -6px;
+    }
+}
+
+.key-statistics {
+    display: flex;
+    justify-content: space-around;
+    margin: 12px 0 12px 0;
+    border: 1px solid #EDEDED;
+    padding: 10px 5px 0 5px;
+    border-radius: 4px;
+}
+
+.divider2 {
+    width: 1px;
+    height: 38px;
+    border: solid 1px #D9D9D9;
+    background-color: #D9D9D9;
+    margin-top: 8px;
+}
+
+.summery {
+    border: 1px solid #EBEBEB;
+    border-radius: 4px;
+    background-color: #F6F6F6;
+    padding: 6px;
+}

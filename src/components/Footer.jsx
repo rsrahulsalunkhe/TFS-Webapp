@@ -1,47 +1,42 @@
-import home from './../assets/home.svg'
-import futures from './../assets/futures.svg'
-import account from './../assets/account.svg'
-
+import home from './../assets/home.svg';
+import futures from './../assets/futures.svg';
+import account from './../assets/account.svg';
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+    const navigate = useNavigate();
+
+    const handleNavigation = (path) => {
+        navigate(path);
+    };
+
     return (
-        <footer
-            className="d-flex w-100 justify-content-around align-items-center bg-white border-top"
-            >
+        <footer className="d-flex w-100 justify-content-around align-items-center bg-secondary">
             {/* Home */}
-            <div className="d-flex flex-column align-items-center">
-                <div
-                className="d-flex justify-content-center align-items-center"
-                style={{ width: '25px', height: '25px' }}
-                >
-                <img className="img-fluid" src={home} alt="Home" />
+            <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/home")}>
+                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
+                    <img className="img-fluid" src={home} alt="Home" />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>HOME</span>
+                <span style={{ fontSize: '14px', fontWeight: '500' }} className='text-primary'>HOME</span>
             </div>
 
             {/* Futures */}
-            <div className="d-flex flex-column align-items-center">
-                <div
-                className="d-flex justify-content-center align-items-center"
-                style={{ width: '25px', height: '25px' }}
-                >
-                <img className="img-fluid" src={futures} alt="Futures" />
+            <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/futures")}>
+                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
+                    <img className="img-fluid" src={futures} alt="Futures" />
                 </div>
                 <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>FUTURES</span>
             </div>
 
             {/* Account */}
-            <div className="d-flex flex-column align-items-center">
-                <div
-                className="d-flex justify-content-center align-items-center"
-                style={{ width: '25px', height: '25px' }}
-                >
-                <img className="img-fluid" src={account} alt="Account" />
+            <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/account")}>
+                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
+                    <img className="img-fluid" src={account} alt="Account" />
                 </div>
                 <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>ACCOUNT</span>
             </div>
         </footer>
     );
-  };
-  
-  export default Footer;
+};
+
+export default Footer;
