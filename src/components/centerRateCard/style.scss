@@ -2,16 +2,16 @@
 
 .date {
     color: var(--primary);
-    background-color: rgba($color: #E25100, $alpha: 0.2);
-    font-size: 12px;
+    background-color: rgba($color: #E25100, $alpha: 0.1);
+    font-size: 14px;
     font-weight: bold;
-    padding: 3px 6px;
+    padding: 1px 7px 0 7px;
     border-radius: 4px;
 }
 
 .status {
     margin-inline-start: auto;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--green);
 }
@@ -37,6 +37,7 @@
 .price {
     display: flex;
     margin-inline-start: auto;
+    gap: 6px;
 
     .price-range {
         font-size: 18px;
@@ -97,7 +98,7 @@
     flex-direction: column;
     
     span {
-        margin-top: -6px;
+        margin-top: -3px;
     }
 }
 
@@ -107,20 +108,19 @@
     margin: 8px 0 12px 0;
     border: 1px solid #EDEDED;
     padding: 15px 5px 6px 5px;
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .divider2 {
     width: 1px;
     height: 36px;
-    border: solid 1px #D9D9D9;
     background-color: #D9D9D9;
     margin-top: 8px;
 }
 
 .summery {
     border: 1px solid #EBEBEB;
-    border-radius: 4px;
-    background-color: #F6F6F6;
+    border-radius: 8px;
+    background-color: #F7F7F7;
     padding: 4px 6px 0 8px;
 }
