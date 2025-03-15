@@ -3,7 +3,7 @@
 .date {
     color: var(--primary);
     background-color: rgba($color: #E25100, $alpha: 0.2);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
     padding: 3px 6px;
     border-radius: 4px;
@@ -23,7 +23,7 @@
 
     p {
         font-size: 18px;
-        font-weight: 900;
+        font-weight: 700;
         color: var(--blue);
     }
 
@@ -37,23 +37,22 @@
 .price {
     display: flex;
     margin-inline-start: auto;
-    font-family: 'Work Sans';
 
     .price-range {
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 18px;
+        font-weight: 600;
         // color: #191919;
     }
 
     .up-down {
-        margin-inline-start: 0.75rem;
+        margin-inline-start: 0.50rem;
         .up-down1 {
             color: #FFFFFF;
             background-color: var(--green);
-            padding-left: 0.3rem/* 8px */;
+            padding-left: 0.2rem/* 8px */;
             font-size: 18px;
-            font-weight: 500;
-            padding-right: 0.5rem/* 8px */;
+            // font-weight: 500;
+            padding-right: 0.3rem/* 8px */;
         }
     }
 }
@@ -62,7 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 4px;
 
     span {
         font-size: 12px;
@@ -105,15 +104,15 @@
 .key-statistics {
     display: flex;
     justify-content: space-around;
-    margin: 12px 0 12px 0;
+    margin: 8px 0 12px 0;
     border: 1px solid #EDEDED;
-    padding: 10px 5px 0 5px;
+    padding: 15px 5px 6px 5px;
     border-radius: 4px;
 }
 
 .divider2 {
     width: 1px;
-    height: 38px;
+    height: 36px;
     border: solid 1px #D9D9D9;
     background-color: #D9D9D9;
     margin-top: 8px;
@@ -123,5 +122,5 @@
     border: 1px solid #EBEBEB;
     border-radius: 4px;
     background-color: #F6F6F6;
-    padding: 6px;
+    padding: 4px 6px 0 8px;
 }

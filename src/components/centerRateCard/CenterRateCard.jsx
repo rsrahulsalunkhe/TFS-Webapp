@@ -5,22 +5,23 @@ import banner2 from './../../assets/banner2.jpeg'
 const Price = (props) => {
   return (
     <div className='price-status'>
-        <span style={{fontSize: '15px', fontWeight: 700, color: '#606060'}}>{props.status}</span>
-        <span style={{fontSize: '19px', fontWeight: 500, fontFamily: 'Work Sans'}}>{props.price}</span>
-        <span style={{fontSize: '18px', fontWeight: 500, color: props.color, fontFamily: 'Work Sans'}}>{props.change}</span>
+        <span className='' style={{fontSize: '15px', fontWeight: 700, color: '#606060'}}>{props.status}</span>
+        <span style={{fontSize: '17px', fontWeight: 500}}>{props.price}</span>
+        <span style={{fontSize: '16px', fontWeight: 500, color: props.color}}>{props.change}</span>
     </div>
   )
 }
 
 const CenterRateCard = () => {
   return (
-    <div className='mb-3 bg-primary'>
+    <div>
+    <div className='mb-2 bg-primary'>
         <div className='p-3'>
             <div className='d-flex align-items-center'>
                 <span className='date'>27-09-2023</span>
                 <p className='status m-0 ms-auto'>STEADY TO FIRM</p>
             </div>
-            <div className='d-flex mt-2'>
+            <div className='d-flex mt-1'>
                 <div className='location'>
                     <p className='m-0'>DELHI</p>
                     <span>RJ Line</span>
@@ -40,19 +41,21 @@ const CenterRateCard = () => {
             </div>
             
             <div className='key-statistics'>
-                <Price status='OPEN' price='5000-5100' change='▲812' color='#00AA08'/><div className="divider2"></div>
-                <Price status='LOW' price='5000-5100' change='▲812' color='#EE0000'/><div className="divider2"></div>
-                <Price status='HIGH' price='5000-5100' change='▲812' color='#00AA08'/>
+                <Price status='7 Days' price='5000-5100' change='▲812' color='#00AA08'/><div className="divider2"></div>
+                <Price status='14 Days' price='5000-5100' change='▲812' color='#EE0000'/><div className="divider2"></div>
+                <Price status='21 Days' price='5000-5100' change='▲812' color='#00AA08'/>
             </div>
 
             <div className='summery'>
-                    <p style={{color: '#27292A', fontWeight: 700, lineHeight: 1.15}}>Trading Activity Very Dull in Chana and rate down</p>
-                    <p style={{color: '#27292A', fontWeight: 700, lineHeight: 1.15}}>Trading Activity Very Dull in Chana and rate down</p>
+                <ul className='ps-3 pt-2'>
+                    <li style={{color: '#27292A', fontWeight: 600, lineHeight: 1.15}} className='mb-2 p-0'>Trading Activity Very Dull in Chana and rate down</li>
+                    <li style={{color: '#27292A', fontWeight: 600, lineHeight: 1.15}} className='mb-2 p-0'>Trading Activity Very Dull in Chana and rate down</li>
+                </ul>
             </div>
-            <p className='text-left mt-2' style={{color: '#1400FC', fontWeight: 700, fontSize: '14px'}}>M P AGRO OVERSEAS, DELHI</p>
+            <p className='text-left mt-2' style={{color: '#1400FC', fontWeight: 600, fontSize: '14px'}}>M P AGRO OVERSEAS, DELHI</p>
         </div>
-
-        <div className='w-100 px-3 pb-3'>
+    </div>
+    <div className='w-100 px-3 pb-2'>
             <img className='w-100 h-100 rounded' src={banner2} alt="" loading="lazy" />
         </div>
     </div>
