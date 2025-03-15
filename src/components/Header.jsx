@@ -40,7 +40,7 @@ const Header = () => {
   const showLogo = logoRoutes.includes(location.pathname);
 
   return (
-    <header className='d-flex align-items-center px-4 py-2 bg-secondary'>
+    <header className='d-flex align-items-center px-4 bg-secondary'>
       {/* Show back button if it's a dynamic route, else show logo */}
       
       <img onClick={showLogo ? () => navigate('/') : () => navigate(-1)} src={showLogo ? logo : backIcon} alt={showLogo ? "Logo" : "Back"} />
@@ -57,7 +57,7 @@ const Header = () => {
         <WhatsappShareButton url={window.location.href}>
           <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
         </WhatsappShareButton>
-        <div className='ms-4' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
+        <div className='ms-2' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
           <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
         </div>
       </div>

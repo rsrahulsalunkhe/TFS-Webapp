@@ -19,16 +19,16 @@ const CenterRateCard = () => {
         <div className='p-3'>
             <div className='d-flex align-items-center'>
                 <span className='date'>27-09-2023</span>
-                <p className='status m-0 ms-auto'>STEADY TO FIRM</p>
+                <p className='status m-0 ms-auto'>Steady to Firm</p>
             </div>
             <div className='d-flex mt-2'>
                 <div className='location'>
-                    <p className='m-0'>DELHI</p>
-                    <span>RJ Line</span>
+                    <p className='m-0'>Delhi</p>
+                    <span style={{color: '#606060'}}>RJ Line</span>
                 </div>
                 <div className='price'>
                     <span className='price-range'>₹5100-5200</span>
-                    <p className='up-down'><span className='up-down1 py-1'>+50</span></p>
+                    <p className='up-down'><span className='up-down1'>+50</span></p>
                 </div>
             </div>
 
@@ -47,12 +47,12 @@ const CenterRateCard = () => {
             </div>
 
             <div className='summery'>
-                <ul className='ps-3 pt-2'>
-                    <li style={{color: '#27292A', fontWeight: 500, lineHeight: 1.15}} className='mb-2 p-0'>Trading Activity Very Dull in Chana and rate down</li>
-                    <li style={{color: '#27292A', fontWeight: 500, lineHeight: 1.15}} className='mb-2 p-0'>Trading Activity Very Dull in Chana and rate down</li>
+                <ul className='ps-3 pt-2 m-0'>
+                    <li style={{color: '#27292A', fontWeight: 500, lineHeight: 1.15, fontSize: '15px'}} className='mb-2 p-0'>Trading Activity Very Dull in Chana and rate down</li>
+                    <li style={{color: '#27292A', fontWeight: 500, lineHeight: 1.15, fontSize: '15px'}} className='mb-2 p-0 m-0'>Trading Activity Very Dull in Chana and rate down</li>
                 </ul>
             </div>
-            <p className='text-left mt-2' style={{color: '#1400FC', fontWeight: 600, fontSize: '14px'}}>M P AGRO OVERSEAS, DELHI</p>
+            <p className='text-left m-0 mt-2' style={{color: '#1400FC', fontWeight: 600, fontSize: '14px'}}>M P AGRO OVERSEAS, DELHI</p>
         </div>
     </div>
     <div className='w-100 pb-3'>

@@ -5,7 +5,7 @@ $primary: #E5811E;
 $light-primary-bg: #FFFFFF;
 $light-secondary-bg: #F0F0F0;
 $light-tertiary-bg: #F6F6F6;
-$light-primary-text: #000000;
+$light-primary-text: #454545;
 $light-secondary-text: #5E5E5E;
 
 // Dark Theme
@@ -25,6 +25,7 @@ $dark-secondary-text: #FFFFFFB3;
 
   --green: #016C1F;
   --red: #FF0000;
+  --blue: #042C5C;
 }
 
 [data-theme="dark"] {
