@@ -12,52 +12,76 @@ const Price = (props) => {
   )
 }
 
-const CenterRateCard = () => {
+const CenterRateCard = ({rate}) => {
   return (
     <div>
-    <div className='mb-3 bg-primary'>
-        <div className='p-3'>
-            <div className='d-flex align-items-center'>
-                <span className='date'>27-09-2023</span>
-                <p className='status m-0 ms-auto'>Steady to Firm</p>
-            </div>
-            <div className='d-flex mt-2'>
-                <div className='location'>
-                    <p className='m-0'>Delhi</p>
-                    <span style={{color: '#606060'}}>RJ Line</span>
+        <div className='mb-3 bg-primary'>
+            <div className='p-3'>
+                <div className='d-flex align-items-center'>
+                    <span className='date'>{rate.rec_date}</span>
+                    <p className='m-0 ms-auto fw-bold' style={{color: rate.content.senti.col}}>{rate.content.senti.val}</p>
                 </div>
-                <div className='price'>
-                    <span className='price-range'>₹5100-5200</span>
-                    <p className='up-down'><span className='up-down1'>+50</span></p>
+                <div className='d-flex mt-2'>
+                    <div className='location'>
+                        <p className='m-0'>{rate.content.Rate.loc}</p>
+                        <span style={{color: '#606060'}}>{rate.content.Rate.var}</span>
+                    </div>
+                    <div className='price'>
+                        <span className='price-range'>{rate.content.Rate.rate}</span>
+                        <p className='up-down'><span className='up-down1' style={{backgroundColor: rate.content.Rate.change.col}}>{rate.content.Rate.change.val}</span></p>
+                    </div>
                 </div>
-            </div>
 
-            <div className='divider1'>
-                <div className='gradient-background1'></div>
-                <div className='gradient-dot me-2'></div>
-                <span>KEY STATISTICS</span>
-                <div className='gradient-dot ms-2'></div>
-                <div className='gradient-background2'></div>
-            </div>
-            
-            <div className='key-statistics'>
-                <Price status='7 Days' price='₹5000-5100' change='▲812' color='#00AA08'/><div className="divider2"></div>
-                <Price status='14 Days' price='₹5000-5100' change='▲812' color='#EE0000'/><div className="divider2"></div>
-                <Price status='21 Days' price='₹5000-5100' change='▲812' color='#00AA08'/>
-            </div>
+                <div className='divider1'>
+                    <div className='gradient-background1'></div>
+                    <div className='gradient-dot me-2'></div>
+                    <span>KEY STATISTICS</span>
+                    <div className='gradient-dot ms-2'></div>
+                    <div className='gradient-background2'></div>
+                </div>
+                
+                {rate?.content?.ca && rate.content.ca.length > 0 && (
+                    <div className='key-statistics'>
+                        {rate.content.ca.map((item, index) => (
+                            <React.Fragment key={index}>
+                                <Price status={item.title} price={item.val} change={item.ch} color={item.col} />
+                                {index !== rate.content.ca.length - 1 && <div className="divider2"></div>}
+                            </React.Fragment>
+                        ))}
+                    </div>
+                )}
 
-            <div className='summery'>
-                <ul className='ps-3 pt-2 m-0'>
-                    <li style={{color: '#27292A', fontWeight: 500, lineHeight: 1.15, fontSize: '15px'}} className='mb-2 p-0'>Trading Activity Very Dull in Chana and rate down</li>
-                    <li style={{color: '#27292A', fontWeight: 500, lineHeight: 1.15, fontSize: '15px'}} className='mb-2 p-0 m-0'>Trading Activity Very Dull in Chana and rate down</li>
-                </ul>
+                {rate?.content?.co && rate.content.co.length > 0 && (
+                    <div className='summery'>
+                        <ul className='ps-3 pt-2 m-0'>
+                            {rate.content.co.map((item, index) => (
+                                <li 
+                                    key={index} 
+                                    style={{ color: '#27292A', fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
+                                    className='mb-2 p-0'
+                                >
+                                    {item.v}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+                <p className='text-left m-0 mt-2' style={{color: '#1400FC', fontWeight: 600, fontSize: '14px'}}>{rate.content.Rate.ref.n}</p>
             </div>
-            <p className='text-left m-0 mt-2' style={{color: '#1400FC', fontWeight: 600, fontSize: '14px'}}>M P AGRO OVERSEAS, DELHI</p>
         </div>
-    </div>
-    <div className='w-100 pb-3'>
-            <img className='w-100 h-100 rounded' src={banner2} alt="" loading="lazy" />
-        </div>
+        {rate?.content?.ba && rate.content.ba.length > 0 && (
+            <div className='w-100 pb-3'>
+                {rate.content.ba.map((item, index) => (
+                    <img 
+                        key={index} 
+                        className='w-100 h-100' 
+                        src={item.i} 
+                        alt={`Image ${index + 1}`} 
+                        loading="lazy" 
+                    />
+                ))}
+            </div>
+        )}
     </div>
   )
 }

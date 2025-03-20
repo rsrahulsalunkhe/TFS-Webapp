@@ -3,7 +3,7 @@ import Home from '../pages/Home';
 import Temp from '../pages/Temp';
 import Account from '../pages/Account';
 import Futures from '../pages/Futures';
-import Detail from '../pages/Detail';
+import CommodityDetail from '../pages/CommodityDetail';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -20,7 +20,7 @@ const AppRouter = () => {
             <Route path="/temp" element={<Temp />} />
             <Route path="/account" element={<Account />} />
             <Route path="/futures" element={<Futures />} />
-            <Route path="/:commodity" element={<Detail />} />
+            <Route path="/:commodity" element={<CommodityDetail />} />
           </Routes>
         </main>
 
