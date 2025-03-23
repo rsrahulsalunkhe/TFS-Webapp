@@ -2,8 +2,11 @@ import home from './../assets/home.svg';
 import futures from './../assets/futures.svg';
 import account from './../assets/account.svg';
 import { useNavigate } from "react-router-dom";
+import '../i18n'
+import { useTranslation } from "react-i18next"
 
 const Footer = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const handleNavigation = (path) => {
@@ -17,7 +20,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
                     <img className="img-fluid" src={home} alt="Home" />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500' }} className='text-primary'>HOME</span>
+                <span style={{ fontSize: '14px', fontWeight: '500' }} className='text-primary'>{t("footer.home")}</span>
             </div>
 
             {/* Futures */}
@@ -25,7 +28,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
                     <img className="img-fluid" src={futures} alt="Futures" />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>FUTURES</span>
+                <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>{t("footer.futures")}</span>
             </div>
 
             {/* Account */}

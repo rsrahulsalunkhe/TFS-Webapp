@@ -14,12 +14,13 @@ const Header = () => {
   
   // Extract dynamic route name from pathname
   const dynamicRoute = location.pathname.substring(1); // Removes "/"
-  
+
   // Predefined titles for fixed routes
   const routeTitles = {
     "/home": "HOME",
     "/futures": "FUTURES",
     "/account": "ACCOUNT",
+    "privacy-policy": "Privacy Policy", // Explicit mapping for privacy-policy
   };
 
   // State to hold header title
@@ -28,12 +29,14 @@ const Header = () => {
   useEffect(() => {
     if (routeTitles[location.pathname]) {
       setTitle(routeTitles[location.pathname]); // Fixed route name
+    } else if (routeTitles[dynamicRoute]) {
+      setTitle(routeTitles[dynamicRoute]); // Use predefined dynamic route titles
     } else if (dynamicRoute) {
-      setTitle(dynamicRoute.charAt(0).toUpperCase() + dynamicRoute.slice(1)); // Capitalize dynamic route
+      setTitle(dynamicRoute.replace(/-/g, " ").charAt(0).toUpperCase() + dynamicRoute.slice(1)); // Capitalize and replace hyphens with spaces
     } else {
       setTitle("HOME"); // Default
     }
-  }, [location.pathname]); // Update when pathname changes
+  }, [location.pathname]);
 
   // Define routes where the logo should be shown
   const logoRoutes = ["/home", "/futures", "/account"];
@@ -42,8 +45,11 @@ const Header = () => {
   return (
     <header className='d-flex align-items-center px-4 bg-secondary'>
       {/* Show back button if it's a dynamic route, else show logo */}
-      
-      <img onClick={showLogo ? () => navigate('/') : () => navigate(-1)} src={showLogo ? logo : backIcon} alt={showLogo ? "Logo" : "Back"} />
+      <img 
+        onClick={showLogo ? () => navigate('/') : () => navigate(-1)} 
+        src={showLogo ? logo : backIcon} 
+        alt={showLogo ? "Logo" : "Back"} 
+      />
 
       {/* Show dynamic title */}
       <div className='ms-3' style={{ lineHeight: 1 }}>

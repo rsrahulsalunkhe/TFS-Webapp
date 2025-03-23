@@ -6,13 +6,25 @@
     "hindi": "हिन्दी",
     "account":  {
         "app_related": {
+            "app_related": "App Related",
             "change_language": "Change Language",
-            "change_theme": "Change Theme"
+            "change_theme": "Change Theme",
+            "share_app": "Share App",
+            "rate_us": "Rate Us",
+            "share": "Share",
+            "download_app": "Download App"
         },
-        "about-mandi_central": {
+        "about_mandi_central": {
+            "about_mandi_central": "About Mandi Central",
             "about_us": "About Us",
             "other": "Other"
-        }
+        },
+        "help_and_support" : "Help & Support"
+    },
+    "footer":  {
+        "home": "Home",
+        "futures": "Futures",
+        "account": "Account"
     }
   }
   

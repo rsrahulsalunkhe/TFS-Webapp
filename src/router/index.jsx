@@ -6,6 +6,8 @@ import Futures from '../pages/Futures';
 import CommodityDetail from '../pages/CommodityDetail';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Other from '../pages/other/Other';
+import PrivacyPolicy from '../pages/other/PrivacyPolicy';
 
 const AppRouter = () => {
   return (
@@ -21,6 +23,9 @@ const AppRouter = () => {
             <Route path="/account" element={<Account />} />
             <Route path="/futures" element={<Futures />} />
             <Route path="/:commodity" element={<CommodityDetail />} />
+
+            <Route path='/other' element={<Other />} />
+            <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           </Routes>
         </main>
 

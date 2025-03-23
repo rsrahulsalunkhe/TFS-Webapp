@@ -6,13 +6,24 @@
     "hindi": "हिन्दी",
     "account": {
         "app_related": {
+            "app_related": "ऐप से संबंधित",
             "change_language": "भाषा बदलें",
-            "change_theme": "थीम बदलें"
+            "change_theme": "थीम बदलें",
+            "share_app": "ऐप साझा करें",
+            "rate_us": "हमें रेट करें",
+            "share": "साझा करें",
+            "download_app": "ऐप डाउनलोड करें"
         },
-        "about-mandi_central": {
+        "about_mandi_central": {
+            "about_mandi_central": "मंडी सेंट्रल के बारे में",
             "about_us": "हमारे बारे में",
             "other": "अन्य"
-        }
+        },
+        "help_and_support": "सहायता और समर्थन"
+    },
+    "footer": {
+        "home": "होम",
+        "futures": "भविष्य",
+        "account": "खाता"
     }
-  }
-  
+}
