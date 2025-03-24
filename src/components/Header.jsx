@@ -43,7 +43,7 @@ const Header = () => {
   const showLogo = logoRoutes.includes(location.pathname);
 
   return (
-    <header className='d-flex align-items-center px-4 bg-secondary'>
+    <header className='d-flex align-items-center py-1 px-4 bg-secondary'>
       {/* Show back button if it's a dynamic route, else show logo */}
       <img 
         onClick={showLogo ? () => navigate('/') : () => navigate(-1)} 

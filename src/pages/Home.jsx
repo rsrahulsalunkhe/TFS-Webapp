@@ -674,7 +674,7 @@ const Home = () => {
     };
     return (
         <main className='bg-primary'>
-            <div className='d-grid gap-2'>
+            <div className='d-grid'>
                 {homeData.data.ban.map((b) => (
                     <div className='w-100 h-100'>
                         <img className='w-100 h-100' src={b.i} alt="" />
@@ -707,7 +707,7 @@ const Home = () => {
                                     style={{ width: '33%', gap: '10px' }} // Increased spacing
                                 >
                                     {/* Image Handling */}
-                                    <div className='img mb-2' style={{ width: '85px', height: '85px' }}>
+                                    <div className='img' style={{ width: '80px', height: '80px' }}>
                                         {c.det.i ? (
                                             <img src={c.det.i} alt={c.commodity_name} className='w-100 h-100 rounded-circle' />
                                         ) : (
@@ -716,8 +716,8 @@ const Home = () => {
                                     </div>
                                     {/* Centered Text */}
                                     <div className='w-100'>
-                                        <h5 className='m-0'>{c.commodity_name}</h5>
-                                        {c.det.t && <p className='special m-0'>• {c.det.t}</p>}
+                                        <h5 style={{fontSize: '18px'}} className='m-0'>{c.commodity_name}</h5>
+                                        {c.det.t && <p style={{fontSize: '14px'}} className='special m-0'>• {c.det.t}</p>}
                                     </div>
                                 </div>
                             ))}

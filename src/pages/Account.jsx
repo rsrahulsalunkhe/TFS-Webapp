@@ -23,7 +23,7 @@ const Account = () => {
         <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: '90vh'}} className="p-3 d-flex flex-column gap-3">
             {/* <h1>{t("welcome")}</h1>
             <p>{t("description")}</p> */}
-            {/* <LanguageToggle /> */}
+            <LanguageToggle />
 
             <div className="bg-primary rounded">
                 <div className="d-flex align-items-center py-2 px-3">

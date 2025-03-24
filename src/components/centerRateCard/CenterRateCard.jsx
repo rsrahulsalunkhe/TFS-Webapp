@@ -5,7 +5,7 @@ import banner2 from './../../assets/banner2.jpeg'
 const Price = (props) => {
   return (
     <div className='price-status'>
-        <span className='' style={{fontSize: '14px', fontWeight: 700, color: '#606060'}}>{props.status}</span>
+        <span className='' style={{fontSize: '14px', fontWeight: 700, color: '#242424'}}>{props.status}</span>
         <span style={{fontSize: '16px', fontWeight: 500}}>{props.price}</span>
         <span style={{fontSize: '14px', fontWeight: 500, color: props.color}}>{props.change}</span>
     </div>
@@ -24,7 +24,7 @@ const CenterRateCard = ({rate}) => {
                 <div className='d-flex mt-2'>
                     <div className='location'>
                         <p className='m-0'>{rate.content.Rate.loc}</p>
-                        <span style={{color: '#606060'}}>{rate.content.Rate.var}</span>
+                        <span>{rate.content.Rate.var}</span>
                     </div>
                     <div className='price'>
                         <span className='price-range'>{rate.content.Rate.rate}</span>
@@ -57,7 +57,7 @@ const CenterRateCard = ({rate}) => {
                             {rate.content.co.map((item, index) => (
                                 <li 
                                     key={index} 
-                                    style={{ color: '#27292A', fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
+                                    style={{ color: '#242424', fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
                                     className='mb-2 p-0'
                                 >
                                     {item.v}
