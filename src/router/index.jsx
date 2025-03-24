@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Other from '../pages/other/Other';
 import PrivacyPolicy from '../pages/other/PrivacyPolicy';
+import TermsAndConditions from '../pages/other/TermsAndConditons'
 
 const AppRouter = () => {
   return (
@@ -26,6 +27,7 @@ const AppRouter = () => {
 
             <Route path='/other' element={<Other />} />
             <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+            <Route path='/terms-&-conditions' element={<TermsAndConditions />} />
           </Routes>
         </main>
 

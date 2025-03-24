@@ -17,7 +17,12 @@
         "about_mandi_central": {
             "about_mandi_central": "About Mandi Central",
             "about_us": "About Us",
-            "other": "Other"
+            "other": {
+                "other": "Other",
+                "terms_and_conditons": "Terms & Conditons",
+                "privacy_policy": "Privacy Policy",
+                "frequently_asked_questions": "Frequently Asked Questions"
+            }
         },
         "help_and_support" : "Help & Support"
     },
