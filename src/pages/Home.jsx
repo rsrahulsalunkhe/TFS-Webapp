@@ -690,7 +690,7 @@ const Home = () => {
                 <div key={s.cat_id}>
                     <div className='mx-5'>
                         <div className='hr-lines'>
-                            <span className='text-secondary text-uppercase'>{s.cat_name}</span>
+                            <span className='text-secondary'>{s.cat_name}</span>
                         </div>
                     </div>
 
@@ -707,7 +707,7 @@ const Home = () => {
                                     style={{ width: '33%', gap: '10px' }} // Increased spacing
                                 >
                                     {/* Image Handling */}
-                                    <div className='img' style={{ width: '80px', height: '80px' }}>
+                                    <div className='img' style={{ width: '75px', height: '75px' }}>
                                         {c.det.i ? (
                                             <img src={c.det.i} alt={c.commodity_name} className='w-100 h-100 rounded-circle' />
                                         ) : (
@@ -716,7 +716,7 @@ const Home = () => {
                                     </div>
                                     {/* Centered Text */}
                                     <div className='w-100'>
-                                        <h5 style={{fontSize: '18px'}} className='m-0'>{c.commodity_name}</h5>
+                                        <h5 style={{fontSize: '16px'}} className='m-0'>{c.commodity_name}</h5>
                                         {c.det.t && <p style={{fontSize: '14px'}} className='special m-0'>• {c.det.t}</p>}
                                     </div>
                                 </div>

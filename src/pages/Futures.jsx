@@ -451,7 +451,7 @@ const Futures = () => {
       }
 
     return (
-        <div className="bg-tertiary">
+        <div className="bg-primary">
             {futuresList.data.map((p, index) => (
                 <CenterRateCard key={index} rate={p} />
             ))}

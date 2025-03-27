@@ -1,6 +1,10 @@
 import { useParams } from 'react-router-dom';
 import CenterRateCard from '../components/centerRateCard/CenterRateCard';
 import ReportCard from '../components/reportCard/ReportCard';
+import star from '../assets/star.svg'
+import sentiments from '../assets/sentiment.svg'
+import timeLine from '../assets/time-line.svg'
+import coverage from '../assets/coverage.svg'
 
 const Detail = () => {
     const { commodity } = useParams();
@@ -222,6 +226,51 @@ const Detail = () => {
         <div className='container d-flex flex-column gap-3 py-3'>
             {/* <h2>Detail Page for {commodity.charAt(0).toUpperCase() + commodity.slice(1)}</h2>
             <p>More information about {commodity} will be displayed here.</p> */}
+            <div>
+                <p style={{fontSize: '18px', fontWeight: '700', color: '#DA6901', backgroundColor: '#FFF2EA'}} className='m-0 py-2 px-3 text-center rounded'>Everything here is Chana Exclusive</p>
+
+                <div className='d-flex align-items-center justify-content-center mt-3'>
+                    <div style={{width: '18px', height: '18px'}} className='d-flex align-items-center justify-content-center'>
+                        <img className='w-100 h-100' src={star} alt="star" />
+                    </div>
+                    <p className='m-0'><strong><i>Premium</i></strong> Member Offers for you</p>
+                    <div style={{width: '18px', height: '18px', rotate: 'revert'}} className='d-flex align-items-center justify-content-center'>
+                        <img className='w-100 h-100' src={star} alt="star" />
+                    </div>
+                </div>
+
+                <p style={{fontSize: "11px", fontWeight: '600'}} className='text-center mb-3'>Up to 50% extra off on crores of products using supercoins</p>
+
+                <div className='row px-2'>
+                    <div className='col-4'>
+                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', border: '2px solid #FFCDAE', borderRadius: '5px'}}>
+                            <div className='d-flex align-items-center justify-content-center' style={{backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9'}}>
+                                <img src={sentiments} alt="" />
+                            </div>
+                            <h6 className='text-center mt-2'>Chana Sentiments</h6>
+                            <button style={{backgroundColor: '#FFF0E6', color: '#E5811E', border: '1px solid #FFC6A4', borderRadius: '2px', fontSize: '11px'}}>Check</button>
+                        </div>
+                    </div>
+                    <div className='col-4'>
+                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', border: '2px solid #FFCDAE', borderRadius: '5px'}}>
+                            <div className='d-flex align-items-center justify-content-center' style={{backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9'}}>
+                                <img src={sentiments} alt="" />
+                            </div>
+                            <h6 className='text-center mt-2'>Chana <br /> Time Line</h6>
+                            <button style={{backgroundColor: '#FFF0E6', color: '#E5811E', border: '1px solid #FFC6A4', borderRadius: '2px', fontSize: '11px'}}>Check</button>
+                        </div>
+                    </div>
+                    <div className='col-4'>
+                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', border: '2px solid #FFCDAE', borderRadius: '5px'}}>
+                            <div className='d-flex align-items-center justify-content-center' style={{backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9'}}>
+                                <img src={sentiments} alt="" />
+                            </div>
+                            <h6 className='text-center mt-2'>Chana Coverage</h6>
+                            <button style={{backgroundColor: '#FFF0E6', color: '#E5811E', border: '1px solid #FFC6A4', borderRadius: '2px', fontSize: '11px'}}>Check</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             {reportList.data.card.map((report) => (
                 <ReportCard key={report.card_id} report={report} />
             ))}

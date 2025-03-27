@@ -5,27 +5,36 @@ $primary: #E5811E;
 $light-primary-bg: #FFFFFF;
 $light-secondary-bg: #F0F0F0;
 $light-tertiary-bg: #F6F6F6;
+$light-header-bg: #F0F0F0;
 $light-primary-text: #454545;
 $light-secondary-text: #5E5E5E;
+$light-gray-primary-text: #B3B3B3;
+$light-gray-secondary-text: #B3B3B3;
 
 // Dark Theme
-$dark-primary-bg: #293549;
-$dark-secondary-bg: #1E293B;
-$dark-tertiary-bg: #1E293B;
+$dark-primary-bg: #242424;
+$dark-secondary-bg: #31333C;
+$dark-tertiary-bg: #3B3D47;
+$dark-header-bg: #24262D;
 $dark-primary-text: #FFFFFF;
 $dark-secondary-text: #FFFFFFB3;
+$dark-gray-primary-text: #a3a3a3;
+$dark-gray-secondary-text: #e0e0e0;
 
 :root {
   --primary: #{$primary};
   --primary-bg: #{$light-primary-bg};
   --secondary-bg: #{$light-secondary-bg};
   --tertiary-bg: #{$light-tertiary-bg};
+  --header-bg: #{$light-header-bg};
   --primary-text: #{$light-primary-text};
   --secondary-text: #{$light-secondary-text};
+  --gray-primary-text: #{$light-gray-primary-text};
+  --gray-secondary-text: #{$light-gray-secondary-text};
 
   --green: #00AA08;
   --red: #FF0000;
-  --blue-primary: #042C5C;
+  --text-blue: #60A5FA;
   --blue-secondary: #0006cc;
 
   --gray-200: #F2F2F2;
@@ -36,8 +45,11 @@ $dark-secondary-text: #FFFFFFB3;
   --primary-bg: #{$dark-primary-bg};
   --secondary-bg: #{$dark-secondary-bg};
   --tertiary-bg: #{$dark-tertiary-bg};
+  --header-bg: #{$dark-header-bg};
   --primary-text: #{$dark-primary-text};
   --secondary-text: #{$dark-primary-text};
+  --gray-primary-text: #{$dark-gray-primary-text};
+  --gray-secondary-text: #{$dark-gray-secondary-text};
 }
 
 // Apply globally
@@ -76,11 +88,19 @@ body {
 }
 
 .bg-tertiary {
-  background-color: var(--tertiary-bg);
+  background-color: var(--tertiary-bg) !important;
 }
 
 .bg-header {
-  background-color: var(--secondary-bg) !important;
+  background-color: var(--header-bg) !important;
+}
+
+.text-gray-primary {
+  color: var(--gray-primary-text);
+}
+
+.text-gray-secondary {
+  color: var(--gray-secondary-text);
 }
 
 .bg-footer {
@@ -93,6 +113,10 @@ body {
 
 .text-secondary {
   color: var(--secondary-text) !important;
+}
+
+.text-blue {
+  color: var(--text-blue);
 }
 
 .bg-gray-200 {

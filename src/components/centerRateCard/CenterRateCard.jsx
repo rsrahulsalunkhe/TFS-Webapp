@@ -5,7 +5,7 @@ import banner2 from './../../assets/banner2.jpeg'
 const Price = (props) => {
   return (
     <div className='price-status'>
-        <span className='' style={{fontSize: '14px', fontWeight: 700, color: '#242424'}}>{props.status}</span>
+        <span className='text-gray-primary' style={{fontSize: '14px', fontWeight: 700}}>{props.status}</span>
         <span style={{fontSize: '16px', fontWeight: 500}}>{props.price}</span>
         <span style={{fontSize: '14px', fontWeight: 500, color: props.color}}>{props.change}</span>
     </div>
@@ -15,7 +15,7 @@ const Price = (props) => {
 const CenterRateCard = ({rate}) => {
   return (
     <div>
-        <div className='mb-3 bg-primary'>
+        <div className='mb-3 bg-secondary'>
             <div className='p-3'>
                 <div className='d-flex align-items-center'>
                     <span className='date'>{rate.rec_date}</span>
@@ -24,10 +24,10 @@ const CenterRateCard = ({rate}) => {
                 <div className='d-flex mt-2'>
                     <div className='location'>
                         <p className='m-0'>{rate.content.Rate.loc}</p>
-                        <span>{rate.content.Rate.var}</span>
+                        <span className='text-gray-primary'>{rate.content.Rate.var}</span>
                     </div>
                     <div className='price'>
-                        <span className='price-range'>{rate.content.Rate.rate}</span>
+                        <span className='price-range text-gray-secondary'>{rate.content.Rate.rate}</span>
                         <p className='up-down'><span className='up-down1' style={{backgroundColor: rate.content.Rate.change.col}}>{rate.content.Rate.change.val}</span></p>
                     </div>
                 </div>
@@ -52,13 +52,13 @@ const CenterRateCard = ({rate}) => {
                 )}
 
                 {rate?.content?.co && rate.content.co.length > 0 && (
-                    <div className='summery'>
+                    <div className='summery bg-tertiary'>
                         <ul className='ps-3 pt-2 m-0'>
                             {rate.content.co.map((item, index) => (
                                 <li 
                                     key={index} 
-                                    style={{ color: '#242424', fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
-                                    className='mb-2 p-0'
+                                    style={{ fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
+                                    className='mb-2 p-0 text-gray-primary'
                                 >
                                     {item.v}
                                 </li>
@@ -66,7 +66,7 @@ const CenterRateCard = ({rate}) => {
                         </ul>
                     </div>
                 )}
-                <p className='text-left m-0 mt-2' style={{color: '#1400FC', fontWeight: 600, fontSize: '14px'}}>{rate.content.Rate.ref.n}</p>
+                <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '14px'}}>{rate.content.Rate.ref.n}</p>
             </div>
         </div>
         {rate?.content?.ba && rate.content.ba.length > 0 && (
