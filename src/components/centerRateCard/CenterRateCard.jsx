@@ -52,8 +52,8 @@ const CenterRateCard = ({rate}) => {
                 )}
 
                 {rate?.content?.co && rate.content.co.length > 0 && (
-                    <div className='summery bg-tertiary'>
-                        <ul className='ps-3 pt-2 m-0'>
+                    <div className='summery mt-2 bg-tertiary'>
+                        <ul className=' m-0'>
                             {rate.content.co.map((item, index) => (
                                 <li 
                                     key={index} 
