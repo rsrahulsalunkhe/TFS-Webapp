@@ -1,6 +1,16 @@
-.card {
+.card1 {
     border: none !important;
     border-radius: 12px !important;
     overflow: hidden;
-    box-shadow: #64646f33 0 7px 29px;
+    background-color: var(--secondary-bg);
+    // box-shadow: #64646f33 0 7px 29px;
+}
+
+ul li::marker {
+    font-size: 1.5em; /* Adjust size */
+    color: #E5811E; /* Optional: Change color */
+}
+
+.subtit {
+    background-color: var(--tertiary-bg);
 }

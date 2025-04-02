@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap');
 
 .date {
-    color: var(--primary);
-    background-color: rgba($color: #E25100, $alpha: 0.05);
+    color: var(--date-text);
+    background-color: rgba($color: #60A5FA1F, $alpha: 0.1);
     font-size: 14px;
-    font-weight: bold;
+    font-weight: 600;
     padding: 2px 6px;
     border-radius: 4px;
 }

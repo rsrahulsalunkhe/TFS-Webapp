@@ -10,16 +10,26 @@ $light-primary-text: #454545;
 $light-secondary-text: #5E5E5E;
 $light-gray-primary-text: #B3B3B3;
 $light-gray-secondary-text: #B3B3B3;
+$light-date-text: #E5811E;
 
 // Dark Theme
-$dark-primary-bg: #242424;
-$dark-secondary-bg: #31333C;
-$dark-tertiary-bg: #3B3D47;
-$dark-header-bg: #24262D;
+$dark-primary-bg: #121212;
+$dark-secondary-bg: #1e1e1e;
+$dark-tertiary-bg: #2A2A2A;
+$dark-header-bg: #1e1e1e;
 $dark-primary-text: #FFFFFF;
 $dark-secondary-text: #FFFFFFB3;
 $dark-gray-primary-text: #a3a3a3;
 $dark-gray-secondary-text: #e0e0e0;
+$dark-date-text: #60A5FA;
+// $dark-primary-bg: #242424;
+// $dark-secondary-bg: #31333C;
+// $dark-tertiary-bg: #3B3D47;
+// $dark-header-bg: #24262D;
+// $dark-primary-text: #FFFFFF;
+// $dark-secondary-text: #FFFFFFB3;
+// $dark-gray-primary-text: #a3a3a3;
+// $dark-gray-secondary-text: #e0e0e0;
 
 :root {
   --primary: #{$primary};
@@ -31,6 +41,7 @@ $dark-gray-secondary-text: #e0e0e0;
   --secondary-text: #{$light-secondary-text};
   --gray-primary-text: #{$light-gray-primary-text};
   --gray-secondary-text: #{$light-gray-secondary-text};
+  --date-text: #{$light-date-text};
 
   --green: #00AA08;
   --red: #FF0000;
@@ -50,6 +61,7 @@ $dark-gray-secondary-text: #e0e0e0;
   --secondary-text: #{$dark-primary-text};
   --gray-primary-text: #{$dark-gray-primary-text};
   --gray-secondary-text: #{$dark-gray-secondary-text};
+  --date-text: #{$dark-date-text};
 }
 
 // Apply globally
@@ -121,4 +133,8 @@ body {
 
 .bg-gray-200 {
   background-color: var(--gray-200);
+}
+
+.date-text {
+  color: var(--date-text);
 }

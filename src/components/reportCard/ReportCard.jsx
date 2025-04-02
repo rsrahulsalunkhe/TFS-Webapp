@@ -6,7 +6,7 @@ const ReportCard = ({ report }) => {
     console.log("Report Data:", report.content.img);
   return (
     <div>
-        <div className='card'>
+        <div className='card1'>
             {report?.content?.img ? (
                 <div className='w-100'>
                     <img className='w-100 h-100' src={report.content.img.i} alt="banner" loading='lazy' />
@@ -14,10 +14,10 @@ const ReportCard = ({ report }) => {
             ) : null}
             <div className='py-3 px-3'>
                 <span className='date'>{report.rec_date}</span>
-                <h5 className='fw-bold pt-2' style={{color: 'var(--blue-primary)'}}>{report.content.card.tit}</h5>
+                <h5 className='fw-bold pt-3 pb-1' style={{color: 'var(--blue-primary)'}}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
-                    <div className='bg-gray-200 py-2 px-3 rounded'>
-                        <h6 className='fw-bold m-0' style={{fontSize: '18px'}}>{report.content.card.subtit}</h6>
+                    <div className='subtit py-2 px-3 rounded'>
+                        <h6 className='fw-bold m-0 py-2'>{report.content.card.subtit}</h6>
                     </div>
                 ) : null }
 
@@ -32,14 +32,14 @@ const ReportCard = ({ report }) => {
                 {report?.content?.card?.p ? (
                     <ul style={{paddingLeft: '1.5rem', marginBottom: '0'}} className='mt-2'>
                         {report.content.card.p.map((p) => (
-                            <li className='fw-bold pb-3' style={{lineHeight: 1.2}}>{p.t}</li>
+                            <li className='pb-3' style={{lineHeight: 1.2}}>{p.t}</li>
                         ))}
                     </ul>
                 ) : null}
 
                 {report?.content?.card?.b ? (
                     <div className='d-flex'>
-                        <i className='ms-auto' style={{color: 'var(--blue-secondary)', fontWeight: 500}}>{report.content.card.b} &gt;</i>
+                        <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
                     </div>
                 ) : null }
             </div>
