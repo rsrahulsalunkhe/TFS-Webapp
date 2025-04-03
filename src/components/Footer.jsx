@@ -28,7 +28,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
                     <img className="img-fluid" src={futures} alt="Futures" />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>{t("footer.futures")}</span>
+                <span style={{ fontSize: '14px', fontWeight: '500'}} className='text-primary'>{t("footer.futures")}</span>
             </div>
 
             {/* Account */}
@@ -36,7 +36,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
                     <img className="img-fluid" src={account} alt="Account" />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: '#333' }}>ACCOUNT</span>
+                <span style={{ fontSize: '14px', fontWeight: '500'}} className='text-primary'>ACCOUNT</span>
             </div>
         </footer>
     );
