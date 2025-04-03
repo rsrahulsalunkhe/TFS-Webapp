@@ -5,6 +5,9 @@ import star from '../assets/star.svg'
 import sentiments from '../assets/sentiment.svg'
 import timeLine from '../assets/time-line.svg'
 import coverage from '../assets/coverage.svg'
+import seperatorLine from '../assets/seperator-line.svg'
+import rightArrow from '../assets/right-arrow.svg'
+import './style.scss'
 
 const Detail = () => {
     const { commodity } = useParams();
@@ -227,7 +230,17 @@ const Detail = () => {
             {/* <h2>Detail Page for {commodity.charAt(0).toUpperCase() + commodity.slice(1)}</h2>
             <p>More information about {commodity} will be displayed here.</p> */}
             <div>
-                <p style={{fontSize: '18px', fontWeight: '700', color: '#DA6901', backgroundColor: '#FFF2EA'}} className='m-0 py-2 px-3 text-center rounded'>Everything here is Chana Exclusive</p>
+            <p
+                style={{
+                    fontSize: '18px',
+                    fontWeight: '700',
+                    color: '#DA6901',
+                    backgroundColor: '#FFF2EA',                    
+                }}
+                className="m-0 py-2 px-3 text-center header-border rounded"
+                >
+                Everything here is Chana Exclusive
+                </p>
 
                 <div className='d-flex align-items-center justify-content-center mt-3'>
                     <div style={{width: '18px', height: '18px'}} className='d-flex align-items-center justify-content-center'>
@@ -243,32 +256,36 @@ const Detail = () => {
 
                 <div className='row px-2'>
                     <div className='col-4'>
-                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', border: '2px solid #FFCDAE', borderRadius: '5px'}}>
+                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)'}}>
                             <div className='d-flex align-items-center justify-content-center' style={{backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9'}}>
                                 <img src={sentiments} alt="" />
                             </div>
                             <h6 className='text-center mt-2'>Chana Sentiments</h6>
-                            <button style={{backgroundColor: '#FFF0E6', color: '#E5811E', border: '1px solid #FFC6A4', borderRadius: '2px', fontSize: '11px'}}>Check</button>
+                            <button style={{backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px'}}>Check <img src={rightArrow} alt="right arrow" /></button>
                         </div>
                     </div>
                     <div className='col-4'>
-                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', border: '2px solid #FFCDAE', borderRadius: '5px'}}>
+                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)'}}>
                             <div className='d-flex align-items-center justify-content-center' style={{backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9'}}>
-                                <img src={sentiments} alt="" />
+                                <img src={timeLine} alt="" />
                             </div>
                             <h6 className='text-center mt-2'>Chana <br /> Time Line</h6>
-                            <button style={{backgroundColor: '#FFF0E6', color: '#E5811E', border: '1px solid #FFC6A4', borderRadius: '2px', fontSize: '11px'}}>Check</button>
+                            <button style={{backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px'}}>Detail <img src={rightArrow} alt="right arrow" /></button>
                         </div>
                     </div>
                     <div className='col-4'>
-                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{boxShadow: '0px 0px 4px 0px rgba(0, 0, 0, 0.25)', border: '2px solid #FFCDAE', borderRadius: '5px'}}>
+                        <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)'}}>
                             <div className='d-flex align-items-center justify-content-center' style={{backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9'}}>
-                                <img src={sentiments} alt="" />
+                                <img src={coverage} alt="" />
                             </div>
                             <h6 className='text-center mt-2'>Chana Coverage</h6>
-                            <button style={{backgroundColor: '#FFF0E6', color: '#E5811E', border: '1px solid #FFC6A4', borderRadius: '2px', fontSize: '11px'}}>Check</button>
+                            <button style={{backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px'}}>Read <img src={rightArrow} alt="right arrow" /></button>
                         </div>
                     </div>
+                </div>
+
+                <div className='text-center mt-3'>
+                    <img src={seperatorLine} alt="" />
                 </div>
             </div>
             {reportList.data.card.map((report) => (

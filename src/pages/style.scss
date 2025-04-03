@@ -64,3 +64,16 @@
 .rounded {
     border-radius: 12px !important;
 }
+
+.header-border {
+    border: 2px solid transparent;
+    border-image-source: linear-gradient(
+        270deg,
+        rgba(243, 131, 63, 0.1) 0%,
+        rgba(243, 131, 63, 0.28) 8%,
+        #F3833F 45%,
+        rgba(243, 131, 63, 0.28) 88%,
+        rgba(243, 131, 63, 0.1) 100%
+    );
+    border-image-slice: 1;
+}
