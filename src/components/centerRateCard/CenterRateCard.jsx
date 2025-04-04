@@ -1,6 +1,7 @@
 import React from 'react'
 import './style.scss'
 import banner2 from './../../assets/banner2.jpeg'
+import ellipse from './../../assets/ellipse.svg'
 
 const Price = (props) => {
   return (
@@ -52,18 +53,22 @@ const CenterRateCard = ({rate}) => {
                 )}
 
                 {rate?.content?.co && rate.content.co.length > 0 && (
-                    <div className='summery mt-2 bg-tertiary'>
-                        <ul className=' m-0'>
+                    <div className='summery bg-tertiary'>
+                        {/* <ul className=' m-0'> */}
                             {rate.content.co.map((item, index) => (
-                                <li 
+                                <span
                                     key={index} 
                                     style={{ fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
-                                    className='mb-2 p-0 text-gray-primary'
+                                    className='d-flex py-1 text-gray-primary'
                                 >
+                                    <div>
+                                    <img src={ellipse} className='me-3' alt="" />
+                                    </div>
+                                    
                                     {item.v}
-                                </li>
+                                </span>
                             ))}
-                        </ul>
+                        {/* </ul> */}
                     </div>
                 )}
                 <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '14px'}}>{rate.content.Rate.ref.n}</p>
