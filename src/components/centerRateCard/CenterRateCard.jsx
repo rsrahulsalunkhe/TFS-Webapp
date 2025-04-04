@@ -62,7 +62,7 @@ const CenterRateCard = ({rate}) => {
                                     className='d-flex py-1 text-gray-primary'
                                 >
                                     <div>
-                                    <img src={ellipse} className='me-3' alt="" />
+                                        <img src={ellipse} className='me-3' alt="" />
                                     </div>
                                     
                                     {item.v}
