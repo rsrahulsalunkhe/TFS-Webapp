@@ -98,7 +98,8 @@
     flex-direction: column;
     
     span {
-        margin-top: -3px;
+        // margin-top: -3px;
+        // padding-top: 8px;
     }
 }
 
@@ -107,7 +108,8 @@
     justify-content: space-around;
     margin: 8px 0 12px 0;
     border: 1px solid #EDEDED;
-    padding: 15px 5px 6px 5px;
+    // padding: 15px 5px 6px 5px;
+    padding: 10px 5px;
     border-radius: 8px;
 }
 
@@ -122,5 +124,5 @@
     border: 1px solid #EBEBEB;
     border-radius: 8px;
     background-color: #F7F7F7;
-    padding: 4px 6px 0 8px;
+    padding: 8px 8px 0 0px;
 }

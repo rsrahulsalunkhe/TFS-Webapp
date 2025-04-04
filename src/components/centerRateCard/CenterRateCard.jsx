@@ -5,7 +5,7 @@ import banner2 from './../../assets/banner2.jpeg'
 const Price = (props) => {
   return (
     <div className='price-status'>
-        <span className='text-gray-primary' style={{fontSize: '14px', fontWeight: 700}}>{props.status}</span>
+        <span className='text-gray-primary pt-1' style={{fontSize: '14px', fontWeight: 700}}>{props.status}</span>
         <span style={{fontSize: '16px', fontWeight: 500}}>{props.price}</span>
         <span style={{fontSize: '14px', fontWeight: 500, color: props.color}}>{props.change}</span>
     </div>

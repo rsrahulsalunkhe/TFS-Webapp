@@ -8,7 +8,7 @@ $light-tertiary-bg: #F6F6F6;
 $light-header-bg: #F9F9F9;
 $light-primary-text: #454545;
 $light-secondary-text: #5E5E5E;
-$light-gray-primary-text: #B3B3B3;
+$light-gray-primary-text: rgba(0, 0, 0, 0.75);
 $light-gray-secondary-text: #B3B3B3;
 $light-date-text: #60A5FA;
 
@@ -19,7 +19,7 @@ $dark-tertiary-bg: #2A2A2A;
 $dark-header-bg: #1E1E1E;
 $dark-primary-text: #FFFFFF;
 $dark-secondary-text: #FFFFFFB3;
-$dark-gray-primary-text: #a3a3a3;
+$dark-gray-primary-text: rgba(255, 255, 255, 0.6);
 $dark-gray-secondary-text: #e0e0e0;
 $dark-date-text: #60A5FA;
 // $dark-primary-bg: #242424;
