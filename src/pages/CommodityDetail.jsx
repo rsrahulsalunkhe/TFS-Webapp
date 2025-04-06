@@ -237,7 +237,7 @@ const Detail = () => {
                     color: '#DA6901',
                     backgroundColor: '#FFF2EA',                    
                 }}
-                className="m-0 py-2 px-3 text-center header-border rounded"
+                className="m-0 py-2 text-center header-border rounded"
                 >
                 Everything here is Chana Exclusive
                 </p>
