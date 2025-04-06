@@ -11,17 +11,19 @@ $light-secondary-text: #5E5E5E;
 $light-gray-primary-text: rgba(0, 0, 0, 0.75);
 $light-gray-secondary-text: #B3B3B3;
 $light-date-text: #60A5FA;
+$light-border: 1px solid rgba(219, 219, 219, 1);
 
 // Dark Theme
 $dark-primary-bg: #121212;
 $dark-secondary-bg: #1e1e1e;
 $dark-tertiary-bg: #2A2A2A;
 $dark-header-bg: #1E1E1E;
-$dark-primary-text: #FFFFFF;
+$dark-primary-text: rgba(255, 255, 255, 0.87);
 $dark-secondary-text: #FFFFFFB3;
 $dark-gray-primary-text: rgba(255, 255, 255, 0.6);
 $dark-gray-secondary-text: #e0e0e0;
 $dark-date-text: #60A5FA;
+$dark-border: 1px solid rgba(255, 255, 255, 0.24);
 // $dark-primary-bg: #242424;
 // $dark-secondary-bg: #31333C;
 // $dark-tertiary-bg: #3B3D47;
@@ -42,6 +44,7 @@ $dark-date-text: #60A5FA;
   --gray-primary-text: #{$light-gray-primary-text};
   --gray-secondary-text: #{$light-gray-secondary-text};
   --date-text: #{$light-date-text};
+  --border: #{$light-border};
 
   --green: #00AA08;
   --red: #FF0000;
@@ -62,6 +65,7 @@ $dark-date-text: #60A5FA;
   --gray-primary-text: #{$dark-gray-primary-text};
   --gray-secondary-text: #{$dark-gray-secondary-text};
   --date-text: #{$dark-date-text};
+  --border: #{$light-border};
 }
 
 // Apply globally

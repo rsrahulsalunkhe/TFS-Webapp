@@ -1,6 +1,6 @@
 import React from 'react'
-import banner from '../../assets/banner.jpeg'
 import ellipse from '../../assets/ellipse.svg'
+import rightArrow from '../../assets/right-arrow.svg'
 import './style.scss'
 
 const ReportCard = ({ report }) => {
@@ -17,15 +17,15 @@ const ReportCard = ({ report }) => {
                 <span className='date'>{report.rec_date}</span>
                 <h5 className='fw-bold pt-3 pb-1' style={{color: 'var(--blue-primary)'}}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
-                    <div className='subtit py-2 px-3 rounded'>
-                        <h6 className='m-0 py-2 text-gray-primary'>{report.content.card.subtit}</h6>
+                    <div className='subtit py-2 px-2 rounded'>
+                        <h6 className='m-0 py-1 text-gray-primary'>{report.content.card.subtit}</h6>
                     </div>
                 ) : null }
 
                 <div className='divider1 mt-3'>
                     <div className='gradient-background1'></div>
                     <div className='gradient-dot me-2'></div>
-                    <span>HIGHLIGHTS</span>
+                    <span>Highlights</span>
                     <div className='gradient-dot ms-2'></div>
                     <div className='gradient-background2'></div>
                 </div>
@@ -44,8 +44,11 @@ const ReportCard = ({ report }) => {
                 ) : null}
 
                 {report?.content?.card?.b ? (
-                    <div className='d-flex'>
-                        <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
+                    // <div className='d-flex'>
+                    //     <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
+                    // </div>
+                    <div className='d-flex justify-content-center'>
+                        <button className='px-5 py-2 fw-bold'>Check More Update <img className='ms-2' src={rightArrow} alt="" /></button>
                     </div>
                 ) : null }
             </div>

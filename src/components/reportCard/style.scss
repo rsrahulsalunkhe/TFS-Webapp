@@ -1,5 +1,5 @@
 .card1 {
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    border: var(--border);
     border-radius: 12px !important;
     overflow: hidden;
     background-color: var(--secondary-bg);
@@ -7,6 +7,20 @@
 
     h5 {
         font-size: 18px;
+        line-height: 1.35;
+    }
+
+    button {
+        background-color: rgba(218, 105, 1, 0.12);
+        border: none !important;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        color: #DA6901;
+
+        img {
+            width: 8px;
+        }
     }
 }
 
@@ -17,4 +31,10 @@ ul li::marker {
 
 .subtit {
     background-color: var(--tertiary-bg);
+    border: var(--border);
 }
+
+// .px-2 {
+//     padding-left: 0.8rem !important;
+//     padding-right: 0.8rem !important;
+// }
