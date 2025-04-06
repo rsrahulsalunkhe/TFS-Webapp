@@ -18,7 +18,7 @@ const ReportCard = ({ report }) => {
                 <h5 className='fw-bold pt-3 pb-1' style={{color: 'var(--blue-primary)'}}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
                     <div className='subtit py-2 px-3 rounded'>
-                        <h6 className='fw-bold m-0 py-2 text-gray-primary'>{report.content.card.subtit}</h6>
+                        <h6 className='m-0 py-2 text-gray-primary'>{report.content.card.subtit}</h6>
                     </div>
                 ) : null }
 

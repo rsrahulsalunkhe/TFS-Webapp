@@ -1,9 +1,13 @@
 .card1 {
-    border: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.24);
     border-radius: 12px !important;
     overflow: hidden;
     background-color: var(--secondary-bg);
     // box-shadow: #64646f33 0 7px 29px;
+
+    h5 {
+        font-size: 18px;
+    }
 }
 
 ul li::marker {
