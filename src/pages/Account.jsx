@@ -1,4 +1,4 @@
-import LanguageToggle from "../components/LanguageToggle";
+// import LanguageToggle from "../components/LanguageToggle";
 import '../i18n'
 import { useTranslation } from "react-i18next"
 
@@ -23,7 +23,7 @@ const Account = () => {
         <div style={{backgroundColor: 'var(--primary-bg)', minHeight: '90vh'}} className="p-3 d-flex flex-column gap-3">
             {/* <h1>{t("welcome")}</h1>
             <p>{t("description")}</p> */}
-            <LanguageToggle />
+            {/* <LanguageToggle /> */}
 
             <div className="bg-secondary rounded">
                 <div className="d-flex align-items-center py-3 px-3">
@@ -40,7 +40,7 @@ const Account = () => {
                     <h5 className="fw-semibold ps-3 m-0 py-1">{t("account.app_related.app_related")}</h5>
                 </div>
 
-                <div className="d-flex align-items-center py-3 px-3">
+                <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/change-language')}>
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={changeLanguage} alt="change language" />
                     </div>
@@ -50,7 +50,7 @@ const Account = () => {
 
                 <Divider variant="inset" component="div" />
 
-                <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/other')}>
+                <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/change-theme')}>
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>

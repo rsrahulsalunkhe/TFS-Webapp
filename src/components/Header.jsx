@@ -37,7 +37,7 @@ const Header = () => {
   const showLogo = logoRoutes.includes(location.pathname);
 
   return (
-    <header className='d-flex align-items-center py-1 px-4 bg-header'>
+    <header className='d-flex align-items-center py-2 px-4 bg-header'>
       <img 
         onClick={showLogo ? () => navigate('/') : () => navigate(-1)} 
         src={showLogo ? logo : backIcon} 
@@ -51,7 +51,7 @@ const Header = () => {
       </div>
 
       <div className='d-flex align-items-center ms-auto icons'>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
         <WhatsappShareButton url={window.location.href}>
           <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
         </WhatsappShareButton>

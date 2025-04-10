@@ -18,3 +18,9 @@ footer {
     padding: 10px 16px;
     /* border-top: 1px solid #ddd; */
 }
+
+input[type="radio"] {
+    accent-color: #DA6901; /* Modern browsers support this */
+    width: 22px;
+    height: 22px;
+}
