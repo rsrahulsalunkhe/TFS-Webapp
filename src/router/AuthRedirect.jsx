@@ -5,7 +5,7 @@ const AuthRedirect = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("language");
 
     if (token) {
       navigate("/home"); // or your home route

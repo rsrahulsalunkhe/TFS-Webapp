@@ -28,7 +28,7 @@ const Home = () => {
         } finally {
           setLoading(false);
         }
-      };
+    };
 
     const navigate = useNavigate();
 
@@ -38,11 +38,11 @@ const Home = () => {
 
     if (loading) {
         return (
-          <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
             <CircularProgress color="warning" />
-          </Box>
+            </Box>
         );
-      }
+    }
       
     return (
         <main className='bg-primary'>

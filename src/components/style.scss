@@ -3,24 +3,22 @@ header {
     top: -1px;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays on top of other content */
-    background-color: white; /* Change this based on your design */
-    /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+    z-index: 1000;
+    background-color: white;
 }
 
 footer {
     position: fixed;
     bottom: 0;
-    left: 0;
+    // left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above other content */
-    background-color: white; /* Adjust color as needed */
+    z-index: 1000; 
     padding: 10px 16px;
-    /* border-top: 1px solid #ddd; */
+    max-width: 430px;
 }
 
 input[type="radio"] {
-    accent-color: #DA6901; /* Modern browsers support this */
+    accent-color: #DA6901;
     width: 22px;
     height: 22px;
 }

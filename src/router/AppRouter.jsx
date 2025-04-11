@@ -26,7 +26,7 @@ import MobileInsertion from '../pages/signUpLogin/MobileInsertion';
 import OtpVerification from '../pages/signUpLogin/OtpVerification';
 
 const Layout = ({ children }) => (
-  <div className="flex flex-col min-h-screen">
+  <div className="flex flex-col min-h-screen" style={{maxWidth: '430px', marginLeft: 'auto', marginRight: 'auto'}}>
     <Header />
     <main style={{ marginBottom: '66px' }}>{children}</main>
     <Footer />
@@ -51,7 +51,7 @@ const AppRouter = () => {
               <Layout>
                 <Routes>
                   <Route path="/" element={<AuthRedirect />} />
-                  <Route path="/home" element={<AuthGuard component={<Home />} />} />
+                  <Route path="/home" element={<Home />} />
                   <Route path="/temp" element={<Temp />} />
                   <Route path="/account" element={<Account />} />
                   <Route path="/futures" element={<Futures />} />

@@ -23,10 +23,10 @@ const LanguageToggle = () => {
     i18n.changeLanguage(selectedLanguage);
     localStorage.setItem("language", selectedLanguage);
 
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("language");
 
-    if (!token) {
-      navigate("/mobile-insertion");
+    if (token) {
+      navigate("/home");
     }
   };
 

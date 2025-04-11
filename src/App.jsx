@@ -3,7 +3,7 @@ import './styles/_theme.scss'
 
 const App = () => {
   return (
-      <AppRouter />
+    <AppRouter />
   )
 }
 
