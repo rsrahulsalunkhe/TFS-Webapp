@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
-import { useHeader } from '../../components/HeaderContext';
+// import { useHeader } from '../../components/HeaderContext';
 
 
 const TermsAndConditons = () => {
-  const { setTitle } = useHeader();
+  // const { setTitle } = useHeader();
 
-  useEffect(() => {
-    setTitle("Terms & Conditions");
-  }, [setTitle]);
+  // useEffect(() => {
+  //   setTitle("Terms & Conditions");
+  // }, [setTitle]);
   
   return (
     <div className='p-3'>

@@ -36,7 +36,7 @@ const Footer = () => {
                 <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
                     <img className="img-fluid" src={account} alt="Account" />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500'}} className='text-primary'>ACCOUNT</span>
+                <span style={{ fontSize: '14px', fontWeight: '500'}} className='text-primary'>{t("footer.account")}</span>
             </div>
         </footer>
     );

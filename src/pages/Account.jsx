@@ -30,7 +30,7 @@ const Account = () => {
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={helpAndSupport} alt="change language" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.help_and_support")}</h6>
+                    <h6 className="m-0 ms-3">{t("account.help_and_support.help_and_support")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
             </div>
@@ -91,7 +91,7 @@ const Account = () => {
 
             <div className="bg-secondary rounded py-3">
                 <div style={{borderLeft: '4px solid #E5811E'}} className="mb-2">
-                    <h5 className="fw-semibold ps-3 m-0 py-1">About Mandi Central</h5>
+                    <h5 className="fw-semibold ps-3 m-0 py-1">{t("account.about_mandi_central.about_mandi_central")}</h5>
                 </div>
                 <div className="d-flex align-items-center py-3 px-3">
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">

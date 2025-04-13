@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import { useHeader } from '../../components/HeaderContext';
+import { useTranslation } from 'react-i18next';
 
 const PrivacyPolicy = () => {
-  const { setTitle } = useHeader();
-  
-  useEffect(() => {
-    setTitle("Privacy Policy");
-  }, [setTitle]);
+  // const { t, i18n } = useTranslation();
+  // const { setTitle } = useHeader();
+
+  // useEffect(() => {
+  //   setTitle(t("account.about_mandi_central.other.privacy_policy"));
+  // }, [setTitle, t, i18n.language]);
 
   return (
     <div className="p-3">

@@ -11,6 +11,7 @@ import Footer from '../components/Footer';
 import Other from '../pages/other/Other';
 import PrivacyPolicy from '../pages/other/PrivacyPolicy';
 import TermsAndConditions from '../pages/other/TermsAndConditons';
+import ContentRestrictions from '../pages/other/ContentRestrictions';
 import FAQ from '../pages/other/FAQ';
 import Sentiment from '../pages/Sentiment';
 import TimeLine from '../pages/TimeLine';
@@ -24,6 +25,7 @@ import UnAuthGuard from './UnAuthGuard';
 import LanguageSelection from '../pages/signUpLogin/LanguageSelection';
 import MobileInsertion from '../pages/signUpLogin/MobileInsertion';
 import OtpVerification from '../pages/signUpLogin/OtpVerification';
+import AccountDelete from '../pages/other/AccountDelete';
 
 const Layout = ({ children }) => (
   <div className="flex flex-col min-h-screen" style={{maxWidth: '430px', marginLeft: 'auto', marginRight: 'auto'}}>
@@ -67,6 +69,8 @@ const AppRouter = () => {
                   <Route path="/other" element={<Other />} />
                   <Route path="/terms-&-conditions" element={<TermsAndConditions />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                  <Route path="/content-restrictions" element={<ContentRestrictions />} />
+                  <Route path="/account-delete" element={<AccountDelete />} />
                   <Route path="/faq" element={<FAQ />} />
                 </Routes>
               </Layout>

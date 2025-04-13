@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import rightArrow from '../../assets/right-arrow.svg'
 import termsAndCondition from '../../assets/terms-and-conditons.svg'
 import privacyPolicy from '../../assets/privacy_policy.svg'
+import deteleAccount from '../../assets/delete-account.svg'
 import faq from '../../assets/faq.svg'
 
 const Other = () => {
@@ -30,6 +31,26 @@ const Other = () => {
                         <img src={privacyPolicy} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.privacy_policy")}</h6>
+                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                </div>
+            </div>
+
+            <div className="bg-secondary rounded" onClick={() => navigate('/content-restrictions')}>
+                <div className="d-flex align-items-center py-3 px-3">
+                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                        <img src={privacyPolicy} alt="change language" />
+                    </div>
+                    <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.content_restrictions")}</h6>
+                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                </div>
+            </div>
+
+            <div className="bg-secondary rounded" onClick={() => navigate('/account-delete')}>
+                <div className="d-flex align-items-center py-3 px-3">
+                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                        <img src={deteleAccount} alt="change language" />
+                    </div>
+                    <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.delete_account")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
             </div>
