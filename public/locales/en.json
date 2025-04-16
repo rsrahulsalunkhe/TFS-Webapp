@@ -28,9 +28,9 @@
         },
         "help_and_support" : {
             "help_and_support": "Help & Support",
-            "Phone Call Support": "Phone Call Support",
-            "Whatsapp Support": "Whatsapp Support",
-            "Email Support": "Email Support"
+            "phone_call_support": "Phone Call Support",
+            "whatsapp_support": "Whatsapp Support",
+            "email_support": "Email Support"
         }
     },
     "footer":  {

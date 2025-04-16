@@ -26,6 +26,7 @@ import LanguageSelection from '../pages/signUpLogin/LanguageSelection';
 import MobileInsertion from '../pages/signUpLogin/MobileInsertion';
 import OtpVerification from '../pages/signUpLogin/OtpVerification';
 import AccountDelete from '../pages/other/AccountDelete';
+import HelpAndSupport from '../pages/account/HelpAndSupport';
 
 const Layout = ({ children }) => (
   <div className="flex flex-col min-h-screen" style={{maxWidth: '430px', marginLeft: 'auto', marginRight: 'auto'}}>
@@ -63,6 +64,7 @@ const AppRouter = () => {
                   <Route path="/time-line/:id" element={<TimeLine />} />
                   <Route path="/coverage/:id" element={<Coverage />} />
 
+                  <Route path="/help-&-support" element={<HelpAndSupport />} />
                   <Route path="/change-language" element={<ChangeLanguage />} />
                   <Route path="/change-theme" element={<ChangeTheme />} />
 

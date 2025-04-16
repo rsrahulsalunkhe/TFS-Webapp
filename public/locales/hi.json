@@ -28,9 +28,9 @@
         },
         "help_and_support": {
             "help_and_support": "मदद और समर्थन",
-            "Phone Call Support": "फोन कॉल सहायता",
-            "Whatsapp Support": "व्हाट्सएप सहायता",
-            "Email Support": "ईमेल सहायता"
+            "phone_call_support": "फोन कॉल सहायता",
+            "whatsapp_support": "व्हाट्सएप सहायता",
+            "email_support": "ईमेल सहायता"
         }
     },
     "footer": {

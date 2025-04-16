@@ -26,7 +26,7 @@ const Account = () => {
             {/* <LanguageToggle /> */}
 
             <div className="bg-secondary rounded">
-                <div className="d-flex align-items-center py-3 px-3">
+                <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/help-&-support')}>
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={helpAndSupport} alt="change language" />
                     </div>
