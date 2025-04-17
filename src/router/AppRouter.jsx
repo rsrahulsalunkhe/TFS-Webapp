@@ -60,9 +60,9 @@ const AppRouter = () => {
                   <Route path="/futures" element={<Futures />} />
                   <Route path="/:commodity" element={<CommodityDetail />} />
 
-                  <Route path="/sentiment/:id" element={<Sentiment />} />
-                  <Route path="/time-line/:id" element={<TimeLine />} />
-                  <Route path="/coverage/:id" element={<Coverage />} />
+                  <Route path="/:commodity/sentiment" element={<Sentiment />} />
+                  <Route path="/:commodity/time-line" element={<TimeLine />} />
+                  <Route path="/:commodity/coverage" element={<Coverage />} />
 
                   <Route path="/help-&-support" element={<HelpAndSupport />} />
                   <Route path="/change-language" element={<ChangeLanguage />} />

@@ -4,9 +4,15 @@ import axiosInstance from "./axiosInstance";
 export const fetchData = async (endpoint) => {
   try {
     const response = await axiosInstance.get(endpoint);
+    console.log('responser from backend side ', response);
+    
     return response.data;
   } catch (error) {
-    console.error("Error fetching data:", error);
+    console.error("Error fetching data:", {
+      message: error.message,
+      status: error?.response?.status,
+      data: error?.response?.data,
+    });
     throw error;
   }
 };
