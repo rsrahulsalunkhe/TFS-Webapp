@@ -64,6 +64,14 @@ const Detail = () => {
         navigate(`/${commodity}/${nevigateOn}`);
     };
 
+    if (loading) {
+        return (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
+            <CircularProgress color="warning" />
+            </Box>
+        );
+    }
+
     return (
         <div className='container d-flex flex-column gap-3 py-3'>
             <div>
@@ -139,11 +147,11 @@ const Detail = () => {
                 return <ReportCard key={report.card_id} report={report} />;
             })}
 
-            {loading && (
+            {/* {loading && (
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 2 }}>
                     <CircularProgress color="warning" />
                 </Box>
-            )}
+            )} */}
         </div>
     );
 };
