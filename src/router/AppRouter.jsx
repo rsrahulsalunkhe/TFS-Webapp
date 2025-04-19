@@ -54,13 +54,13 @@ const AppRouter = () => {
               <Layout>
                 <Routes>
                   <Route path="/" element={<AuthRedirect />} />
-                  <Route path="/home" element={<Home />} />
+                  <Route path="/home" element={<UnAuthGuard component={<Home />} />} />
                   <Route path="/temp" element={<Temp />} />
                   <Route path="/account" element={<Account />} />
                   <Route path="/futures" element={<Futures />} />
-                  <Route path="/:commodity" element={<CommodityDetail />} />
+                  <Route path="/:commodity" element={<UnAuthGuard component={<CommodityDetail />} />} />
 
-                  <Route path="/:commodity/sentiment" element={<Sentiment />} />
+                  <Route path="/:commodity/sentiment" element={<AuthGuard component={<Sentiment />} />} />
                   <Route path="/:commodity/time-line" element={<TimeLine />} />
                   <Route path="/:commodity/coverage" element={<Coverage />} />
 

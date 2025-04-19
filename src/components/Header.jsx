@@ -71,7 +71,7 @@ const Header = () => {
         <WhatsappShareButton url={window.location.href}>
           <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
         </WhatsappShareButton>
-        <div className='ms-2' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
+        <div className='ms-3' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
           <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
         </div>
       </div>

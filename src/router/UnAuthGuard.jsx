@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 
 const UnAuthGuard = ({component}) => {
+    debugger
     useEffect(() => {
         console.log("UnAuth Guard");
     }, [component]);

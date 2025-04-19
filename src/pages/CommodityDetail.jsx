@@ -107,7 +107,7 @@ const Detail = () => {
                                     <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Check <img src={rightArrow} alt="right arrow" /></button>
                                 </div>
                             </div>
-                            <div style={{ width: '31%' }}>
+                            <div style={{ width: '31%' }} onClick={() => handleNavigation(commodity, 'time-line')}>
                                 <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{ border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)' }}>
                                     <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
                                         <img src={timeLine} alt="" />

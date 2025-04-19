@@ -99,7 +99,7 @@ const Home = () => {
                 </div>
             ))}
 
-            <div className='d-flex justify-content-evenly'>
+            {/* <div className='d-flex justify-content-evenly'>
                 <div className='commodity' onClick={() => handleNavigation("chana")}>
                     <div className='img'>
                         <img src={chana} alt="" />
@@ -119,7 +119,7 @@ const Home = () => {
                     </div>
                     <span>Urad</span>
                 </div>
-            </div>
+            </div> */}
 
             <div style={{backgroundColor: '#FBEDE0'}} className='py-5 px-2 mt-3'>
                 <h1 style={{fontSize: '60px', color: 'var(--primary)'}} className='fw-bold'>Mandi Centrar</h1>

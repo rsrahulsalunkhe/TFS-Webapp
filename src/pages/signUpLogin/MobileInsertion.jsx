@@ -5,10 +5,20 @@ import whatsapp from './../../assets/whatsapp.svg'
 import phone from './../../assets/phone.svg'
 import RightArrowBlack from './../../assets/right-arrow-black.svg?react'
 import { useNavigate } from "react-router-dom";
+import backIcon from './../../assets/back.svg'
 import './style.scss'
 
 const MobileInsertion = () => {
     const navigate = useNavigate();
+
+    const handleBack = () => {
+        const previousPath = localStorage.getItem("redirectAfterLogin");
+        if (previousPath) {
+            navigate("/home");
+        } else {
+            navigate(-1); // fallback
+        }
+    };
 
     const handleNextClick = () => {
         navigate("/otp-verification");
@@ -18,6 +28,7 @@ const MobileInsertion = () => {
     <div>
         <div style={{width: '100%', height: '30px', backgroundColor: '#DA6901'}}></div>
             <div style={{width: '100%', height: '56px', backgroundColor: '#F5F5F5'}} className='d-flex align-items-center px-3'>
+            <img src={backIcon} alt="back" onClick={handleBack} className='me-3' />
             <h5 className='m-0' style={{color: '#DA6901'}}>For Any Help</h5>
 
             <div className='ms-auto d-flex gap-3'>
