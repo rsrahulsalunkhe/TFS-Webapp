@@ -20,10 +20,10 @@ const Detail = () => {
     const [pageNo, setPageNo] = useState(0);
     const [hasMore, setHasMore] = useState(true);
     const [initialLoading, setInitialLoading] = useState(true);
-
-    const observer = useRef();
+    const [isFetching, setIsFetching] = useState(false);
 
     const loadReports = async (page) => {
+        setIsFetching(true);
         try {
             const res = await fetchData(`/commoditydetails/${commodity}/n/29-02-2024?pageno=${page}&pagesize=5`);
             const newCards = res?.data?.card || [];
@@ -36,28 +36,28 @@ const Detail = () => {
             console.error("Error fetching detail data:", error);
             setInitialLoading(false);
         }
+        setIsFetching(false);
     };
 
     useEffect(() => {
         loadReports(0);
     }, []);
 
-    const handleObserver = useCallback((node) => {
-        if (!hasMore) return;
-        if (observer.current) observer.current.disconnect();
+    const handleScroll = useCallback(() => {
+        const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+        if (!isFetching && hasMore && scrollTop + clientHeight >= scrollHeight - 50) {
+            setPageNo(prev => {
+                const nextPage = prev + 1;
+                loadReports(nextPage);
+                return nextPage;
+            });
+        }
+    }, [isFetching, hasMore]);
 
-        observer.current = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                setPageNo(prev => {
-                    const nextPage = prev + 1;
-                    loadReports(nextPage);
-                    return nextPage;
-                });
-            }
-        });
-
-        if (node) observer.current.observe(node);
-    }, [hasMore]);
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [handleScroll]);
 
     const handleNavigation = (commodity, nevigateOn) => {
         navigate(`/${commodity}/${nevigateOn}`);
@@ -71,7 +71,6 @@ const Detail = () => {
                 </Box>
             ) : (
                 <div className='container d-flex flex-column gap-3 py-3'>
-                    {/* Header section remains unchanged */}
                     <div>
                         <p
                             style={{
@@ -132,17 +131,15 @@ const Detail = () => {
                         </div>
                     </div>
 
-                    {reportList.map((report, index) => {
-                        const triggerIndex = 2 + pageNo * 5; // after showing 2 cards, trigger fetch of next 5
-                        if (index === triggerIndex) {
-                            return (
-                                <div ref={handleObserver} key={report.card_id}>
-                                    <ReportCard report={report} />
-                                </div>
-                            );
-                        }
-                        return <ReportCard key={report.card_id} report={report} />;
-                    })}
+                    {reportList.map((report) => (
+                        <ReportCard key={report.card_id} report={report} />
+                    ))}
+
+                    {isFetching && (
+                        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <CircularProgress color="warning" />
+                        </Box>
+                    )}
                 </div>
             )}
         </>

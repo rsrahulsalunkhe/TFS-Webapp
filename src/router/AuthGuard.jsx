@@ -1,27 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate, useLocation  } from "react-router-dom";
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
-const AuthGuard = ({ component }) => {
-  const navigate = useNavigate();
+const AuthGuard = () => {
+  const token = localStorage.getItem("token");
   const location = useLocation();
-  const [isAuthorized, setIsAuthorized] = useState(null);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    if (token) {
-      setIsAuthorized(true);
-    } else {
-      localStorage.setItem("redirectAfterLogin", location.pathname);
-      navigate("/mobile-insertion");
-    }
-  }, [navigate, location]);
-
-  if (isAuthorized === null) {
-    return null;
+  if (!token) {
+    localStorage.setItem("redirectAfterLogin", location.pathname);
+    return <Navigate to="/mobile-insertion" replace />;
   }
 
-  return <>{component}</>;
+  return <Outlet />;
 };
 
 export default AuthGuard;

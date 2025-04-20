@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 import { HeaderProvider } from '../components/HeaderContext';
 
 import Home from '../pages/Home';
@@ -28,11 +28,22 @@ import OtpVerification from '../pages/signUpLogin/OtpVerification';
 import AccountDelete from '../pages/other/AccountDelete';
 import HelpAndSupport from '../pages/account/HelpAndSupport';
 
-const Layout = ({ children }) => (
-  <div className="flex flex-col min-h-screen" style={{maxWidth: '430px', marginLeft: 'auto', marginRight: 'auto'}}>
+const Layout = () => (
+  <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
     <Header />
-    <main style={{ marginBottom: '66px' }}>{children}</main>
+    <main style={{ marginBottom: '66px' }}>
+      <Outlet />
+    </main>
     <Footer />
+  </div>
+);
+
+const WithoutLayout = () => (
+  <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
+    <Header />
+    <main style={{ marginBottom: '66px' }}>
+      <Outlet />
+    </main>
   </div>
 );
 
@@ -41,43 +52,42 @@ const AppRouter = () => {
     <HeaderProvider>
       <Router>
         <Routes>
+          {/* Routes WITHOUT Layout */}
+          <Route element={<WithoutLayout />}>
+            <Route element={<UnAuthGuard />}>
+              <Route path="/language-selection" element={<LanguageSelection />} />
+              <Route path="/mobile-insertion" element={<MobileInsertion />} />
+              <Route path="/otp-verification" element={<OtpVerification />} />
+              <Route path=":commodity" element={<CommodityDetail />} />
+            </Route>
 
-          {/* 👇 Routes WITHOUT layout (no Header/Footer) */}
-          <Route path="/language-selection" element={<UnAuthGuard component={<LanguageSelection />} />} />
-          <Route path="/mobile-insertion" element={<UnAuthGuard component={<MobileInsertion />} />} />
-          <Route path="/otp-verification" element={<UnAuthGuard component={<OtpVerification />} />} />
+            <Route element={<AuthGuard />}>
+              <Route path=":commodity/sentiment" element={<Sentiment />} />
+              <Route path=":commodity/time-line" element={<TimeLine />} />
+              <Route path=":commodity/coverage" element={<Coverage />} />
+            </Route>
 
-          {/* 👇 Routes WITH layout */}
-          <Route
-            path="/*"
-            element={
-              <Layout>
-                <Routes>
-                  <Route path="/" element={<AuthRedirect />} />
-                  <Route path="/home" element={<UnAuthGuard component={<Home />} />} />
-                  <Route path="/temp" element={<Temp />} />
-                  <Route path="/account" element={<Account />} />
-                  <Route path="/futures" element={<Futures />} />
-                  <Route path="/:commodity" element={<UnAuthGuard component={<CommodityDetail />} />} />
+            <Route path="/help-&-support" element={<HelpAndSupport />} />
+            <Route path="/change-language" element={<ChangeLanguage />} />
+            <Route path="/change-theme" element={<ChangeTheme />} />
+            <Route path="/other" element={<Other />} />
+            <Route path="/terms-&-conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/content-restrictions" element={<ContentRestrictions />} />
+            <Route path="/account-delete" element={<AccountDelete />} />
+            <Route path="/faq" element={<FAQ />} />
+          </Route>
 
-                  <Route path="/:commodity/sentiment" element={<AuthGuard component={<Sentiment />} />} />
-                  <Route path="/:commodity/time-line" element={<TimeLine />} />
-                  <Route path="/:commodity/coverage" element={<Coverage />} />
-
-                  <Route path="/help-&-support" element={<HelpAndSupport />} />
-                  <Route path="/change-language" element={<ChangeLanguage />} />
-                  <Route path="/change-theme" element={<ChangeTheme />} />
-
-                  <Route path="/other" element={<Other />} />
-                  <Route path="/terms-&-conditions" element={<TermsAndConditions />} />
-                  <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-                  <Route path="/content-restrictions" element={<ContentRestrictions />} />
-                  <Route path="/account-delete" element={<AccountDelete />} />
-                  <Route path="/faq" element={<FAQ />} />
-                </Routes>
-              </Layout>
-            }
-          />
+          {/* Routes WITH Layout */}
+          <Route element={<Layout />}>
+            <Route path="/" element={<AuthRedirect />} />
+            <Route element={<UnAuthGuard />}>
+              <Route path="/home" element={<Home />} />
+            </Route>
+            <Route path="/temp" element={<Temp />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/futures" element={<Futures />} />
+          </Route>
         </Routes>
       </Router>
     </HeaderProvider>

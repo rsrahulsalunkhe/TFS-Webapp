@@ -1,7 +1,4 @@
 import { useState, useEffect } from "react";
-// import LightModeIcon from "@mui/icons-material/LightMode";
-// import DarkModeIcon from "@mui/icons-material/DarkMode";
-import RightArrowBlack from "./../assets/right-arrow-black.svg?react";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");

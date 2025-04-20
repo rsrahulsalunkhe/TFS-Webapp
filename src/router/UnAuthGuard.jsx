@@ -1,11 +1,8 @@
-import React, { useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 
-const UnAuthGuard = ({component}) => {
-    useEffect(() => {
-        console.log("UnAuth Guard");
-    }, [component]);
-
-    return <React.Fragment>{component}</React.Fragment>
-}
+const UnAuthGuard = () => {
+  // Add logic if needed later (e.g., prevent logged-in users)
+  return <Outlet />;
+};
 
 export default UnAuthGuard;

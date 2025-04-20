@@ -39,7 +39,7 @@ const Home = () => {
     if (loading) {
         return (
             <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh' }}>
-            <CircularProgress color="warning" />
+                <CircularProgress color="warning" />
             </Box>
         );
     }
@@ -47,9 +47,9 @@ const Home = () => {
     return (
         <main className='bg-primary'>
             <div className='d-grid'>
-                {homeData.data?.ban?.map((b) => (
-                    <div className='w-100 h-100'>
-                        <img className='w-100 h-100' src={b.i} alt="" />
+                {homeData.data?.ban?.map((b, index) => (
+                    <div className='w-100 h-100' key={index}>
+                        <img className='w-100 h-100' src={b.i} alt={`banner-${index + 1}`} />
                     </div>
                 ))}
             </div>

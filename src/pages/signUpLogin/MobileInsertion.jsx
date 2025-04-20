@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import whatsapp from './../../assets/whatsapp.svg'
@@ -6,9 +6,16 @@ import phone from './../../assets/phone.svg'
 import RightArrowBlack from './../../assets/right-arrow-black.svg?react'
 import { useNavigate } from "react-router-dom";
 import backIcon from './../../assets/back.svg'
+import { useHeader } from '../../components/HeaderContext';
 import './style.scss'
 
 const MobileInsertion = () => {
+    const { setTitle } = useHeader();
+
+    useEffect(() => {
+        setTitle("For Any Help");
+    }, [setTitle]);
+
     const navigate = useNavigate();
 
     const handleBack = () => {
@@ -26,7 +33,7 @@ const MobileInsertion = () => {
 
   return (
     <div>
-        <div style={{width: '100%', height: '30px', backgroundColor: '#DA6901'}}></div>
+        {/* <div style={{width: '100%', height: '30px', backgroundColor: '#DA6901'}}></div>
             <div style={{width: '100%', height: '56px', backgroundColor: '#F5F5F5'}} className='d-flex align-items-center px-3'>
             <img src={backIcon} alt="back" onClick={handleBack} className='me-3' />
             <h5 className='m-0' style={{color: '#DA6901'}}>For Any Help</h5>
@@ -35,7 +42,7 @@ const MobileInsertion = () => {
                 <img src={whatsapp} alt="" />
                 <img src={phone} alt="" />
             </div>
-        </div>
+        </div> */}
         <div style={{width: '100%', height: '190px', backgroundColor: '#D9D9D9'}}></div>
         <div className='container py-3 px-4 mt-4'>
             <Box
