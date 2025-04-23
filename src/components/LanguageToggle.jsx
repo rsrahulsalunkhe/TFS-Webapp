@@ -23,7 +23,7 @@ const LanguageToggle = () => {
     i18n.changeLanguage(selectedLanguage);
     localStorage.setItem("language", selectedLanguage);
 
-    const token = localStorage.getItem("language");
+    const token = localStorage.getItem("token");
 
     if (token) {
       navigate("/home");

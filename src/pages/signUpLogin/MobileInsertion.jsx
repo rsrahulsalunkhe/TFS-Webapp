@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import { postData, fetchData } from '../../services/apiService'
+import React, { useEffect, useState } from "react";
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import whatsapp from './../../assets/whatsapp.svg'
@@ -11,38 +12,36 @@ import './style.scss'
 
 const MobileInsertion = () => {
     const { setTitle } = useHeader();
+    const [mobile, setMobile] = useState('');
+    const navigate = useNavigate();
 
     useEffect(() => {
         setTitle("For Any Help");
     }, [setTitle]);
 
-    const navigate = useNavigate();
-
-    const handleBack = () => {
-        const previousPath = localStorage.getItem("redirectAfterLogin");
-        if (previousPath) {
-            navigate("/home");
-        } else {
-            navigate(-1); // fallback
+    const sendOTP = async () => {
+        if (!mobile || mobile.length !== 10 || isNaN(mobile)) {
+            alert("Please enter a valid 10-digit mobile number.");
+            return;
         }
-    };
+        
+        const body = {
+            mobile: Number(mobile),
+            language: "hi"
+        };
 
-    const handleNextClick = () => {
-        navigate("/otp-verification");
+        try {
+            const data = await postData("/login", body);
+            if (data.status == 200) {
+                navigate("/otp-verification");
+            }
+        } catch (error) {
+            console.error("Error posting send OTP screen data:", error);
+        }
     };
 
   return (
     <div>
-        {/* <div style={{width: '100%', height: '30px', backgroundColor: '#DA6901'}}></div>
-            <div style={{width: '100%', height: '56px', backgroundColor: '#F5F5F5'}} className='d-flex align-items-center px-3'>
-            <img src={backIcon} alt="back" onClick={handleBack} className='me-3' />
-            <h5 className='m-0' style={{color: '#DA6901'}}>For Any Help</h5>
-
-            <div className='ms-auto d-flex gap-3'>
-                <img src={whatsapp} alt="" />
-                <img src={phone} alt="" />
-            </div>
-        </div> */}
         <div style={{width: '100%', height: '190px', backgroundColor: '#D9D9D9'}}></div>
         <div className='container py-3 px-4 mt-4'>
             <Box
@@ -51,14 +50,11 @@ const MobileInsertion = () => {
                 noValidate
                 autoComplete="off"
                 >
-                <TextField id="outlined-basic" label="Mobile Number" variant="outlined" />
-                {/* <TextField id="filled-basic" label="Filled" variant="filled" />
-                <TextField id="standard-basic" label="Standard" variant="standard" /> */}
+                <TextField id="outlined-basic" label="Mobile Number" variant="outlined" value={mobile} onChange={(e) => setMobile(e.target.value)} />
             </Box>
 
             <div className="d-flex justify-content-center mt-4">
                 <button
-                    onClick={handleNextClick}
                     style={{
                     width: '160px',
                     backgroundColor: '#DA6901',
@@ -71,7 +67,7 @@ const MobileInsertion = () => {
                     justifyContent: 'center'
                     }}
                     className="py-2 fw-bold"
-                    
+                    onClick={sendOTP}
                     >
                     GET OTP <RightArrowBlack style={{ color: "#FFFFFF" }} className="ms-2" />
                 </button>

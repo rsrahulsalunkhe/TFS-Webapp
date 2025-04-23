@@ -80,7 +80,7 @@ const Account = () => {
 
                 <Divider variant="inset" component="div" />
 
-                <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/download-app')}>
+                <div className="d-flex align-items-center py-3 px-3" onClick={() => window.open('https://tradeforsure.com/download.html', '_blank')}>
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={downloadApp} alt="about us" />
                     </div>
