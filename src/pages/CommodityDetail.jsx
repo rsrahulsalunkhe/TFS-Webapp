@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import ReportCard from '../components/reportCard/ReportCard';
 import star from '../assets/star.svg';
 import sentiments from '../assets/sentiment.svg';
@@ -10,11 +10,14 @@ import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import { fetchData } from './../services/apiService';
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import { useHeader } from './../components/HeaderContext';
 import './style.scss';
 
 const Detail = () => {
     const { commodity } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
+    const commodityName = location.state?.commodityName;
 
     const [reportList, setReportList] = useState([]);
     const [pageNo, setPageNo] = useState(0);
@@ -40,6 +43,7 @@ const Detail = () => {
     };
 
     useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'instant' });
         loadReports(0);
     }, []);
 
@@ -54,7 +58,10 @@ const Detail = () => {
         }
     }, [isFetching, hasMore]);
 
+    const { setTitle } = useHeader();
+
     useEffect(() => {
+        setTitle(commodityName);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, [handleScroll]);
@@ -81,7 +88,7 @@ const Detail = () => {
                             }}
                             className="m-0 py-2 text-center header-border rounded"
                         >
-                            Everything here is Chana Exclusive
+                            Everything here is {commodityName} Exclusive
                         </p>
                         <div className='d-flex align-items-center justify-content-center mt-3'>
                             <div style={{ width: '18px', height: '18px' }} className='d-flex align-items-center justify-content-center'>
@@ -102,7 +109,7 @@ const Detail = () => {
                                     <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
                                         <img src={sentiments} alt="" />
                                     </div>
-                                    <h6 className='text-center mt-2'>Chana Sentiments</h6>
+                                    <h6 className='text-center mt-2'>{commodityName} <br /> Sentiments</h6>
                                     <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Check <img src={rightArrow} alt="right arrow" /></button>
                                 </div>
                             </div>
@@ -111,7 +118,7 @@ const Detail = () => {
                                     <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
                                         <img src={timeLine} alt="" />
                                     </div>
-                                    <h6 className='text-center mt-2'>Chana <br /> Time Line</h6>
+                                    <h6 className='text-center mt-2'>{commodityName} <br /> Time Line</h6>
                                     <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Detail <img src={rightArrow} alt="right arrow" /></button>
                                 </div>
                             </div>
@@ -120,7 +127,7 @@ const Detail = () => {
                                     <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
                                         <img src={coverage} alt="" />
                                     </div>
-                                    <h6 className='text-center mt-2'>Chana Coverage</h6>
+                                    <h6 className='text-center mt-2'>{commodityName} <br /> Coverage</h6>
                                     <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Read <img src={rightArrow} alt="right arrow" /></button>
                                 </div>
                             </div>

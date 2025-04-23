@@ -32,8 +32,8 @@ const Home = () => {
 
     const navigate = useNavigate();
 
-    const handleNavigation = (commodity) => {
-        navigate(`/${commodity}`);
+    const handleNavigation = (commodity, commodityName) => {
+        navigate(`/${commodity}`, { state: { commodityName: commodityName } });
     };
 
     if (loading) {
@@ -77,7 +77,7 @@ const Home = () => {
                                     key={c.id || `commodity-${rowIndex}-${cIndex}`} 
                                     className='commodity d-flex flex-column align-items-center text-center p-3' 
                                     style={{ width: '33%', gap: '10px' }} // Increased spacing
-                                    onClick={() => handleNavigation(c.commodity_id)}
+                                    onClick={() => handleNavigation(c.commodity_id, c.commodity_name)}
                                 >
                                     {/* Image Handling */}
                                     <div className='img' style={{ width: '75px', height: '75px' }}>
