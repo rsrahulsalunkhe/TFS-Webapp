@@ -5,6 +5,7 @@ import chana from './../assets/chana.svg'
 import dividerLine from './../assets/divider-line.svg'
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
+import placeholder from '../assets/placeholder.webp'
 import './style.scss'
 
 import { fetchData } from './../services/apiService'
@@ -48,8 +49,8 @@ const Home = () => {
         <main className='bg-primary'>
             <div className='d-grid'>
                 {homeData.data?.ban?.map((b, index) => (
-                    <div className='w-100 h-100' key={index}>
-                        <img className='w-100 h-100' src={b.i} alt={`banner-${index + 1}`} />
+                    <div className='w-100 h-100' key={index} onClick={() => window.open(b.re, '_blank')}>
+                        <img className='w-100 h-100' src={b.i} alt={`banner-${index + 1}`} loading='lazy' />
                     </div>
                 ))}
             </div>
@@ -82,9 +83,10 @@ const Home = () => {
                                     {/* Image Handling */}
                                     <div className='img' style={{ width: '75px', height: '75px' }}>
                                         {c.det.i ? (
-                                            <img src={c.det.i} alt={c.commodity_name} className='w-100 h-100 rounded-circle' />
+                                            <img src={c.det.i} alt={c.commodity_name} className='w-100 h-100 rounded-circle' loading='lazy' />
                                         ) : (
-                                            <div className='w-100 h-100 rounded-circle bg-secondary'></div>
+                                            // <div className='w-100 h-100 rounded-circle bg-secondary'></div>
+                                            <img src={placeholder} alt={c.commodity_name} className='w-100 h-100 rounded-circle' loading='lazy' />
                                         )}
                                     </div>
                                     {/* Centered Text */}
