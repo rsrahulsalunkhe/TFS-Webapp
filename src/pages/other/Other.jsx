@@ -14,10 +14,10 @@ const Other = () => {
     const navigate = useNavigate();
 
     return (
-        <div style={{backgroundColor: 'var(--primary-bg)', minHeight: 'calc(100vh - 780px)'}} className="p-3 d-flex flex-column gap-3">
+        <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: 'calc(100vh - 780px)'}} className="p-3 d-flex flex-column gap-3">
             <div className="bg-secondary rounded" onClick={() => navigate('/terms-&-conditions')}>
                 <div className="d-flex align-items-center py-3 px-3">
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img src={termsAndCondition} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.terms_and_conditons")}</h6>
@@ -27,7 +27,7 @@ const Other = () => {
 
             <div className="bg-secondary rounded" onClick={() => navigate('/privacy-policy')}>
                 <div className="d-flex align-items-center py-3 px-3">
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img src={privacyPolicy} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.privacy_policy")}</h6>
@@ -37,7 +37,7 @@ const Other = () => {
 
             <div className="bg-secondary rounded" onClick={() => navigate('/content-restrictions')}>
                 <div className="d-flex align-items-center py-3 px-3">
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img src={privacyPolicy} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.content_restrictions")}</h6>
@@ -47,7 +47,7 @@ const Other = () => {
 
             <div className="bg-secondary rounded" onClick={() => navigate('/account-delete')}>
                 <div className="d-flex align-items-center py-3 px-3">
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img src={deteleAccount} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.delete_account")}</h6>
@@ -57,7 +57,7 @@ const Other = () => {
 
             <div className="bg-secondary rounded" onClick={() => navigate('/faq')}>
                 <div className="d-flex align-items-center py-3 px-3">
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img src={faq} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.frequently_asked_questions")}</h6>

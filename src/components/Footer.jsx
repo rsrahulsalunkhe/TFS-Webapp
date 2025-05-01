@@ -1,3 +1,4 @@
+import React, { useEffect, useState  } from 'react';
 import home from './../assets/home.svg';
 import futures from './../assets/futures.svg';
 import account from './../assets/account.svg';
@@ -8,13 +9,19 @@ import { useTranslation } from "react-i18next"
 const Footer = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const [lang, setLang] = useState('hi');
+        
+    useEffect(() => {
+        const storedLang = localStorage.getItem('lang') || 'hi';
+        setLang(storedLang);
+    }, []);
 
     const handleNavigation = (path) => {
         navigate(path);
     };
 
     return (
-        <footer className="d-flex w-100 justify-content-around align-items-center bg-secondary">
+        <footer className="d-flex w-100 justify-content-around align-items-center" style={{backgroundColor: 'var(--gray-000)'}}>
             {/* Home */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/home")}>
                 <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>

@@ -1,4 +1,4 @@
-// import LanguageToggle from "../components/LanguageToggle";
+import React, { useEffect, useState  } from 'react';
 import '../i18n'
 import { useTranslation } from "react-i18next"
 
@@ -18,106 +18,112 @@ import { useNavigate } from 'react-router-dom';
 const Account = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
+    const [lang, setLang] = useState('hi');
+    
+    useEffect(() => {
+        const storedLang = localStorage.getItem('lang') || 'hi';
+        setLang(storedLang);
+    }, []);
     
     return (
-        <div style={{backgroundColor: 'var(--primary-bg)', minHeight: '90vh'}} className="p-3 d-flex flex-column gap-3">
+        <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: '90vh'}} className="p-3 d-flex flex-column gap-3">
             {/* <h1>{t("welcome")}</h1>
             <p>{t("description")}</p> */}
             {/* <LanguageToggle /> */}
 
-            <div className="bg-secondary rounded">
+            <div className="bg-secondary b-rounded">
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/help-&-support')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={helpAndSupport} alt="change language" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.help_and_support.help_and_support")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.help_and_support.help_and_support")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
             </div>
 
-            <div className="bg-secondary rounded py-3">
+            <div className="bg-secondary b-rounded py-3">
                 <div style={{borderLeft: '4px solid #E5811E'}} className="mb-2">
                     <h5 className="fw-semibold ps-3 m-0 py-1">{t("account.app_related.app_related")}</h5>
                 </div>
 
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/change-language')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={changeLanguage} alt="change language" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.app_related.change_language")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.change_language")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
 
                 <Divider variant="inset" component="div" />
 
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/change-theme')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.app_related.change_theme")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.change_theme")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
 
                 <Divider variant="inset" component="div" />
 
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/other')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={share} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.app_related.share_app")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.share_app")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
 
                 <Divider variant="inset" component="div" />
 
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/rate-us')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.app_related.rate_us")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.rate_us")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
 
                 <Divider variant="inset" component="div" />
 
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => window.open('https://tradeforsure.com/download.html', '_blank')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={downloadApp} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.app_related.download_app")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.download_app")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
             </div>
 
-            <div className="bg-secondary rounded py-3">
+            <div className="bg-secondary b-rounded py-3">
                 <div style={{borderLeft: '4px solid #E5811E'}} className="mb-2">
                     <h5 className="fw-semibold ps-3 m-0 py-1">{t("account.about_mandi_central.about_mandi_central")}</h5>
                 </div>
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/about-us')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={aboutUs} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.about_mandi_central.about_us")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.about_us")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
 
                 <Divider variant="inset" component="div" />
 
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/other')}>
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.other")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.other.other")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
 
                 <Divider variant="inset" component="div" />
 
                 <div className="d-flex align-items-center py-3 px-3">
-                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
-                    <h6 className="m-0 ms-3">{t("account.about_mandi_central.logout")}</h6>
+                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.logout")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
             </div>
