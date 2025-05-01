@@ -86,7 +86,7 @@ const Home = () => {
                                         onClick={() => handleNavigation(c.cat_id, c.commodity_id, c.commodity_name)}
                                     >
                                         {/* Image Handling */}
-                                        <div className='img' style={{ width: '70px', height: '70px' }}>
+                                        <div className='img' style={{ width: '75px', height: '75px' }}>
                                             {c.det.i ? (
                                                 <img src={c.det.i} alt={c.commodity_name} className='w-100 h-100 rounded-circle' loading='lazy' />
                                             ) : (
@@ -97,7 +97,7 @@ const Home = () => {
                                         {/* Centered Text */}
                                         <div className='w-100'>
                                             <h5 style={{ fontSize: lang === 'hi' ? '18px' : '16px' }} className='m-0'>{c.commodity_name}</h5>
-                                            {c.det.t && <p style={{ fontSize: lang === 'hi' ? '15px' : '12px' }} className='special m-0'>• {c.det.t}</p>}
+                                            {c.det.t && <p style={{ fontSize: lang === 'hi' ? '14px' : '12px' }} className='special m-0'>• {c.det.t}</p>}
                                         </div>
                                     </div>
                                 ))}
