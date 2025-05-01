@@ -35,7 +35,7 @@ $dark-border: 1px solid rgba(255, 255, 255, 0.24);
 // $dark-gray-secondary-text: #e0e0e0;
 
 :root {
-  --primary: #{$primary};
+  --primary: #{$light-orange};
   --primary-bg: #{$light-primary-bg};
   --secondary-bg: #{$light-secondary-bg};
   --tertiary-bg: #{$light-tertiary-bg};
@@ -58,6 +58,7 @@ $dark-border: 1px solid rgba(255, 255, 255, 0.24);
 }
 
 [data-theme="dark"] {
+  --primary: #{dark-orange};
   --primary-bg: #{$dark-primary-bg};
   --secondary-bg: #{$dark-secondary-bg};
   --tertiary-bg: #{$dark-tertiary-bg};
