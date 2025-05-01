@@ -10,7 +10,14 @@ const ReportCard = ({ report }) => {
         <div className='card1'>
             {report?.content?.img ? (
                 <div className='w-100'>
-                    <img className='w-100 h-100' src={report.content.img.i} alt="banner" loading='lazy' />
+                    {report.content.img.i ? (
+                        <img
+                            className="w-100 h-100"
+                            src={report.content.img.i}
+                            alt="banner"
+                            loading="lazy"
+                        />
+                        ) : null}
                 </div>
             ) : null}
             <div className='py-3 px-3'>

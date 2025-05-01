@@ -1,7 +1,7 @@
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 
 const AuthGuard = () => {
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("user_token");
   const location = useLocation();
 
   if (!token) {

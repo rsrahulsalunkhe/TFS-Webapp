@@ -14,6 +14,7 @@ import { useHeader } from './../components/HeaderContext';
 import './style.scss';
 
 const Detail = () => {
+    const { cat_id } = useParams();
     const { commodity } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
@@ -28,11 +29,11 @@ const Detail = () => {
     const loadReports = async (page) => {
         setIsFetching(true);
         try {
-            const res = await fetchData(`/commoditydetails/${commodity}/n/29-02-2024?pageno=${page}&pagesize=5`);
+            const res = await fetchData(`/commoditydetailscatwise/${cat_id}/${commodity}/n/29-02-2024?pageno=${page}&pagesize=20`);
             const newCards = res?.data?.card || [];
 
             setReportList(prev => [...prev, ...newCards]);
-            setHasMore(newCards.length === 5);
+            setHasMore(newCards.length === 20);
 
             if (page === 0) setInitialLoading(false);
         } catch (error) {

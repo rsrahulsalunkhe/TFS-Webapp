@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate  } from 'react-router-dom';
 import { HeaderProvider } from '../components/HeaderContext';
 
 import Home from '../pages/Home';
@@ -18,6 +18,7 @@ import TimeLine from '../pages/TimeLine';
 import Coverage from '../pages/Coverage';
 import ChangeLanguage from '../pages/account/ChangeLanguage';
 import ChangeTheme from '../pages/account/ChangeTheme';
+import AboutUs from '../pages/account/AboutUs';
 
 import AuthRedirect from './AuthRedirect';
 import AuthGuard from './AuthGuard';
@@ -58,7 +59,7 @@ const AppRouter = () => {
               <Route path="/language-selection" element={<LanguageSelection />} />
               <Route path="/mobile-insertion" element={<MobileInsertion />} />
               <Route path="/otp-verification" element={<OtpVerification />} />
-              <Route path=":commodity" element={<CommodityDetail />} />
+              <Route path=":cat_id/:commodity" element={<CommodityDetail />} />
             </Route>
 
             <Route element={<AuthGuard />}>
@@ -76,6 +77,7 @@ const AppRouter = () => {
             <Route path="/content-restrictions" element={<ContentRestrictions />} />
             <Route path="/account-delete" element={<AccountDelete />} />
             <Route path="/faq" element={<FAQ />} />
+            <Route path='/about-us' element={<AboutUs />} />
           </Route>
 
           {/* Routes WITH Layout */}
@@ -88,6 +90,8 @@ const AppRouter = () => {
             <Route path="/account" element={<Account />} />
             <Route path="/futures" element={<Futures />} />
           </Route>
+
+          <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
       </Router>
     </HeaderProvider>

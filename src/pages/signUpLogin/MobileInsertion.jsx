@@ -24,21 +24,25 @@ const MobileInsertion = () => {
             alert("Please enter a valid 10-digit mobile number.");
             return;
         }
-        
+    
         const body = {
             mobile: Number(mobile),
             language: "hi"
         };
-
+    
         try {
             const data = await postData("/login", body);
-            if (data.status == 200) {
-                navigate("/otp-verification");
+            if (data.status === 200) {
+                navigate("/otp-verification", { state: { mobile: mobile, language: "hi" } });
+                data.data.user_token
+                data.data.user_uid
+                data.data.user_id
+
             }
         } catch (error) {
             console.error("Error posting send OTP screen data:", error);
         }
-    };
+    };    
 
   return (
     <div>

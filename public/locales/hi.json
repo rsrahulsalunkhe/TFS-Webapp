@@ -24,7 +24,8 @@
                 "content_restrictions": "सामग्री प्रतिबंध",
                 "delete_account": "खाता हटाएं",
                 "frequently_asked_questions": "अक्सर पूछे जाने वाले प्रश्न"
-            }
+            },
+            "logout": "लॉग आउट"
         },
         "help_and_support": {
             "help_and_support": "मदद और समर्थन",

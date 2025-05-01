@@ -49,12 +49,10 @@ const AccountDelete = () => {
           {"Use Google's location service?"}
         </DialogTitle> */}
         <DialogContent className='d-flex flex-column justify-content-center align-items-center my-5'>
-          <DialogContentText>
-            <div className='text-center mb-4'>
-              <img src={warning} alt="warning" />
-            </div>
-            <h5 className='text-center text-black'>Once you delete the account there’s no way to get it back. Make sure you want to <br /> delete it.</h5>
-          </DialogContentText>
+          <div className='text-center mb-4'>
+            <img src={warning} alt="warning" />
+          </div>
+          <h5 className='text-center text-black'>Once you delete the account there’s no way to get it back. Make sure you want to <br /> delete it.</h5>
           <Button className='rounded-btn my-3 px-4' variant="outlined" onClick={handleClickOpen}>
             YES, DELETE ACCOUNT
           </Button>

@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import whatsapp from './../../assets/whatsapp.svg'
-import phone from './../../assets/phone.svg'
+import { useLocation, useNavigate } from 'react-router-dom'; // corrected import
+import whatsapp from './../../assets/whatsapp.svg';
+import phone from './../../assets/phone.svg';
+import { postData, fetchData } from '../../services/apiService'
 
 const OtpVerification = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
-  const [timer, setTimer] = useState(30); // Timer in seconds
+  const [timer, setTimer] = useState(30);
   const [isResendEnabled, setIsResendEnabled] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate(); // added navigate
+  const mobile = location.state?.mobile;
+  const language = location.state?.language || "hi";
 
   useEffect(() => {
     let interval;
@@ -24,40 +31,64 @@ const OtpVerification = () => {
     newOtp[index] = value;
     setOtp(newOtp);
 
-    // Auto-focus next input
     if (value && index < 3) {
       document.getElementById(`otp-${index + 1}`).focus();
     }
   };
 
-  const handleResend = () => {
+  const handleResend = async () => {
     if (!isResendEnabled) return;
-    // Logic to resend OTP
+
     console.log("OTP Resent!");
     setOtp(['', '', '', '']);
     setTimer(30);
     setIsResendEnabled(false);
+
+    // Here, call your resend OTP API if needed
   };
 
-  const handleVerify = () => {
+  const handleVerify = async () => {
     const enteredOtp = otp.join('');
     console.log("Entered OTP:", enteredOtp);
-    // Verify logic here
+
+    const body = {
+      mobile: Number(mobile),
+      otp_val: enteredOtp, // send joined OTP, not array
+      language: language
+    };
+
+    try {
+      const data = await postData("/verifyOTP", body);
+      if (data.status === 200 && data.data) {
+        // Save to localStorage
+        localStorage.setItem('user_token', data.data.user_token);
+        localStorage.setItem('user_uid', data.data.user_uid);
+        localStorage.setItem('user_id', data.data.user_id);
+
+        // Then navigate to OTP screen with mobile and language
+        navigate("/home", { state: { mobile: mobile, language: "hi" } });
+    } else {
+        console.error("OTP verification failed:", data);
+      }
+    } catch (error) {
+      console.error("Error verifying OTP:", error);
+    }
   };
 
   return (
     <div style={styles.container}>
-        <div style={{width: '100%', height: '30px', backgroundColor: '#DA6901'}}></div>
-            <div style={{width: '100%', height: '56px', backgroundColor: '#F5F5F5'}} className='d-flex align-items-center px-3'>
-            <h5 className='m-0' style={{color: '#DA6901'}}>OTP Verification</h5>
+      <div style={{ width: '100%', height: '30px', backgroundColor: '#DA6901' }}></div>
+      <div style={{ width: '100%', height: '56px', backgroundColor: '#F5F5F5' }} className='d-flex align-items-center px-3'>
+        <h5 className='m-0' style={{ color: '#DA6901' }}>OTP Verification</h5>
 
-            <div className='ms-auto d-flex gap-3'>
-                <img src={whatsapp} alt="" />
-                <img src={phone} alt="" />
-            </div>
+        <div className='ms-auto d-flex gap-3'>
+          <img src={whatsapp} alt="WhatsApp" />
+          <img src={phone} alt="Phone" />
         </div>
-      <p style={styles.text}>We have sent a OTP code to</p>
-      <p style={styles.phone}>+91-7378963818</p>
+      </div>
+
+      <p style={styles.text}>We have sent an OTP code to</p>
+      <p style={styles.phone}>+91-{mobile}</p>
       <p style={styles.subtext}>Check text messages for OTP</p>
 
       <div style={styles.otpContainer} className='container'>
@@ -72,23 +103,18 @@ const OtpVerification = () => {
             style={styles.otpInput}
           />
         ))}
+
         <p style={styles.resendText}>
           Didn’t receive the OTP?{' '}
-          {/* {isResendEnabled ? (
-            <button style={styles.resendBtnActive} onClick={handleResend}>
-              Resend OTP
-            </button>
-          ) : (
-            <span style={styles.resendTimer}>Resend in {timer}s</span>
-          )} */}
           {!(isResendEnabled) && (
             <span style={styles.resendTimer}>Resend in {timer}s</span>
           )}
         </p>
+
         {isResendEnabled && (
-            <button style={styles.resendBtnActive} onClick={handleResend}>
-              Resend OTP
-            </button>
+          <button style={styles.resendBtnActive} onClick={handleResend}>
+            Resend OTP
+          </button>
         )}
       </div>
 

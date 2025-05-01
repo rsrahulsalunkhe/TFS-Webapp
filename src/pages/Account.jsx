@@ -93,7 +93,7 @@ const Account = () => {
                 <div style={{borderLeft: '4px solid #E5811E'}} className="mb-2">
                     <h5 className="fw-semibold ps-3 m-0 py-1">{t("account.about_mandi_central.about_mandi_central")}</h5>
                 </div>
-                <div className="d-flex align-items-center py-3 px-3">
+                <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/about-us')}>
                     <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={aboutUs} alt="about us" />
                     </div>
@@ -108,6 +108,16 @@ const Account = () => {
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3">{t("account.about_mandi_central.other.other")}</h6>
+                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                </div>
+
+                <Divider variant="inset" component="div" />
+
+                <div className="d-flex align-items-center py-3 px-3">
+                    <div style={{backgroundColor: 'var(--primary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                        <img className="w-100 h-100" src={other} alt="about us" />
+                    </div>
+                    <h6 className="m-0 ms-3">{t("account.about_mandi_central.logout")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
                 </div>
             </div>

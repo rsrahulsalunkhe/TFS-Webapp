@@ -1,20 +1,12 @@
 // src/services/axiosInstance.js
 import axios from "axios";
 
-// const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-// const token = import.meta.env.VITE_API_TOKEN;
-// const user_uid = import.meta.env.VITE_API_USER_UID;
-// const id = import.meta.env.VITE_API_USER_ID;
-
 const API_BASE_URL = 'https://grainmarket.in/anaj-admin/Apiweb';
-const token = '7733aeef73f32ab344531979deb827a1adeffca62a04e1a3d6e5242eb3fd2c2761ad75c84cb807e09cfe20bed88c3df77d88250e410f2ea2b67c68e9'
-const user_uid = '01JNENTT93D37B6D371CVQJZW2'
-const id = 49;
 
-// VITE_API_BASE_URL=https://grainmarket.in/anaj-admin/Apiweb
-// VITE_API_TOKEN=7733aeef73f32ab344531979deb827a1adeffca62a04e1a3d6e5242eb3fd2c2761ad75c84cb807e09cfe20bed88c3df77d88250e410f2ea2b67c68e9
-// VITE_API_USER_UID=01JNENTT93D37B6D371CVQJZW2
-// VITE_API_USER_ID=49
+// const static_token = '22f323abf26f416b0b098e002d06942f3002e4373739b42e7cf3f4d53aa8d9be64790b1e6026f86234e9198e0ee01771468aaf3afef115faa8fe6b1e'
+// const static_user_uid = '01JNENTT93D37B6D371CVQJZW2'
+const static_id = null;
+const logout_token = '5K7Pt2YKz7IlGoCOzA1I55dutdAL'
 
 const axiosInstance = axios.create({
   baseURL: API_BASE_URL,
@@ -26,9 +18,29 @@ const axiosInstance = axios.create({
 // Request Interceptor
 axiosInstance.interceptors.request.use(
   (config) => {
+    const token = localStorage.getItem('user_token');
+    const user_uid = localStorage.getItem('user_uid');
+    const user_id = localStorage.getItem('user_id');
+    const language = localStorage.getItem('language') || 'hi';
+
     config.headers["Token"] = token;
-    config.headers["User-Id"] = id;
+    config.headers["User-Id"] = user_id;
     config.headers["User-Uid"] = user_uid;
+    config.headers["language"] = language;
+
+    const currentPath = window.location.pathname;
+    config.headers["Logout-Token"] = currentPath === "/mobile-insertion" ? null : logout_token;
+
+    // Set headers if values exist
+    // if (token) {
+    //   config.headers["Token"] = token;
+    // }
+    // if (user_id) {
+    //   config.headers["User-Id"] = user_id;
+    // }
+    // if (user_uid) {
+    //   config.headers["User-Uid"] = user_uid;
+    // }
 
     return config;
   },
@@ -43,8 +55,12 @@ axiosInstance.interceptors.response.use(
   (error) => {
     if (error.response && error.response.status === 401) {
       console.error("Unauthorized: Redirecting to login...");
-      localStorage.removeItem("authToken");
-      window.location.href = "/login"; // Redirect to login
+      // Clear all related data
+      localStorage.removeItem('user_token');
+      localStorage.removeItem('user_uid');
+      localStorage.removeItem('user_id');
+      localStorage.removeItem('language');
+      window.location.href = "/mobile-insertion"; // Redirect to login page
     }
     return Promise.reject(error);
   }

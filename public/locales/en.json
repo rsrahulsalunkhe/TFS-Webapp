@@ -24,7 +24,8 @@
                 "content_restrictions": "Content Restrictions",
                 "delete_account": "Delete Account",
                 "frequently_asked_questions": "Frequently Asked Questions"
-            }
+            },
+            "logout": "Logout"
         },
         "help_and_support" : {
             "help_and_support": "Help & Support",
