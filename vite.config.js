@@ -35,6 +35,23 @@ export default defineConfig({
             type: 'image/png',
             purpose: 'any maskable'
           }
+        ],
+        "splash_pages": [
+          {
+            "src": "splash-screen.svg",
+            "sizes": "640x1136",
+            "type": "image/svg+xml"
+          },
+          {
+            "src": "splash-screen.svg",
+            "sizes": "750x1334",
+            "type": "image/svg+xml"
+          },
+          {
+            "src": "splash-screen.svg",
+            "sizes": "1242x2208",
+            "type": "image/svg+xml"
+          }
         ]
       }
     })
