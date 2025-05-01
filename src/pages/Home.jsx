@@ -97,7 +97,7 @@ const Home = () => {
                                         {/* Centered Text */}
                                         <div className='w-100'>
                                             <h5 style={{ fontSize: lang === 'hi' ? '18px' : '16px' }} className='m-0'>{c.commodity_name}</h5>
-                                            {c.det.t && <p style={{ fontSize: lang === 'hi' ? '14px' : '12px' }} className='special m-0'>• {c.det.t}</p>}
+                                            {c.det.t && <p style={{ fontSize: lang === 'hi' ? '15px' : '12px' }} className='special m-0'>• {c.det.t}</p>}
                                         </div>
                                     </div>
                                 ))}
