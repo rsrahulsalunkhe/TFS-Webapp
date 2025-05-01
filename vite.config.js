@@ -9,7 +9,7 @@ export default defineConfig({
     svgr(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png', 'splash-screen.svg'],
+      includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png', 'splash-*.png'],
       manifest: {
         name: 'Mandi Central',
         short_name: 'Mandi Central',
@@ -34,23 +34,6 @@ export default defineConfig({
             sizes: '512x512',
             type: 'image/png',
             purpose: 'any maskable'
-          }
-        ],
-        splash_pages: [
-          {
-            src: "splash-screen.svg",
-            sizes: "640x1136",
-            type: "image/svg+xml"
-          },
-          {
-            src: "splash-screen.svg",
-            sizes: "750x1334",
-            type: "image/svg+xml"
-          },
-          {
-            src: "splash-screen.svg",
-            sizes: "1242x2208",
-            type: "image/svg+xml"
           }
         ]
       }
