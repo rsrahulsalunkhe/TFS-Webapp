@@ -27,7 +27,7 @@ const ReportCard = ({ report }) => {
             ) : null}
             <div className='py-3 ps-3 pe-2'>
                 <span className='date'>{report.rec_date}</span>
-                <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '18px', color: 'var(--blue-text)' }}>{report.content.card.tit}</h5>
+                <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '19px', color: 'var(--blue-text)' }}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
                     <div className='subtit py-2 px-2 rounded'>
                         <h6 className='m-0 fw-bold py-1 text-gray-primary' style={{ fontSize: lang === 'hi' ? '18px' : '16px', }}>{report.content.card.subtit}</h6>
@@ -60,9 +60,12 @@ const ReportCard = ({ report }) => {
                     //     <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
                     // </div>
                     <div className='d-flex justify-content-center'>
-                        <button className='px-2 py-2 fw-bold'>Check More Update <img className='ms-2' src={rightArrow} alt="" /></button>
+                        <button className='px-2 py-2 fw-bold'>{report.content.card.b}  <img className='ms-2' src={rightArrow} alt="" /></button>
                     </div>
-                ) : null }
+                ) : <div className='d-flex justify-content-center'>
+                        <button className='px-2 py-2 fw-bold'>Click For More Detail  <img className='ms-2' src={rightArrow} alt="" /></button>
+                    </div> 
+                }
             </div>
         </div>
 
