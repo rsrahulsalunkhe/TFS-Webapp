@@ -30,7 +30,7 @@ const ReportCard = ({ report }) => {
                 <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '18px', color: 'var(--blue-text)' }}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
                     <div className='subtit py-2 px-2 rounded'>
-                        <h6 className='m-0 py-1 text-gray-primary' style={{ fontSize: lang === 'hi' ? '18px' : '16px', }}>{report.content.card.subtit}</h6>
+                        <h6 className='m-0 fw-bold py-1 text-gray-primary' style={{ fontSize: lang === 'hi' ? '18px' : '16px', }}>{report.content.card.subtit}</h6>
                     </div>
                 ) : null }
 
@@ -45,7 +45,7 @@ const ReportCard = ({ report }) => {
                 {report?.content?.card?.p ? (
                     <div className='mt-3'>
                         {report.content.card.p.map((p) => (
-                            <span className='pb-3 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 500 }}>
+                            <span className='pb-3 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 600 }}>
                                 <div>
                                     <img src={ellipse} className='me-2' alt="" />
                                 </div>
