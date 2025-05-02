@@ -9,6 +9,9 @@ export default defineConfig({
     svgr(),
     VitePWA({
       registerType: 'autoUpdate',
+      devOptions: {
+        enabled: true
+      },
       includeAssets: ['favicon.svg', 'robots.txt', 'apple-touch-icon.png', 'splash-*.png'],
       manifest: {
         name: 'Mandi Central',

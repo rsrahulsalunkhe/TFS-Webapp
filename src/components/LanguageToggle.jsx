@@ -5,7 +5,7 @@ import RightArrowBlack from "./../assets/right-arrow-black.svg?react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-const LanguageToggle = () => {
+const LanguageToggle = ({redirectPath}) => {
   const { i18n } = useTranslation();
   const navigate = useNavigate();
   
@@ -23,9 +23,11 @@ const LanguageToggle = () => {
     i18n.changeLanguage(selectedLanguage);
     localStorage.setItem("language", selectedLanguage);
 
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
 
-    if (token) {
+    if (redirectPath) {
+      navigate(redirectPath);
+    } else {
       navigate("/home");
     }
   };
@@ -43,6 +45,7 @@ const LanguageToggle = () => {
           color: selectedLanguage === "hi" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 d-flex align-items-center rounded"
+        onChange={handleLanguageChange}
       >
         <input
           style={{ width: "22px", height: "22px" }}
@@ -51,7 +54,6 @@ const LanguageToggle = () => {
           name="fav_language"
           value="hi"
           checked={selectedLanguage === "hi"}
-          onChange={handleLanguageChange}
         />
         <label className="ms-3 mb-0 fw-semibold fs-5" htmlFor="hindi">हिंदी</label>
         <IndiaGate className="ms-auto me-2 pe-1" style={{ color: getFillColor("hi") }} />
@@ -62,7 +64,8 @@ const LanguageToggle = () => {
           backgroundColor: selectedLanguage === "en" ? "#E5811E3D" : "var(--tertiary-bg)",
           color: selectedLanguage === "en" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
-        className="py-2 px-4 mt-3 d-flex align-items-center rounded"
+        className="py-2 px-4 mt-3 d-flex align-items-center rounded" 
+        onChange={handleLanguageChange}
       >
         <input
           style={{ width: "22px", height: "22px" }}
@@ -71,7 +74,6 @@ const LanguageToggle = () => {
           name="fav_language"
           value="en"
           checked={selectedLanguage === "en"}
-          onChange={handleLanguageChange}
         />
         <label className="ms-3 mb-0 fw-semibold fs-5" htmlFor="english">English</label>
         <LondonBridge className="ms-auto" style={{ color: getFillColor("en") }} />

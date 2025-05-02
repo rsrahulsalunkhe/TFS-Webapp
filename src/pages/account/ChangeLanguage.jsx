@@ -10,7 +10,7 @@ const ChangeLanguage = () => {
 
       <p className='my-3 fw-medium'>आप हमारे ऐप को हिंदी या अंग्रेजी में उपयोग कर सकते हैं, कृपया अपनी पसंदीदा भाषा चुनें।</p>
 
-      <LanguageToggle />
+      <LanguageToggle redirectPath="/account" />
     </div>
   )
 }

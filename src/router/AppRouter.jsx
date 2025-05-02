@@ -11,7 +11,7 @@ import Footer from '../components/Footer';
 import Other from '../pages/other/Other';
 import PrivacyPolicy from '../pages/other/PrivacyPolicy';
 import TermsAndConditions from '../pages/other/TermsAndConditons';
-import ContentRestrictions from '../pages/other/ContentRestrictions';
+import ContentPolicy from '../pages/other/ContentPolicy';
 import FAQ from '../pages/other/FAQ';
 import Sentiment from '../pages/Sentiment';
 import TimeLine from '../pages/TimeLine';
@@ -54,11 +54,13 @@ const AppRouter = () => {
       <Router>
         <Routes>
           {/* Routes WITHOUT Layout */}
+          <Route element={<UnAuthGuard />}>
+            <Route path="/language-selection" element={<LanguageSelection />} />
+            <Route path="/mobile-insertion" element={<MobileInsertion />} />
+            <Route path="/otp-verification" element={<OtpVerification />} />
+          </Route>
           <Route element={<WithoutLayout />}>
             <Route element={<UnAuthGuard />}>
-              <Route path="/language-selection" element={<LanguageSelection />} />
-              <Route path="/mobile-insertion" element={<MobileInsertion />} />
-              <Route path="/otp-verification" element={<OtpVerification />} />
               <Route path=":cat_id/:commodity" element={<CommodityDetail />} />
             </Route>
 
@@ -74,7 +76,7 @@ const AppRouter = () => {
             <Route path="/other" element={<Other />} />
             <Route path="/terms-&-conditions" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/content-restrictions" element={<ContentRestrictions />} />
+            <Route path="/content-policy" element={<ContentPolicy />} />
             <Route path="/account-delete" element={<AccountDelete />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path='/about-us' element={<AboutUs />} />
@@ -83,12 +85,13 @@ const AppRouter = () => {
           {/* Routes WITH Layout */}
           <Route element={<Layout />}>
             <Route path="/" element={<AuthRedirect />} />
-            <Route element={<UnAuthGuard />}>
-              <Route path="/home" element={<Home />} />
-            </Route>
-            <Route path="/temp" element={<Temp />} />
-            <Route path="/account" element={<Account />} />
-            <Route path="/futures" element={<Futures />} />
+              <Route element={<UnAuthGuard />}>
+                <Route path="/home" element={<Home />} />
+              </Route>
+              <Route path="/temp" element={<Temp />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="/futures" element={<Futures />} />
+            {/* </Route> */}
           </Route>
 
           <Route path="*" element={<Navigate to="/home" replace />} />

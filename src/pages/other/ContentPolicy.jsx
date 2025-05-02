@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ContentRestrictions = () => {
+const ContentPolicy = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const ContentRestrictions = () => {
   )
 }
 
-export default ContentRestrictions
+export default ContentPolicy
