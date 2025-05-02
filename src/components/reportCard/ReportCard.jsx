@@ -45,7 +45,7 @@ const ReportCard = ({ report }) => {
                 {report?.content?.card?.p ? (
                     <div className='mt-3'>
                         {report.content.card.p.map((p) => (
-                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 600 }}>
+                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 500 }}>
                                 <div>
                                     <img src={ellipse} className='me-2' alt="" />
                                 </div>
