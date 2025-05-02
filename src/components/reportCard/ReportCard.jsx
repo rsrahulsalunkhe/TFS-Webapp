@@ -45,7 +45,7 @@ const ReportCard = ({ report }) => {
                 {report?.content?.card?.p ? (
                     <div className='mt-3'>
                         {report.content.card.p.map((p) => (
-                            <span className='pb-3 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 600 }}>
+                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 600 }}>
                                 <div>
                                     <img src={ellipse} className='me-2' alt="" />
                                 </div>
@@ -59,11 +59,11 @@ const ReportCard = ({ report }) => {
                     // <div className='d-flex'>
                     //     <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
                     // </div>
-                    <div className='d-flex justify-content-center'>
-                        <button className='px-2 py-2 fw-bold'>{report.content.card.b}  <img className='ms-2' src={rightArrow} alt="" /></button>
+                    <div className='d-flex justify-content-center mt-1'>
+                        <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '6px 0'}}>{report.content.card.b}  <img className='ms-2' src={rightArrow} alt="" /></button>
                     </div>
-                ) : <div className='d-flex justify-content-center'>
-                        <button className='px-2 py-2 fw-bold'>Click For More Detail  <img className='ms-2' src={rightArrow} alt="" /></button>
+                ) : <div className='d-flex justify-content-center mt-1'>
+                        <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '6px 0'}}>Click For More Detail  <img className='ms-2' src={rightArrow} alt="" /></button>
                     </div> 
                 }
             </div>
