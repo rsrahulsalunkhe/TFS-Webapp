@@ -42,7 +42,7 @@ const Layout = () => (
 const WithoutLayout = () => (
   <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
     <Header />
-    <main style={{ marginBottom: '66px' }}>
+    <main>
       <Outlet />
     </main>
   </div>

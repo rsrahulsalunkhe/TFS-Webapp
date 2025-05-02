@@ -8,6 +8,7 @@ import RightArrowBlack from './../../assets/right-arrow-black.svg?react'
 import { useNavigate } from "react-router-dom";
 import backIcon from './../../assets/back.svg'
 import { useHeader } from '../../components/HeaderContext';
+import { WhatsappShareButton } from "react-share";
 import './style.scss'
 
 const MobileInsertion = () => {
@@ -46,6 +47,18 @@ const MobileInsertion = () => {
 
   return (
     <div>
+        <div style={{width: '100%', height: '56px', backgroundColor: '#F5F5F5'}} className='d-flex align-items-center px-3'>
+            <h5 className='m-0' style={{color: '#DA6901'}}>For Any Help</h5>
+
+            <div className='ms-auto d-flex gap-3'>
+                <WhatsappShareButton url={window.location.href}>
+                    <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
+                </WhatsappShareButton>
+                <div onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
+                    <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
+                </div>
+            </div>
+        </div>
         <div style={{width: '100%', height: '190px', backgroundColor: '#D9D9D9'}}></div>
         <div className='container py-3 px-4 mt-4'>
             <Box
@@ -54,7 +67,7 @@ const MobileInsertion = () => {
                 noValidate
                 autoComplete="off"
                 >
-                <TextField id="outlined-basic" label="Mobile Number" variant="outlined" value={mobile} onChange={(e) => setMobile(e.target.value)} />
+                <TextField id="outlined-basic" label="Mobile Number" variant="outlined" type="tel" value={mobile} onChange={(e) => setMobile(e.target.value)} inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} />
             </Box>
 
             <div className="d-flex justify-content-center mt-4">

@@ -13,9 +13,9 @@ const LanguageToggle = ({redirectPath}) => {
   const [selectedLanguage, setSelectedLanguage] = useState(language);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
-  const handleLanguageChange = (e) => {
-    const newLang = e.target.value;
-    setSelectedLanguage(newLang);
+  const handleLanguageChange = (lang) => {
+    // const newLang = e.target.value;
+    setSelectedLanguage(lang);
   };
 
   const handleNextClick = () => {
@@ -40,12 +40,12 @@ const LanguageToggle = ({redirectPath}) => {
   return (
     <div>
       <div
+        onClick={() => handleLanguageChange("hi")}
         style={{
           backgroundColor: selectedLanguage === "hi" ? "#E5811E3D" : "var(--tertiary-bg)",
           color: selectedLanguage === "hi" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 d-flex align-items-center rounded"
-        onChange={handleLanguageChange}
       >
         <input
           style={{ width: "22px", height: "22px" }}
@@ -54,18 +54,19 @@ const LanguageToggle = ({redirectPath}) => {
           name="fav_language"
           value="hi"
           checked={selectedLanguage === "hi"}
+          readOnly
         />
         <label className="ms-3 mb-0 fw-semibold fs-5" htmlFor="hindi">हिंदी</label>
         <IndiaGate className="ms-auto me-2 pe-1" style={{ color: getFillColor("hi") }} />
       </div>
 
       <div
+        onClick={() => handleLanguageChange("en")}
         style={{
           backgroundColor: selectedLanguage === "en" ? "#E5811E3D" : "var(--tertiary-bg)",
           color: selectedLanguage === "en" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 mt-3 d-flex align-items-center rounded" 
-        onChange={handleLanguageChange}
       >
         <input
           style={{ width: "22px", height: "22px" }}
@@ -74,6 +75,7 @@ const LanguageToggle = ({redirectPath}) => {
           name="fav_language"
           value="en"
           checked={selectedLanguage === "en"}
+          readOnly
         />
         <label className="ms-3 mb-0 fw-semibold fs-5" htmlFor="english">English</label>
         <LondonBridge className="ms-auto" style={{ color: getFillColor("en") }} />

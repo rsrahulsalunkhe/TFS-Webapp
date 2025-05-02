@@ -7,7 +7,7 @@ const ReportCard = ({ report }) => {
     const [lang, setLang] = useState('hi');
     
     useEffect(() => {
-        const storedLang = localStorage.getItem('lang') || 'hi';
+        const storedLang = localStorage.getItem('language') || 'hi';
         setLang(storedLang);
     }, []);
   return (
@@ -25,9 +25,9 @@ const ReportCard = ({ report }) => {
                         ) : null}
                 </div>
             ) : null}
-            <div className='py-3 px-3'>
+            <div className='py-3 ps-3 pe-2'>
                 <span className='date'>{report.rec_date}</span>
-                <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '18px', color: 'var(--blue-primary)' }}>{report.content.card.tit}</h5>
+                <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '18px', color: 'var(--blue-text)' }}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
                     <div className='subtit py-2 px-2 rounded'>
                         <h6 className='m-0 py-1 text-gray-primary' style={{ fontSize: lang === 'hi' ? '18px' : '16px', }}>{report.content.card.subtit}</h6>
@@ -37,7 +37,7 @@ const ReportCard = ({ report }) => {
                 <div className='divider1 mt-3'>
                     <div className='gradient-background1'></div>
                     <div className='gradient-dot me-2'></div>
-                    <span>Highlights</span>
+                    <span>HIGHLIGHTS</span>
                     <div className='gradient-dot ms-2'></div>
                     <div className='gradient-background2'></div>
                 </div>
@@ -47,7 +47,7 @@ const ReportCard = ({ report }) => {
                         {report.content.card.p.map((p) => (
                             <span className='pb-3 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 500 }}>
                                 <div>
-                                    <img src={ellipse} className='me-3' alt="" />
+                                    <img src={ellipse} className='me-2' alt="" />
                                 </div>
                                 {p.t}
                             </span>
@@ -60,7 +60,7 @@ const ReportCard = ({ report }) => {
                     //     <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
                     // </div>
                     <div className='d-flex justify-content-center'>
-                        <button className='px-5 py-2 fw-bold'>Check More Update <img className='ms-2' src={rightArrow} alt="" /></button>
+                        <button className='px-2 py-2 fw-bold'>Check More Update <img className='ms-2' src={rightArrow} alt="" /></button>
                     </div>
                 ) : null }
             </div>

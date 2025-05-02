@@ -11,12 +11,15 @@
     }
 
     button {
-        background-color: rgba(218, 105, 1, 0.12);
+        background-color: var(--primary);
         border: none !important;
         border-radius: 8px;
         display: flex;
         align-items: center;
-        color: #DA6901;
+        justify-content: center;
+        color: #FFFFFF;
+        width: 70%;
+        max-width: 80%;
 
         img {
             width: 8px;

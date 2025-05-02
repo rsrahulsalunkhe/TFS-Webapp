@@ -1,7 +1,7 @@
 import React from 'react'
 import LanguageToggle from './../../components/LanguageToggle'
 import { useNavigate } from "react-router-dom";
-
+import { WhatsappShareButton } from "react-share";
 import whatsapp from './../../assets/whatsapp.svg'
 import phone from './../../assets/phone.svg'
 
@@ -15,8 +15,12 @@ const LanguageSelection = () => {
         <h5 className='m-0' style={{color: '#DA6901'}}>For Any Help</h5>
 
         <div className='ms-auto d-flex gap-3'>
-            <img src={whatsapp} alt="" />
-            <img src={phone} alt="" />
+            <WhatsappShareButton url={window.location.href}>
+              <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
+            </WhatsappShareButton>
+            <div onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
+              <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
+            </div>
         </div>
       </div>
       <div className='container mt-2'>

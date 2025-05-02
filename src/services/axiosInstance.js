@@ -5,7 +5,7 @@ const API_BASE_URL = 'https://grainmarket.in/anaj-admin/Apiweb';
 
 // const static_token = '22f323abf26f416b0b098e002d06942f3002e4373739b42e7cf3f4d53aa8d9be64790b1e6026f86234e9198e0ee01771468aaf3afef115faa8fe6b1e'
 // const static_user_uid = '01JNENTT93D37B6D371CVQJZW2'
-const static_id = null;
+// const static_id = null;
 const logout_token = '5K7Pt2YKz7IlGoCOzA1I55dutdAL'
 
 const axiosInstance = axios.create({

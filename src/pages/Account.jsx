@@ -11,6 +11,8 @@ import aboutUs from "../assets/about-us.svg"
 import other from '../assets/other.svg'
 import rightArrow from "../assets/right-arrow.svg"
 
+import logout from '../assets/logout.svg'
+
 
 import Divider from '@mui/material/Divider';
 import { useNavigate } from 'react-router-dom';
@@ -121,7 +123,7 @@ const Account = () => {
 
                 <div className="d-flex align-items-center py-3 px-3">
                     <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
-                        <img className="w-100 h-100" src={other} alt="about us" />
+                        <img className="w-100 h-100" src={logout} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.logout")}</h6>
                     <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />

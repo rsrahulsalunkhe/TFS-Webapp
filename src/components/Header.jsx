@@ -6,7 +6,7 @@ import logo from './../assets/logo.svg';
 import whatsapp from './../assets/whatsapp.svg';
 import phone from './../assets/phone.svg';
 import './style.scss';
-import ThemeToggle from './ThemeToggle';
+// import ThemeToggle from './ThemeToggle';
 import { useHeader } from '../components/HeaderContext';
 import '../i18n'
 import { useTranslation } from "react-i18next";

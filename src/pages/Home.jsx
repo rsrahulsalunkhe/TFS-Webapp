@@ -86,7 +86,7 @@ const Home = () => {
                                         onClick={() => handleNavigation(c.cat_id, c.commodity_id, c.commodity_name)}
                                     >
                                         {/* Image Handling */}
-                                        <div className='img' style={{ width: '75px', height: '75px' }}>
+                                        <div className='img' style={{ width: '72px', height: '72px' }}>
                                             {c.det.i ? (
                                                 <img src={c.det.i} alt={c.commodity_name} className='w-100 h-100 rounded-circle' loading='lazy' />
                                             ) : (

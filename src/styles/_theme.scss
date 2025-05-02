@@ -6,13 +6,14 @@ $dark-orange: #E5811E;
 $light-primary-bg: #FEFEFE;
 $light-secondary-bg: #FFFFFF;
 $light-tertiary-bg: #F5F5F5;
-$light-header-bg: #F9F9F9;
+$light-header-bg: #FEFEFE;
 $light-primary-text: #454545;
 $light-secondary-text: #5E5E5E;
 $light-gray-primary-text: rgba(0, 0, 0, 0.75);
 $light-gray-secondary-text: #B3B3B3;
-$light-date-text: #60A5FA;
+$light-date-text: #0006CC;
 $light-border: 1px solid rgba(219, 219, 219, 1);
+$light-blue-primary: #003B82;
 
 // Dark Theme
 $dark-primary-bg: #121212;
@@ -25,6 +26,7 @@ $dark-gray-primary-text: rgba(255, 255, 255, 0.6);
 $dark-gray-secondary-text: #e0e0e0;
 $dark-date-text: #60A5FA;
 $dark-border: 1px solid rgba(255, 255, 255, 0.24);
+$dark-blue-primary: #003B82;
 // $dark-primary-bg: #242424;
 // $dark-secondary-bg: #31333C;
 // $dark-tertiary-bg: #3B3D47;
@@ -46,6 +48,7 @@ $dark-border: 1px solid rgba(255, 255, 255, 0.24);
   --gray-secondary-text: #{$light-gray-secondary-text};
   --date-text: #{$light-date-text};
   --border: #{$light-border};
+  --blue-text: #{$light-blue-primary};
 
   --green: #00AA08;
   --red: #FF0000;
@@ -69,6 +72,7 @@ $dark-border: 1px solid rgba(255, 255, 255, 0.24);
   --gray-secondary-text: #{$dark-gray-secondary-text};
   --date-text: #{$dark-date-text};
   --border: #{$light-border};
+  --blue-text: #{$dark-blue-primary};
 }
 
 // Apply globally
@@ -94,7 +98,7 @@ body {
 }
 
 .container {
-  background-color: var(--primary-bg);
+  background-color: var(--tertiary-bg);
   color: var(--primary-text);
 }
 

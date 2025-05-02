@@ -3,10 +3,11 @@ import { useLocation, useNavigate } from 'react-router-dom'; // corrected import
 import whatsapp from './../../assets/whatsapp.svg';
 import phone from './../../assets/phone.svg';
 import { postData, fetchData } from '../../services/apiService'
+import RightArrowBlack from './../../assets/right-arrow-black.svg?react'
 
 const OtpVerification = () => {
   const [otp, setOtp] = useState(['', '', '', '']);
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(120);
   const [isResendEnabled, setIsResendEnabled] = useState(false);
 
   const location = useLocation();
@@ -41,15 +42,20 @@ const OtpVerification = () => {
 
     console.log("OTP Resent!");
     setOtp(['', '', '', '']);
-    setTimer(30);
+    setTimer(120);
     setIsResendEnabled(false);
 
+    const body = {
+      mobile: Number(mobile),
+      language: language
+    };
+
     // Here, call your resend OTP API if needed
+    const data = await postData("/resendOTP", body);
   };
 
   const handleVerify = async () => {
     const enteredOtp = otp.join('');
-    console.log("Entered OTP:", enteredOtp);
 
     const body = {
       mobile: Number(mobile),
@@ -66,13 +72,15 @@ const OtpVerification = () => {
         localStorage.setItem('user_id', data.data.user_id);
 
         // Then navigate to OTP screen with mobile and language
-        navigate("/home", { state: { mobile: mobile, language: "hi" } });
-    } else {
-        console.error("OTP verification failed:", data);
+        navigate("/home");
+      } else if (data.status === 100) {
+
+      } else {
+          console.error("OTP verification failed:", data);
+        }
+      } catch (error) {
+        console.error("Error verifying OTP:", error);
       }
-    } catch (error) {
-      console.error("Error verifying OTP:", error);
-    }
   };
 
   return (
@@ -118,9 +126,11 @@ const OtpVerification = () => {
         )}
       </div>
 
-      <button style={styles.verifyBtn} onClick={handleVerify}>
-        Verify & Proceed →
-      </button>
+      <div className="d-flex justify-content-center mt-4">
+        <button disabled={otp.some(digit => digit === '')} style={{ width: '220px', backgroundColor: '#DA6901', fontSize: '18px', color: '#FFFFFF', border: 'none', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: otp.some(digit => digit === '') ? 'not-allowed' : 'pointer', opacity: otp.some(digit => digit === '') ? 0.7 : 1 }} className="py-2 fw-bold" onClick={handleVerify}>
+          Verify & Proceed <RightArrowBlack style={{ color: "#FFFFFF" }} className="ms-2" />
+        </button>
+      </div>
     </div>
   );
 };
@@ -181,7 +191,7 @@ const styles = {
     cursor: 'pointer',
   },
   verifyBtn: {
-    width: '100%',
+    width: 'fit-content',
     backgroundColor: '#DA6901',
     color: '#fff',
     padding: '12px',
