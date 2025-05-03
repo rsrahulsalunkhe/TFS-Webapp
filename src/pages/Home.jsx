@@ -18,7 +18,7 @@ const Home = () => {
     const [lang, setLang] = useState('hi');
 
     useEffect(() => {
-        const storedLang = localStorage.getItem('lang') || 'hi';
+        const storedLang = localStorage.getItem('language') || 'hi';
         setLang(storedLang);
         loadUsers();
     }, []);

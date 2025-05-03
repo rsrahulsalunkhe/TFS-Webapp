@@ -1,5 +1,5 @@
 import React, { useEffect, useState  } from 'react';
-import ellipse from '../../assets/ellipse.svg'
+import ellipse from '../../assets/ellipse-light.svg'
 import rightArrow from '../../assets/right-arrow.svg'
 import './style.scss'
 

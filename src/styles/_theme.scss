@@ -16,6 +16,8 @@ $light-gray-secondary-text: #B3B3B3;
 $light-date-text: #0006CC;
 $light-border: 1px solid rgba(219, 219, 219, 1);
 $light-blue-primary: #003B82;
+$light-black-6: rgba(0, 0, 0, 0.6);
+$light-black-03: rgba(0, 0, 0, 0.03);
 
 // Dark Theme
 $dark-primary-bg: #121212;
@@ -29,14 +31,9 @@ $dark-gray-secondary-text: #e0e0e0;
 $dark-date-text: #60A5FA;
 $dark-border: 1px solid rgba(255, 255, 255, 0.24);
 $dark-blue-primary: #FFFFFF;
-// $dark-primary-bg: #242424;
-// $dark-secondary-bg: #31333C;
-// $dark-tertiary-bg: #3B3D47;
-// $dark-header-bg: #24262D;
-// $dark-primary-text: #FFFFFF;
-// $dark-secondary-text: #FFFFFFB3;
-// $dark-gray-primary-text: #a3a3a3;
-// $dark-gray-secondary-text: #e0e0e0;
+$dark-black-87: rgba(255, 255, 255, 0.87);
+$dark-black-6: rgba(255, 255, 255, 0.6);
+$dark-black-03: rgba(56, 56, 56, 1);
 
 :root {
   --primary: #{$light-orange};
@@ -60,10 +57,14 @@ $dark-blue-primary: #FFFFFF;
   --gray-200: #F2F2F2;
   --gray-000: #F0F0F0;
 
+  --black-87: #{$light-black-87};
+  --black-6: #{$light-black-6};
+  --black-03: #{$light-black-03};
+
 }
 
 [data-theme="dark"] {
-  --primary: #{dark-orange};
+  --primary: #{$dark-orange};
   --primary-bg: #{$dark-primary-bg};
   --secondary-bg: #{$dark-secondary-bg};
   --tertiary-bg: #{$dark-tertiary-bg};
@@ -75,12 +76,16 @@ $dark-blue-primary: #FFFFFF;
   --date-text: #{$dark-date-text};
   --border: #{$light-border};
   --blue-text: #{$dark-blue-primary};
+  --black-87: #{$dark-black-87};
+  --black-6: #{$dark-black-6};
+  --black-03: #{$dark-black-03};
+  --gray-000: #121212;
 }
 
 // Apply globally
 body {
   background: var(--primary-bg);
-  color: var(--primary-text);
+  color: var(--black-87);
   transition: background 0.3s ease, color 0.3s ease;
   padding: 0;
   margin: 0;

@@ -1,31 +1,42 @@
-import React from 'react'
+import React, { useEffect, useState  } from 'react'
 import './style.scss'
 import banner2 from './../../assets/banner2.jpeg'
-import ellipse from './../../assets/ellipse.svg'
+import ellipseLight from './../../assets/ellipse-light.svg'
+import ellipseDark from './../../assets/ellipse-dark.svg'
 
 const Price = (props) => {
   return (
     <div className='price-status'>
-        <span className='text-gray-primary pt-1' style={{fontSize: '14px', fontWeight: 700}}>{props.status}</span>
-        <span style={{fontSize: '16px', fontWeight: 500}}>{props.price}</span>
-        <span style={{fontSize: '14px', fontWeight: 500, color: `#${props.color}`}}>{props.change}</span>
+        <span className='pt-1' style={{fontSize: '14px', fontWeight: 700, color: 'var(--black-6)'}}>{props.status}</span>
+        <span style={{fontSize: '15px', fontWeight: 600}}>{props.price}</span>
+        <span style={{fontSize: '15px', fontWeight: 600, color: `#${props.color}`}}>{props.change}</span>
     </div>
   )
 }
 
 const CenterRateCard = ({rate}) => {
+    const [lang, setLang] = useState('hi');
+    const [theme, setTheme] = useState('light');
+    
+    useEffect(() => {
+        const storedLang = localStorage.getItem('language') || 'hi';
+        setLang(storedLang);
+
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(storedTheme);
+    }, []);
+
   return (
     <div>
-        <div className='mb-3 bg-secondary'>
+        <div className='mb-3 bg-secondary' style={{borderRadius: '12px'}}>
             <div className='p-3'>
                 <div className='d-flex align-items-center'>
                     <span className='date'>{rate.rec_date}</span>
-                    <p className='m-0 ms-auto fw-bold' style={{color: `#${rate.content.senti.col}`}}>{rate.content.senti.val}</p>
+                    <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`}}>{rate.content.senti.val}</p>
                 </div>
                 <div className='d-flex mt-2'>
                     <div className='location'>
                         <p className='m-0'>{rate.content.Rate.loc}</p>
-                        {/* <span className='text-gray-primary'>{rate.content.Rate.var}</span> */}
                     </div>
                     <div className='price'>
                         <p className='price-range text-gray-secondary m-0'>{rate.content.Rate.rate}</p>
@@ -41,15 +52,17 @@ const CenterRateCard = ({rate}) => {
                         )}
                     </div>
                 </div>
-                <span className='text-gray-primary fw-semibold' style={{}}>{rate.content.Rate.var}</span>
+                <span className='fw-semibold' style={{color: 'var(--black-6)'}}>{rate.content.Rate.var}</span>
 
-                <div className='divider1'>
-                    <div className='gradient-background1'></div>
-                    <div className='gradient-dot me-2'></div>
-                    <span>KEY STATISTICS</span>
-                    <div className='gradient-dot ms-2'></div>
-                    <div className='gradient-background2'></div>
-                </div>
+                {rate?.content?.ca && rate.content.ca.length > 0 && (
+                    <div className='divider1'>
+                        <div className='gradient-background1'></div>
+                        <div className='gradient-dot me-2'></div>
+                        <span>Key Highlights</span>
+                        <div className='gradient-dot ms-2'></div>
+                        <div className='gradient-background2'></div>
+                    </div>
+                )}
                 
                 {rate?.content?.ca && rate.content.ca.length > 0 && (
                     <div className='key-statistics'>
@@ -63,25 +76,33 @@ const CenterRateCard = ({rate}) => {
                 )}
 
                 {rate?.content?.co && rate.content.co.length > 0 && (
-                    <div className='summery bg-tertiary'>
-                        {/* <ul className=' m-0'> */}
-                            {rate.content.co.map((item, index) => (
-                                <span
-                                    key={index} 
-                                    style={{ fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
-                                    className='d-flex py-1 text-gray-primary'
-                                >
-                                    <div>
-                                        <img src={ellipse} className='me-3' alt="" />
-                                    </div>
-                                    
-                                    {item.v}
-                                </span>
-                            ))}
-                        {/* </ul> */}
+                    <div className='summery'>
+                        {rate.content.co.map((item, index) => (
+                            <span
+                                key={index} 
+                                style={{ fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
+                                className='d-flex py-1 text-gray-primary'
+                            >
+                                <div>
+                                    {theme === 'light' ? (
+                                    <img src={ellipseLight} className='me-3' alt="" />
+                                    ) : (
+                                    <img src={ellipseDark} className='me-3' alt="" />
+                                    )}
+                                </div>
+                                
+                                {item.v}
+                            </span>
+                        ))}
                     </div>
                 )}
-                <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '14px'}}>{rate.content.Rate.ref.n}</p>
+                <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '14px', color: 'var(--black-6)'}}>{rate.content.Rate.ref.n}</p>
+                
+                {rate?.is_detail === '1' && (
+                    <div className='d-flex justify-content-center'>
+                        <h5 className='m-0 py-2 px-5 mt-3' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '15px'}}>Click For More Detail</h5>
+                    </div>
+                )}
             </div>
         </div>
         {rate?.content?.ba && rate.content.ba.length > 0 && (
