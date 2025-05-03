@@ -54,7 +54,7 @@ const Futures = () => {
           <CircularProgress color="warning" />
         </Box>
       ) : (
-        <div className="bg-primary">
+        <div style={{backgroundColor: 'var(--gray-000)'}} className="py-3">
           {futuresList.map((p, index) => {
             const triggerIndex = 10 + page * 20; // trigger after 10 cards of each page
             if (index === triggerIndex) {

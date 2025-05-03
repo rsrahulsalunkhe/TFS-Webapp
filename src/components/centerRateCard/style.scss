@@ -62,7 +62,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 4px;
+    // margin-top: 4px;
+    margin: 8px 0;
 
     span {
         font-size: 14px;
@@ -106,7 +107,7 @@
 .key-statistics {
     display: flex;
     justify-content: space-around;
-    margin: 8px 0 12px 0;
+    margin-bottom: 12px;
     border: 1px solid #EDEDED;
     // padding: 15px 5px 6px 5px;
     padding: 10px 5px;

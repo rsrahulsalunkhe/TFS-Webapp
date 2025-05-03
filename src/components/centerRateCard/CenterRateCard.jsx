@@ -8,7 +8,7 @@ const Price = (props) => {
     <div className='price-status'>
         <span className='text-gray-primary pt-1' style={{fontSize: '14px', fontWeight: 700}}>{props.status}</span>
         <span style={{fontSize: '16px', fontWeight: 500}}>{props.price}</span>
-        <span style={{fontSize: '14px', fontWeight: 500, color: props.color}}>{props.change}</span>
+        <span style={{fontSize: '14px', fontWeight: 500, color: `#${props.color}`}}>{props.change}</span>
     </div>
   )
 }
@@ -20,18 +20,28 @@ const CenterRateCard = ({rate}) => {
             <div className='p-3'>
                 <div className='d-flex align-items-center'>
                     <span className='date'>{rate.rec_date}</span>
-                    <p className='m-0 ms-auto fw-bold' style={{color: rate.content.senti.col}}>{rate.content.senti.val}</p>
+                    <p className='m-0 ms-auto fw-bold' style={{color: `#${rate.content.senti.col}`}}>{rate.content.senti.val}</p>
                 </div>
                 <div className='d-flex mt-2'>
                     <div className='location'>
                         <p className='m-0'>{rate.content.Rate.loc}</p>
-                        <span className='text-gray-primary'>{rate.content.Rate.var}</span>
+                        {/* <span className='text-gray-primary'>{rate.content.Rate.var}</span> */}
                     </div>
                     <div className='price'>
-                        <span className='price-range text-gray-secondary'>{rate.content.Rate.rate}</span>
-                        <p className='up-down'><span className='up-down1' style={{backgroundColor: rate.content.Rate.change.col}}>{rate.content.Rate.change.val}</span></p>
+                        <p className='price-range text-gray-secondary m-0'>{rate.content.Rate.rate}</p>
+                        {rate.content.Rate.change.val && (
+                            <p className='up-down m-0'>
+                            <span
+                                className='up-down1'
+                                style={{ backgroundColor: `#${rate.content.Rate.change.col}` }}
+                            >
+                                {rate.content.Rate.change.val}
+                            </span>
+                            </p>
+                        )}
                     </div>
                 </div>
+                <span className='text-gray-primary fw-semibold' style={{}}>{rate.content.Rate.var}</span>
 
                 <div className='divider1'>
                     <div className='gradient-background1'></div>

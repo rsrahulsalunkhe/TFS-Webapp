@@ -1,12 +1,13 @@
-import React, { useEffect, useState  } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState  } from 'react'
+import { useNavigate } from 'react-router-dom'
 import kabuli from './../assets/kabuli.svg'
 import urad from './../assets/urad.svg'
 import chana from './../assets/chana.svg'
 import dividerLine from './../assets/divider-line.svg'
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress'
+import Box from '@mui/material/Box'
 import placeholder from '../assets/placeholder.webp'
+import rectanglePlaceholder from '../assets/rectangle-placeholder.webp'
 import './style.scss'
 
 import { fetchData } from './../services/apiService'
@@ -51,11 +52,31 @@ const Home = () => {
     return (
         <main style={{backgroundColor: 'var(--gray-000)'}}>
             <div className='d-grid'>
-                {homeData.data?.ban?.map((b, index) => (
+                {/* {homeData.data?.ban?.map((b, index) => (
                     <div className='w-100 h-100' key={index} onClick={() => window.open(b.re, '_blank')}>
                         <img className='w-100 h-100' src={b.i} alt={`banner-${index + 1}`} loading='lazy' />
                     </div>
-                ))}
+                ) : {
+                    <div className='w-100 h-100'>
+                        <img className='w-100 h-100' src={rectanglePlaceholder} loading='lazy' />
+                    </div>
+                }
+                )} */}
+                {loading ? (
+                    // Show placeholder while loading
+                    <img className='w-100 h-100' src={rectanglePlaceholder} alt="Loading placeholder" loading='lazy' />
+                ) : (
+                    homeData.data?.ban?.length > 0 ? (
+                        homeData.data?.ban?.map((b, index) => (
+                        <div className='w-100 h-100' key={index} onClick={() => window.open(b.re, '_blank')}>
+                        <img className='w-100 h-100' src={b.i} alt={`banner-${index + 1}`} loading='lazy' />
+                        </div>
+                    ))
+                    ) : (
+                    // Show placeholder if no banners
+                    <img className='w-100 h-100' src={rectanglePlaceholder} alt="No banners available" loading='lazy' />
+                    )
+                )}
             </div>
 
             {/* <div className='mt-4'>
