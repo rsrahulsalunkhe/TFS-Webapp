@@ -5,9 +5,20 @@ import ellipseLight from './../../assets/ellipse-light.svg'
 import ellipseDark from './../../assets/ellipse-dark.svg'
 
 const Price = (props) => {
+    const [lang, setLang] = useState('hi');
+    const [theme, setTheme] = useState('light');
+    
+    useEffect(() => {
+        const storedLang = localStorage.getItem('language') || 'hi';
+        setLang(storedLang);
+
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(storedTheme);
+    }, []);
+
   return (
     <div className='price-status'>
-        <span className='pt-1' style={{fontSize: '14px', fontWeight: 700, color: 'var(--black-6)'}}>{props.status}</span>
+        <span className='pt-1' style={{fontSize: lang === 'hi' ? '16px' : '14px', fontWeight: 700, color: 'var(--black-6)'}}>{props.status}</span>
         <p style={{fontSize: '15px', fontWeight: 600}} className='m-0 mt-1'>{props.price}</p>
         <p style={{fontSize: '15px', fontWeight: 600, color: `#${props.color}`, paddingTop: '2px'}} className='m-0'>{props.change}</p>
     </div>
@@ -32,11 +43,11 @@ const CenterRateCard = ({rate}) => {
             <div style={{padding: '16px 12px 16px 16px'}}>
                 <div className='d-flex align-items-center pb-2'>
                     <span className='date'>{rate.rec_date}</span>
-                    <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`}}>{rate.content.senti.val}</p>
+                    <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`, fontSize: lang === 'hi' ? '18px' : '16px' }}>{rate.content.senti.val}</p>
                 </div>
                 <div className='d-flex mt-2'>
                     <div className='location'>
-                        <p className='m-0'>{rate.content.Rate.loc}</p>
+                        <p className='m-0 fw-bold' style={{fontSize: lang === 'hi' ? '20px' : '18px'}}>{rate.content.Rate.loc}</p>
                     </div>
                     <div className='price'>
                         <p className='price-range text-gray-secondary m-0'>{rate.content.Rate.rate}</p>
@@ -52,7 +63,7 @@ const CenterRateCard = ({rate}) => {
                         )}
                     </div>
                 </div>
-                <p className='fw-semibold mt-1' style={{color: 'var(--black-6)'}}>{rate.content.Rate.var}</p>
+                <p className='fw-semibold mt-1' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '18px' : '16px'}}>{rate.content.Rate.var}</p>
 
                 {rate?.content?.ca && rate.content.ca.length > 0 && (
                     <div className='divider1'>
@@ -80,7 +91,7 @@ const CenterRateCard = ({rate}) => {
                         {rate.content.co.map((item, index) => (
                             <span
                                 key={index} 
-                                style={{ fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
+                                style={{ fontWeight: 500, lineHeight: 1.15, fontSize: lang === 'hi' ? '18px' : '16px' }} 
                                 className='d-flex py-1 text-gray-primary'
                             >
                                 <div style={{ display: 'flex', alignItems: 'baseline', paddingTop: '4px' }}>
@@ -95,11 +106,19 @@ const CenterRateCard = ({rate}) => {
                         ))}
                     </div>
                 )}
-                <p className='text-left m-0 text-blue' style={{ fontWeight: 600, fontSize: '14px', color: 'var(--black-6)', paddingTop: '12px'}}>{rate.content.Rate.ref.n}</p>
+                <p className='text-left m-0 text-blue' style={{ fontWeight: 600, fontSize: lang === 'hi' ? '16px' : '14px', color: 'var(--black-6)', paddingTop: '12px'}}>{rate.content.Rate.ref.n}</p>
                 
                 {rate?.is_detail === '1' && (
-                    <div className='d-flex justify-content-center'>
-                        <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '15px'}}>Click For More Detail</h5>
+                    <div>
+                        {lang === 'hi' ? (
+                            <div className='d-flex justify-content-center'>
+                                <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '16px'}}>विश्लेषण के लिए क्लिक करें</h5>
+                            </div>
+                        ) : (
+                            <div className='d-flex justify-content-center'>
+                                <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '14px'}}>Click For More Detail</h5>
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
