@@ -29,8 +29,8 @@ const CenterRateCard = ({rate}) => {
   return (
     <div>
         <div className='mb-3 bg-secondary' style={{borderRadius: '12px'}}>
-            <div className='p-3'>
-                <div className='d-flex align-items-center'>
+            <div style={{padding: '16px 12px 16px 16px'}}>
+                <div className='d-flex align-items-center pb-1'>
                     <span className='date'>{rate.rec_date}</span>
                     <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`}}>{rate.content.senti.val}</p>
                 </div>
@@ -96,7 +96,7 @@ const CenterRateCard = ({rate}) => {
                         ))}
                     </div>
                 )}
-                <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '16px', color: 'var(--black-6)'}}>{rate.content.Rate.ref.n}</p>
+                <p className='text-left m-0 text-blue' style={{ fontWeight: 600, fontSize: '14px', color: 'var(--black-6)', paddingTop: '12px'}}>{rate.content.Rate.ref.n}</p>
                 
                 {rate?.is_detail === '1' && (
                     <div className='d-flex justify-content-center'>

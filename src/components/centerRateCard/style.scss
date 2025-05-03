@@ -48,7 +48,7 @@
             // padding-left: 0.2rem/* 8px */;
             font-size: 17px;
             font-weight: 700;
-            padding: 0.3rem/* 8px */;
+            padding: 4px 6px;
         }
     }
 }
@@ -92,30 +92,31 @@
     // width: 100%;
     display: flex;
     flex-direction: column;
+    width: 30%;
 }
 
 .key-statistics {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     // margin-bottom: 12px;
     // border: 1px solid #EDEDED;   
     // padding: 15px 5px 6px 5px;
-    padding: 10px 5px;
+    padding: 10px 15px;
     border-radius: 8px;
     background-color: var(--black-03);
 }
 
 .divider2 {
     width: 1px;
-    height: 54px;
+    // height: 54px;
     background-color: #D9D9D9;
-    margin-top: 8px;
+    margin: 8px 12px;
 }
 
 .summery {
     // border: 1px solid #EBEBEB;
     border-radius: 8px;
-    padding: 8px 16px;
+    padding: 8px 12px;
     background-color: var(--black-03);
     margin-top: 12px;
 }
