@@ -8,8 +8,8 @@ const Price = (props) => {
   return (
     <div className='price-status'>
         <span className='pt-1' style={{fontSize: '14px', fontWeight: 700, color: 'var(--black-6)'}}>{props.status}</span>
-        <span style={{fontSize: '15px', fontWeight: 600}}>{props.price}</span>
-        <span style={{fontSize: '15px', fontWeight: 600, color: `#${props.color}`}}>{props.change}</span>
+        <p style={{fontSize: '15px', fontWeight: 600}} className='m-0 mt-1'>{props.price}</p>
+        <p style={{fontSize: '15px', fontWeight: 600, color: `#${props.color}`, paddingTop: '2px'}} className='m-0'>{props.change}</p>
     </div>
   )
 }
@@ -52,13 +52,13 @@ const CenterRateCard = ({rate}) => {
                         )}
                     </div>
                 </div>
-                <span className='fw-semibold' style={{color: 'var(--black-6)'}}>{rate.content.Rate.var}</span>
+                <p className='fw-semibold mt-1' style={{color: 'var(--black-6)'}}>{rate.content.Rate.var}</p>
 
                 {rate?.content?.ca && rate.content.ca.length > 0 && (
                     <div className='divider1'>
                         <div className='gradient-background1'></div>
                         <div className='gradient-dot me-2'></div>
-                        <span>Key Highlights</span>
+                        <span>KEY HIGHLIGHTS</span>
                         <div className='gradient-dot ms-2'></div>
                         <div className='gradient-background2'></div>
                     </div>
@@ -85,9 +85,9 @@ const CenterRateCard = ({rate}) => {
                             >
                                 <div>
                                     {theme === 'light' ? (
-                                    <img src={ellipseLight} className='me-3' alt="" />
+                                    <img src={ellipseLight} className='me-2' alt="" />
                                     ) : (
-                                    <img src={ellipseDark} className='me-3' alt="" />
+                                    <img src={ellipseDark} className='me-2' alt="" />
                                     )}
                                 </div>
                                 
@@ -96,11 +96,11 @@ const CenterRateCard = ({rate}) => {
                         ))}
                     </div>
                 )}
-                <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '14px', color: 'var(--black-6)'}}>{rate.content.Rate.ref.n}</p>
+                <p className='text-left m-0 mt-2 text-blue' style={{ fontWeight: 600, fontSize: '16px', color: 'var(--black-6)'}}>{rate.content.Rate.ref.n}</p>
                 
                 {rate?.is_detail === '1' && (
                     <div className='d-flex justify-content-center'>
-                        <h5 className='m-0 py-2 px-5 mt-3' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '15px'}}>Click For More Detail</h5>
+                        <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '15px'}}>Click For More Detail</h5>
                     </div>
                 )}
             </div>
