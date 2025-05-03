@@ -95,7 +95,7 @@
     // margin-bottom: 12px;
     // border: 1px solid #EDEDED;   
     // padding: 15px 5px 6px 5px;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 8px;
     background-color: var(--black-03);
 }
@@ -113,4 +113,20 @@
     padding: 8px 12px;
     background-color: var(--black-03);
     margin-top: 12px;
+}
+
+button {
+    background-color: var(--primary);
+    border: none !important;
+    border-radius: 8px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    width: 70%;
+    max-width: 80%;
+
+    img {
+        width: 8px;
+    }
 }

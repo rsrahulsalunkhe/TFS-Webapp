@@ -9,7 +9,7 @@ import helpAndSupport from "../assets/help-and-support.svg"
 
 import aboutUs from "../assets/about-us.svg"
 import other from '../assets/other.svg'
-import rightArrow from "../assets/right-arrow.svg"
+import rightArrow from "../assets/right-arrow-black.svg"
 
 import logout from '../assets/logout.svg'
 

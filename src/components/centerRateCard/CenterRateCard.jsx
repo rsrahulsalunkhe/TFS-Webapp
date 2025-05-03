@@ -3,6 +3,7 @@ import './style.scss'
 import banner2 from './../../assets/banner2.jpeg'
 import ellipseLight from './../../assets/ellipse-light.svg'
 import ellipseDark from './../../assets/ellipse-dark.svg'
+import rightArrowWhite from "./../../assets/right-arrow-white.svg"
 
 const Price = (props) => {
     const [lang, setLang] = useState('hi');
@@ -91,10 +92,10 @@ const CenterRateCard = ({rate}) => {
                         {rate.content.co.map((item, index) => (
                             <span
                                 key={index} 
-                                style={{ fontWeight: 500, lineHeight: 1.15, fontSize: lang === 'hi' ? '18px' : '16px' }} 
+                                style={{ fontWeight: 500, lineHeight: 1.2, fontSize: lang === 'hi' ? '18px' : '16px' }} 
                                 className='d-flex py-1 text-gray-primary'
                             >
-                                <div style={{ display: 'flex', alignItems: 'baseline', paddingTop: '4px' }}>
+                                <div style={{ display: 'flex', alignItems: 'baseline', paddingTop: '6px' }}>
                                     {theme === 'light' ? (
                                         <img src={ellipseLight} className='me-2' alt="" />
                                     ) : (
@@ -111,12 +112,20 @@ const CenterRateCard = ({rate}) => {
                 {rate?.is_detail === '1' && (
                     <div>
                         {lang === 'hi' ? (
-                            <div className='d-flex justify-content-center'>
-                                <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '16px'}}>विश्लेषण के लिए क्लिक करें</h5>
+                            // <div className='d-flex justify-content-center'>
+                            //     <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '16px'}}>विश्लेषण के लिए क्लिक करें</h5>
+                            //     <img src={rightArrowWhite} alt="Right Arrow" />
+                            // </div>
+                            <div className='d-flex justify-content-center mt-3'>
+                                <button className='px-2 fw-bold' style={{fontSize: '16px', padding: '8px 0 6px 0'}}>विश्लेषण के लिए क्लिक करें  <img className='ms-2' src={rightArrowWhite} alt="Right Arrow" /></button>
                             </div>
                         ) : (
-                            <div className='d-flex justify-content-center'>
-                                <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '14px'}}>Click For More Detail</h5>
+                            // <div className='d-flex justify-content-center'>
+                            //     <h5 className='m-0 py-2 px-5 mt-3 fw-bold' style={{backgroundColor: 'var(--primary)', color: '#FFFFFF', borderRadius: '8px', fontSize: '14px'}}>Click For More Detail</h5>
+                            //     <img src={rightArrowWhite} alt="Right Arrow" />
+                            // </div>
+                            <div className='d-flex justify-content-center mt-3'>
+                                <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '8px 0'}}>Click For More Detail  <img className='ms-2' src={rightArrowWhite} alt="Right Arrow" /></button>
                             </div>
                         )}
                     </div>
