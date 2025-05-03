@@ -30,7 +30,7 @@ const CenterRateCard = ({rate}) => {
     <div>
         <div className='mb-3 bg-secondary' style={{borderRadius: '12px'}}>
             <div style={{padding: '16px 12px 16px 16px'}}>
-                <div className='d-flex align-items-center pb-1'>
+                <div className='d-flex align-items-center pb-2'>
                     <span className='date'>{rate.rec_date}</span>
                     <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`}}>{rate.content.senti.val}</p>
                 </div>
@@ -83,14 +83,13 @@ const CenterRateCard = ({rate}) => {
                                 style={{ fontWeight: 500, lineHeight: 1.15, fontSize: '15px' }} 
                                 className='d-flex py-1 text-gray-primary'
                             >
-                                <div>
+                                <div style={{ display: 'flex', alignItems: 'baseline', paddingTop: '4px' }}>
                                     {theme === 'light' ? (
-                                    <img src={ellipseLight} className='me-2' alt="" />
+                                        <img src={ellipseLight} className='me-2' alt="" />
                                     ) : (
-                                    <img src={ellipseDark} className='me-2' alt="" />
+                                        <img src={ellipseDark} className='me-2' alt="" />
                                     )}
                                 </div>
-                                
                                 {item.v}
                             </span>
                         ))}
