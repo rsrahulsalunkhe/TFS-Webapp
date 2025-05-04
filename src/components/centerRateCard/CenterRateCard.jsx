@@ -44,11 +44,11 @@ const CenterRateCard = ({rate}) => {
             <div style={{padding: '16px 12px 16px 16px'}}>
                 <div className='d-flex align-items-center pb-2'>
                     <span className='date'>{rate.rec_date}</span>
-                    <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`, fontSize: lang === 'hi' ? '18px' : '16px' }}>{rate.content.senti.val}</p>
+                    <p className='m-0 ms-auto fw-semibold' style={{color: `#${rate.content.senti.col}`, fontSize: lang === 'hi' ? '17px' : '15px' }}>{rate.content.senti.val}</p>
                 </div>
                 <div className='d-flex mt-2'>
                     <div className='location'>
-                        <p className='m-0 fw-bold' style={{fontSize: lang === 'hi' ? '20px' : '18px'}}>{rate.content.Rate.loc}</p>
+                        <p className='m-0 fw-bold' style={{fontSize: lang === 'hi' ? '19px' : '17px'}}>{rate.content.Rate.loc}</p>
                     </div>
                     <div className='price'>
                         <p className='price-range text-gray-secondary m-0'>{rate.content.Rate.rate}</p>
@@ -64,7 +64,7 @@ const CenterRateCard = ({rate}) => {
                         )}
                     </div>
                 </div>
-                <p className='fw-semibold' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '17px' : '15px'}}>{rate.content.Rate.var}</p>
+                <p className='fw-semibold' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '17px' : '15px', marginTop: lang === 'hi' ? '2px' : null}}>{rate.content.Rate.var}</p>
 
                 {rate?.content?.ca && rate.content.ca.length > 0 && (
                     <div className='divider1'>
