@@ -64,7 +64,7 @@ const CenterRateCard = ({rate}) => {
                         )}
                     </div>
                 </div>
-                <p className='fw-semibold' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '17px' : '15px', marginTop: lang === 'hi' ? '2px' : null}}>{rate.content.Rate.var}</p>
+                <p className='fw-semibold' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '17px' : '15px'}}>{rate.content.Rate.var}</p>
 
                 {rate?.content?.ca && rate.content.ca.length > 0 && (
                     <div className='divider1'>
