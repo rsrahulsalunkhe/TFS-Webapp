@@ -51,7 +51,7 @@ const ReportCard = ({ report }) => {
                 {report?.content?.card?.p ? (
                     <div className='mt-3'>
                         {report.content.card.p.map((p) => (
-                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 500 }}>
+                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.3, fontWeight: 500 }}>
                                 {theme === 'light' ? (
                                     <div>
                                         <img src={ellipseLight} className='me-2' alt="" />
@@ -74,7 +74,7 @@ const ReportCard = ({ report }) => {
                     <div className="d-flex justify-content-center mt-1">
                         <button className="px-2 fw-bold d-flex align-items-center"
                             style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.2 }}>
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
                                 {report.content.card.b}
                             </span>
                             <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
@@ -84,7 +84,7 @@ const ReportCard = ({ report }) => {
                         <div className="d-flex justify-content-center mt-1">
                             <button className="px-2 fw-bold d-flex align-items-center"
                                 style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.2 }}>
+                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
                                     Click For More Detail
                                 </span>
                                 <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
