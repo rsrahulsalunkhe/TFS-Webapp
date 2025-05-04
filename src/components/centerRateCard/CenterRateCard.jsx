@@ -90,18 +90,17 @@ const CenterRateCard = ({rate}) => {
                 {rate?.content?.co && rate.content.co.length > 0 && (
                     <div className='summery'>
                         {rate.content.co.map((item, index) => (
-                            <span
-                                key={index} 
-                                style={{ fontWeight: 500, lineHeight: 1.2, fontSize: lang === 'hi' ? '18px' : '16px' }} 
-                                className='d-flex py-1 text-gray-primary'
-                            >
-                                <div style={{ display: 'flex', alignItems: 'baseline', paddingTop: '6px' }}>
+                            // <span key={index} style={{ fontWeight: 500, lineHeight: 1.2, fontSize: lang === 'hi' ? '18px' : '16px' }} className='d-flex py-1 text-gray-primary'>
+                                <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 500 }}>
                                     {theme === 'light' ? (
-                                        <img src={ellipseLight} className='me-2' alt="" />
+                                        <div>
+                                            <img src={ellipseLight} className='me-2' alt="" />
+                                        </div>
                                     ) : (
-                                        <img src={ellipseDark} className='me-2' alt="" />
+                                        <div>
+                                            <img src={ellipseDark} className='me-2' alt="" />
+                                        </div>
                                     )}
-                                </div>
                                 {item.v}
                             </span>
                         ))}

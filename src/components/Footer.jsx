@@ -12,7 +12,16 @@ const Footer = () => {
     const location = useLocation();
     const [activeTab, setActiveTab] = useState("");
 
+    const [lang, setLang] = useState('hi');
+    const [theme, setTheme] = useState('light');
+
     useEffect(() => {
+        const storedLang = localStorage.getItem('language') || 'hi';
+        setLang(storedLang);
+
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(storedTheme);
+
         const currentPath = location.pathname.replace("/", "") || "home";
         setActiveTab(currentPath);
     }, [location]);
@@ -21,36 +30,36 @@ const Footer = () => {
         navigate(route);
     };
 
-    const getFillColor = (tabName) => (tabName === activeTab ? "#E5811E" : "#000");
+    const getFillColor = (tabName) => (tabName === activeTab ? "#E5811E" : (theme === 'light' ? '#5E5E5E' : '#FFFFFFDE'));
 
     return (
         <footer className="d-flex w-100 justify-content-around align-items-center" style={{ backgroundColor: 'var(--gray-000)' }}>
             {/* Home */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/home")}>
-                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
+                <div className="d-flex justify-content-center align-items-center mb-1" style={{ width: '25px', height: '25px' }}>
                     <Home style={{ color: getFillColor("home") }} />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: getFillColor("home") }}>
+                <span style={{ fontSize: lang === 'hi' ? '14px' : '12px', fontWeight: '500', color: getFillColor("home") }}>
                     {t("footer.home")}
                 </span>
             </div>
 
             {/* Futures */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/futures")}>
-                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
+                <div className="d-flex justify-content-center align-items-center mb-1" style={{ width: '25px', height: '25px' }}>
                     <Futures style={{ color: getFillColor("futures") }} />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: getFillColor("futures") }}>
+                <span style={{ fontSize: lang === 'hi' ? '14px' : '12px', fontWeight: '500', color: getFillColor("futures") }}>
                     {t("footer.futures")}
                 </span>
             </div>
 
             {/* Account */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/account")}>
-                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px' }}>
+                <div className="d-flex justify-content-center align-items-center mb-1" style={{ width: '25px', height: '25px' }}>
                     <Account style={{ color: getFillColor("account") }} />
                 </div>
-                <span style={{ fontSize: '14px', fontWeight: '500', color: getFillColor("account") }}>
+                <span style={{ fontSize: lang === 'hi' ? '14px' : '12px', fontWeight: '500', color: getFillColor("account") }}>
                     {t("footer.account")}
                 </span>
             </div>

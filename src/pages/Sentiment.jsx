@@ -56,7 +56,7 @@ const Sentiment = () => {
           <CircularProgress color="warning" />
         </Box>
       ) : (
-        <div className="bg-primary">
+        <div className="bg-tertiary py-3">
           {futuresList.map((p, index) => {
             const triggerIndex = 10 + page * 20; // trigger after 10 cards of each page
             if (index === triggerIndex) {

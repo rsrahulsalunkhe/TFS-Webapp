@@ -5,7 +5,7 @@ import sentiments from '../assets/sentiment.svg';
 import timeLine from '../assets/time-line.svg';
 import coverage from '../assets/coverage.svg';
 import seperatorLine from '../assets/seperator-line.svg';
-import rightArrow from '../assets/right-arrow.svg';
+import rightArrow from '../assets/right-arrow-orange.svg';
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 import { fetchData } from './../services/apiService';

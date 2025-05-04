@@ -9,11 +9,10 @@ import helpAndSupport from "../assets/help-and-support.svg"
 
 import aboutUs from "../assets/about-us.svg"
 import other from '../assets/other.svg'
-import rightArrow from "../assets/right-arrow-black.svg"
+import rightArrowBlack from './../assets/right-arrow-black.svg'
+import rightArrowWhite from './../assets/right-arrow-white.svg'
 
 import logout from '../assets/logout.svg'
-
-
 import Divider from '@mui/material/Divider';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,10 +20,14 @@ const Account = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [lang, setLang] = useState('hi');
+    const [theme, setTheme] = useState('light');
     
     useEffect(() => {
         const storedLang = localStorage.getItem('language') || 'hi';
         setLang(storedLang);
+
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(storedTheme);
     }, []);
     
     return (
@@ -39,7 +42,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={helpAndSupport} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.help_and_support.help_and_support")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
             </div>
 
@@ -53,7 +60,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={changeLanguage} alt="change language" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.change_language")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
 
                 <Divider variant="inset" component="div" />
@@ -63,7 +74,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.change_theme")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
 
                 <Divider variant="inset" component="div" />
@@ -73,7 +88,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={share} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.share_app")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
 
                 <Divider variant="inset" component="div" />
@@ -83,7 +102,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.rate_us")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
 
                 <Divider variant="inset" component="div" />
@@ -93,7 +116,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={downloadApp} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.app_related.download_app")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
             </div>
 
@@ -106,7 +133,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={aboutUs} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.about_us")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
 
                 <Divider variant="inset" component="div" />
@@ -116,7 +147,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={other} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.other.other")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
 
                 <Divider variant="inset" component="div" />
@@ -126,7 +161,11 @@ const Account = () => {
                         <img className="w-100 h-100" src={logout} alt="about us" />
                     </div>
                     <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.logout")}</h6>
-                    <img src={rightArrow} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto" />
+                    {theme === 'light' ? (
+                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    ) : (
+                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                    )}
                 </div>
             </div>
 

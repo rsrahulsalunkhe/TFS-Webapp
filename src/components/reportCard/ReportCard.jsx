@@ -1,15 +1,21 @@
 import React, { useEffect, useState  } from 'react';
-import ellipse from '../../assets/ellipse-light.svg'
-import rightArrow from '../../assets/right-arrow.svg'
+import ellipseLight from './../../assets/ellipse-light.svg'
+import ellipseDark from './../../assets/ellipse-dark.svg'
+import rightArrow from '../../assets/right-arrow-white.svg'
 import './style.scss'
 
 const ReportCard = ({ report }) => {
     const [lang, setLang] = useState('hi');
+    const [theme, setTheme] = useState('light');
     
     useEffect(() => {
         const storedLang = localStorage.getItem('language') || 'hi';
         setLang(storedLang);
+
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(storedTheme);
     }, []);
+
   return (
     <div>
         <div className='card1'>
@@ -46,9 +52,15 @@ const ReportCard = ({ report }) => {
                     <div className='mt-3'>
                         {report.content.card.p.map((p) => (
                             <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.2, fontWeight: 500 }}>
-                                <div>
-                                    <img src={ellipse} className='me-2' alt="" />
-                                </div>
+                                {theme === 'light' ? (
+                                    <div>
+                                        <img src={ellipseLight} className='me-2' alt="" />
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <img src={ellipseDark} className='me-2' alt="" />
+                                    </div>
+                                )}
                                 {p.t}
                             </span>
                         ))}
@@ -59,13 +71,30 @@ const ReportCard = ({ report }) => {
                     // <div className='d-flex'>
                     //     <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
                     // </div>
-                    <div className='d-flex justify-content-center mt-1'>
-                        <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '6px 0'}}>{report.content.card.b}  <img className='ms-2' src={rightArrow} alt="" /></button>
+                    <div className="d-flex justify-content-center mt-1">
+                        <button className="px-2 fw-bold d-flex align-items-center"
+                            style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.2 }}>
+                                {report.content.card.b}
+                            </span>
+                            <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
+                        </button>
                     </div>
-                ) : <div className='d-flex justify-content-center mt-1'>
-                        <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '6px 0'}}>Click For More Detail  <img className='ms-2' src={rightArrow} alt="" /></button>
-                    </div> 
-                }
+                    ) : (
+                        <div className="d-flex justify-content-center mt-1">
+                            <button className="px-2 fw-bold d-flex align-items-center"
+                                style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.2 }}>
+                                    Click For More Detail
+                                </span>
+                                <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
+                            </button>
+                        </div>
+                    )
+                    // <div className='d-flex justify-content-center mt-1'>
+                    //         <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '6px 0'}}>Click For More Detail  <img className='ms-2' src={rightArrow} alt="" /></button>
+                    //     </div> 
+                    }
             </div>
         </div>
 

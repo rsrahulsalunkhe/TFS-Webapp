@@ -48,7 +48,7 @@ const Header = () => {
   const showLogo = logoRoutes.includes(location.pathname);
 
   return (
-    <header className='d-flex align-items-center py-2 px-4 bg-header'>
+    <header className='d-flex align-items-center px-4 bg-header' style={{height: '56px'}}>
       <img
         onClick={showLogo ? () => navigate('/') : () => navigate(-1)}
         src={showLogo ? logo : backIcon}
@@ -56,23 +56,15 @@ const Header = () => {
       />
 
       <div className='ms-3' style={{ lineHeight: 1 }}>
-        <span className='fw-bold' style={{
-          fontSize: '20px',
-          textTransform: 'capitalize',
-          color: 'var(--primary)',
-          fontWeight: '500'
-        }}>
-          {title}
-        </span>
+        <span className='fw-semibold' style={{ fontSize: '20px', textTransform: 'capitalize', color: 'var(--primary)' }}>{title}</span>
       </div>
 
       <div className='d-flex align-items-center ms-auto icons'>
-        {/* <ThemeToggle /> */}
         <WhatsappShareButton url={window.location.href}>
-          <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
+          <img style={{ width: "22px", height: '22px' }} src={whatsapp} alt="Share on WhatsApp" />
         </WhatsappShareButton>
         <div className='ms-3' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
-          <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
+          <img style={{ width: "22px", height: '20px' }} src={phone} alt="Call Now" />
         </div>
       </div>
     </header>
