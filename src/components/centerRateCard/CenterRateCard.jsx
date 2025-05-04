@@ -64,7 +64,7 @@ const CenterRateCard = ({rate}) => {
                         )}
                     </div>
                 </div>
-                <p className='fw-semibold mt-1' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '18px' : '16px'}}>{rate.content.Rate.var}</p>
+                <p className='fw-semibold' style={{color: 'var(--black-6)', fontSize: lang === 'hi' ? '17px' : '15px'}}>{rate.content.Rate.var}</p>
 
                 {rate?.content?.ca && rate.content.ca.length > 0 && (
                     <div className='divider1'>
@@ -90,7 +90,7 @@ const CenterRateCard = ({rate}) => {
                 {rate?.content?.co && rate.content.co.length > 0 && (
                     <div className='summery'>
                         {rate.content.co.map((item, index) => (
-                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: 1.3, fontWeight: 500 }}>
+                            <span className='pb-2 d-flex' style={{ fontSize: lang === 'hi' ? '17px' : '15px', lineHeight: 1.3, fontWeight: 500 }}>
                                 {theme === 'light' ? (
                                     <div>
                                         <img src={ellipseLight} className='me-2' alt="" />
