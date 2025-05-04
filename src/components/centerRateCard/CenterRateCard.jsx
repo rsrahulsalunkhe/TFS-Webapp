@@ -19,7 +19,7 @@ const Price = (props) => {
 
   return (
     <div className='price-status'>
-        <span style={{fontSize: lang === 'hi' ? '16px' : '14px', fontWeight: 700, color: 'var(--black-6)'}}>{props.status}</span>
+        <span style={{fontSize: '14px', fontWeight: 700, color: 'var(--black-6)'}}>{props.status}</span>
         <p style={{fontSize: '15px', fontWeight: 600}} className='m-0'>{props.price}</p>
         <p style={{fontSize: '15px', fontWeight: 600, color: `#${props.color}`, lineHeight: '14px'}} className='m-0'>{props.change}</p>
     </div>
