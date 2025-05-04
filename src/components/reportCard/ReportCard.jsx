@@ -83,7 +83,7 @@ const ReportCard = ({ report }) => {
                             <button className="px-2 fw-bold d-flex align-items-center"
                                 style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                                 <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
-                                    Click For More Detail
+                                    क्लिक करें
                                 </span>
                                 <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
                             </button>
@@ -91,7 +91,7 @@ const ReportCard = ({ report }) => {
                             <button className="px-2 fw-bold d-flex align-items-center"
                                 style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                                 <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
-                                    क्लिक करें
+                                    Click For More Detail
                                 </span>
                                 <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
                             </button>
