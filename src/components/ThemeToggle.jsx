@@ -25,7 +25,7 @@ const ThemeToggle = () => {
     <div>
       <div
         style={{
-          backgroundColor: selectedTheme === "light" ? "#E5811E3D" : "var(--tertiary-bg)",
+          backgroundColor: selectedTheme === "light" ? "#E5811E3D" : "var(--secondary-bg)",
           color: selectedTheme === "light" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 d-flex align-items-center rounded"
@@ -44,7 +44,7 @@ const ThemeToggle = () => {
 
       <div
         style={{
-          backgroundColor: selectedTheme === "dark" ? "#E5811E3D" : "var(--tertiary-bg)",
+          backgroundColor: selectedTheme === "dark" ? "#E5811E3D" : "var(--secondary-bg)",
           color: selectedTheme === "dark" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 mt-3 d-flex align-items-center rounded"

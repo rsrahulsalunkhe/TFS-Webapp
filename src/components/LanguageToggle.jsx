@@ -42,7 +42,7 @@ const LanguageToggle = ({redirectPath}) => {
       <div
         onClick={() => handleLanguageChange("hi")}
         style={{
-          backgroundColor: selectedLanguage === "hi" ? "#E5811E3D" : "var(--tertiary-bg)",
+          backgroundColor: selectedLanguage === "hi" ? "#E5811E3D" : "var(--secondary-bg)",
           color: selectedLanguage === "hi" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 d-flex align-items-center rounded"
@@ -63,7 +63,7 @@ const LanguageToggle = ({redirectPath}) => {
       <div
         onClick={() => handleLanguageChange("en")}
         style={{
-          backgroundColor: selectedLanguage === "en" ? "#E5811E3D" : "var(--tertiary-bg)",
+          backgroundColor: selectedLanguage === "en" ? "#E5811E3D" : "var(--secondary-bg)",
           color: selectedLanguage === "en" ? "#DA6901" : "rgba(0, 0, 0, 0.8)"
         }}
         className="py-2 px-4 mt-3 d-flex align-items-center rounded" 

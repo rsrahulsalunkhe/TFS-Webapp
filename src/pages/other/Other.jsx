@@ -26,7 +26,7 @@ const Other = () => {
     }, []);
 
     return (
-        <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: 'calc(100vh - 780px)'}} className="p-3 d-flex flex-column gap-3">
+        <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: 'calc(100vh - 56px)'}} className="p-3 d-flex flex-column gap-3">
             <div className="bg-secondary rounded" onClick={() => navigate('/terms-&-conditions')}>
                 <div className="d-flex align-items-center py-3 px-3">
                     <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">

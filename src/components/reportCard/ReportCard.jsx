@@ -68,10 +68,7 @@ const ReportCard = ({ report }) => {
                 ) : null}
 
                 {report?.content?.card?.b ? (
-                    // <div className='d-flex'>
-                    //     <i className='ms-auto' style={{color: 'var(--primary)', fontWeight: 700}}>{report.content.card.b} &gt;</i>
-                    // </div>
-                    <div className="d-flex justify-content-center mt-1">
+                    <div className="d-flex justify-content-center mt-3">
                         <button className="px-2 fw-bold d-flex align-items-center"
                             style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
@@ -80,21 +77,17 @@ const ReportCard = ({ report }) => {
                             <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
                         </button>
                     </div>
-                    ) : (
-                        <div className="d-flex justify-content-center mt-1">
-                            <button className="px-2 fw-bold d-flex align-items-center"
-                                style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
-                                    Click For More Detail
-                                </span>
-                                <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
-                            </button>
-                        </div>
-                    )
-                    // <div className='d-flex justify-content-center mt-1'>
-                    //         <button className='px-2 fw-bold' style={{fontSize: '14px', padding: '6px 0'}}>Click For More Detail  <img className='ms-2' src={rightArrow} alt="" /></button>
-                    //     </div> 
-                    }
+                ) : (
+                    <div className="d-flex justify-content-center mt-3">
+                        <button className="px-2 fw-bold d-flex align-items-center"
+                            style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
+                                Click For More Detail
+                            </span>
+                            <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
+                        </button>
+                    </div>
+                )}
             </div>
         </div>
 
