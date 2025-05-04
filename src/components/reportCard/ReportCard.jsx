@@ -36,7 +36,7 @@ const ReportCard = ({ report }) => {
                 <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '19px', color: 'var(--blue-text)' }}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (
                     <div className='subtit py-2 px-2 rounded'>
-                        <h6 className='m-0 fw-bold py-1 text-gray-primary' style={{ fontSize: lang === 'hi' ? '18px' : '16px', }}>{report.content.card.subtit}</h6>
+                        <h6 className='m-0 fw-bold py-1 text-gray-primary' style={{ fontSize: lang === 'hi' ? '18px' : '16px', lineHeight: '1.3' }}>{report.content.card.subtit}</h6>
                     </div>
                 ) : null }
 
@@ -79,13 +79,23 @@ const ReportCard = ({ report }) => {
                     </div>
                 ) : (
                     <div className="d-flex justify-content-center mt-3">
-                        <button className="px-2 fw-bold d-flex align-items-center"
-                            style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
-                                Click For More Detail
-                            </span>
-                            <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
-                        </button>
+                        {lang === 'hi' ? (
+                            <button className="px-2 fw-bold d-flex align-items-center"
+                                style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
+                                    Click For More Detail
+                                </span>
+                                <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
+                            </button>
+                        ) : (
+                            <button className="px-2 fw-bold d-flex align-items-center"
+                                style={{ fontSize: '14px', padding: '10px 12px', maxWidth: '250px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'inline-block', flex: '1 1 auto', lineHeight: 1.3 }}>
+                                    क्लिक करें
+                                </span>
+                                <img className="me-2" src={rightArrow} alt="" style={{ flexShrink: 0 }} />
+                            </button>
+                        )}
                     </div>
                 )}
             </div>
