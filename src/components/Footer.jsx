@@ -36,7 +36,7 @@ const Footer = () => {
         <footer className="d-flex w-100 justify-content-around align-items-center" style={{ backgroundColor: 'var(--gray-000)' }}>
             {/* Home */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/home")}>
-                <div className="d-flex justify-content-center align-items-center mb-1" style={{ width: '25px', height: '25px' }}>
+                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px', marginBottom: lang === 'hi' ? '4px' : null }}>
                     <Home style={{ color: getFillColor("home") }} />
                 </div>
                 <span style={{ fontSize: lang === 'hi' ? '14px' : '12px', fontWeight: '500', color: getFillColor("home") }}>
@@ -46,7 +46,7 @@ const Footer = () => {
 
             {/* Futures */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/futures")}>
-                <div className="d-flex justify-content-center align-items-center mb-1" style={{ width: '25px', height: '25px' }}>
+                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px', marginBottom: lang === 'hi' ? '4px' : null }}>
                     <Futures style={{ color: getFillColor("futures") }} />
                 </div>
                 <span style={{ fontSize: lang === 'hi' ? '14px' : '12px', fontWeight: '500', color: getFillColor("futures") }}>
@@ -56,7 +56,7 @@ const Footer = () => {
 
             {/* Account */}
             <div className="d-flex flex-column align-items-center" onClick={() => handleNavigation("/account")}>
-                <div className="d-flex justify-content-center align-items-center mb-1" style={{ width: '25px', height: '25px' }}>
+                <div className="d-flex justify-content-center align-items-center" style={{ width: '25px', height: '25px', marginBottom: lang === 'hi' ? '4px' : null }}>
                     <Account style={{ color: getFillColor("account") }} />
                 </div>
                 <span style={{ fontSize: lang === 'hi' ? '14px' : '12px', fontWeight: '500', color: getFillColor("account") }}>

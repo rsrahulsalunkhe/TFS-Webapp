@@ -61,10 +61,10 @@ const Header = () => {
 
       <div className='d-flex align-items-center ms-auto icons'>
         <WhatsappShareButton url={window.location.href}>
-          <img style={{ width: "22px", height: '22px' }} src={whatsapp} alt="Share on WhatsApp" />
+          <img style={{ width: "30px", height: '30px' }} src={whatsapp} alt="Share on WhatsApp" />
         </WhatsappShareButton>
         <div className='ms-3' onClick={() => window.location.href = "tel:+919172680961"} style={{ cursor: 'pointer' }}>
-          <img style={{ width: "22px", height: '20px' }} src={phone} alt="Call Now" />
+          <img style={{ width: "24px", height: '24px' }} src={phone} alt="Call Now" />
         </div>
       </div>
     </header>

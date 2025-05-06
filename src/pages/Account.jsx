@@ -1,6 +1,11 @@
 import React, { useEffect, useState  } from 'react';
 import '../i18n'
 import { useTranslation } from "react-i18next"
+import { fetchData } from './../services/apiService';
+
+import company from '../assets/company.svg'
+import profile from '../assets/profile.svg'
+import dialer from '../assets/dialer.svg'
 
 import changeLanguage from "../assets/change-language.svg"
 import share from "../assets/share.svg"
@@ -21,6 +26,18 @@ const Account = () => {
     const navigate = useNavigate();
     const [lang, setLang] = useState('hi');
     const [theme, setTheme] = useState('light');
+    const [userId, setUserId] = useState(0);
+
+    const [userData, setUsers] = useState({});
+    
+    const loadUsers = async () => {
+        try {
+            const data = await fetchData(`/userdetails/${userId}`);
+            setUsers(data);
+        } catch (error) {
+            console.error("Error fetching home screen data:", error);
+        }
+    };
     
     useEffect(() => {
         const storedLang = localStorage.getItem('language') || 'hi';
@@ -28,13 +45,49 @@ const Account = () => {
 
         const storedTheme = localStorage.getItem('theme') || 'light';
         setTheme(storedTheme);
+
+        const userId = localStorage.getItem('user_id');
+        setUserId(userId);
+
+        loadUsers();
     }, []);
     
     return (
         <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: '90vh'}} className="p-3 d-flex flex-column gap-3">
-            {/* <h1>{t("welcome")}</h1>
-            <p>{t("description")}</p> */}
-            {/* <LanguageToggle /> */}
+            <div className="bg-secondary b-rounded">
+                <div className="d-flex align-items-center pt-3 px-3">
+                    <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
+                        <img className="w-100 h-100" src={company} alt="company" />
+                    </div>
+                    {userData.data ? (
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{userData.data.user_firm}</h6>
+                    ) : (
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>Hello Guest</h6>
+                    )}
+                </div>
+
+                <div className="d-flex align-items-center pt-3 px-3">
+                    <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
+                        <img className="w-100 h-100" src={profile} alt="profile" />
+                    </div>
+                    {userData.data ? (
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{userData.data.user_name}</h6>
+                    ) : (
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>Hello Guest</h6>
+                    )}
+                </div>
+
+                <div className="d-flex align-items-center py-3 px-3">
+                    <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
+                        <img className="w-100 h-100" src={dialer} alt="dialer" />
+                    </div>
+                    {userData.data ? (
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{userData.data.user_mobile}</h6>
+                    ) : (
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>Hello Guest</h6>
+                    )}
+                </div>
+            </div>
 
             <div className="bg-secondary b-rounded">
                 <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/help-&-support')}>

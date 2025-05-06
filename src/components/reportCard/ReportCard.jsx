@@ -31,7 +31,7 @@ const ReportCard = ({ report }) => {
                         ) : null}
                 </div>
             ) : null}
-            <div className='py-3 ps-3 pe-2'>
+            <div className='py-4 ps-3 pe-2'>
                 <span className='date'>{report.rec_date}</span>
                 <h5 className='fw-bold pt-3 pb-1' style={{ fontSize: lang === 'hi' ? '20px' : '19px', color: 'var(--blue-text)' }}>{report.content.card.tit}</h5>
                 {report?.content?.card?.subtit ? (

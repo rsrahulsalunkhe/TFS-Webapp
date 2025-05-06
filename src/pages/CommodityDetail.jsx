@@ -80,15 +80,7 @@ const Detail = () => {
             ) : (
                 <div className='container d-flex flex-column gap-3 py-3'>
                     <div>
-                        <p
-                            style={{
-                                fontSize: '18px',
-                                fontWeight: '700',
-                                color: '#DA6901',
-                                backgroundColor: '#FFF2EA',
-                            }}
-                            className="m-0 py-2 text-center header-border rounded"
-                        >
+                        {/* <p style={{ fontSize: '18px', fontWeight: '700', color: '#DA6901', backgroundColor: '#FFF2EA' }} className="m-0 py-2 text-center header-border rounded">
                             Everything here is {commodityName} Exclusive
                         </p>
                         <div className='d-flex align-items-center justify-content-center mt-3'>
@@ -136,6 +128,42 @@ const Detail = () => {
 
                         <div className='text-center mt-3'>
                             <img src={seperatorLine} alt="" />
+                        </div> */}
+
+                        <h6>MANDI CENTRAL’S</h6>
+                        <h4 className='fw-bold' style={{color: 'var(--dark-red)'}}>CURATED UPDATES</h4>
+
+                        <div className='my-3 d-flex gap-3 h-100'>
+                            <div className='w-50 d-flex flex-column' style={{backgroundColor: 'var(--secondary-bg)', padding: '16px 12px', borderRadius: '8px', border: '1px solid #D5D5D5'}}>
+                                <h6 className='mb-2'>Major Market Sentiment</h6>
+                                <p style={{fontSize: '13px', color: 'var(--black-6)', fontWeight: 500}}>Identify and Analyze Important Market Trends and Changes</p>
+                                <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px', width: '64px', padding: '2px 0' }}>Check <img src={rightArrow} alt="right arrow" /></button>
+                                <div className='d-flex justify-content-end mt-auto'>
+                                    <img src={sentiments} alt="sentiments" />
+                                </div>
+                            </div>
+                            <div className='w-50 h-100 d-flex flex-column gap-3'>
+                                <div className='h-50' style={{backgroundColor: 'var(--secondary-bg)', padding: '16px 12px', borderRadius: '8px', border: '1px solid #D5D5D5'}}>
+                                    <h6>Time Line</h6>
+                                    <p style={{fontSize: '13px', color: 'var(--black-6)', fontWeight: 500}} className='m-0'>Daywise Market Highlights</p>
+                                    <div className='d-flex w-100 align-items-end'>
+                                        <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px', width: '64px', height: '20px' }}>Check <img src={rightArrow} alt="right arrow" /></button>
+                                        <div className='d-flex justify-content-end w-100'>
+                                            <img src={timeLine} alt="timeLine" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='h-50' style={{backgroundColor: 'var(--secondary-bg)', padding: '16px 12px', borderRadius: '8px', border: '1px solid #D5D5D5'}}>
+                                    <h6>Coverage</h6>
+                                    <p style={{fontSize: '13px', color: 'var(--black-6)', fontWeight: 500}} className='m-0'>Track Important Market Updates</p>
+                                    <div className='d-flex w-100 align-items-end'>
+                                        <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px', width: '64px', height: '20px' }}>Check <img src={rightArrow} alt="right arrow" /></button>
+                                        <div className='d-flex justify-content-end w-100'>
+                                            <img src={coverage} alt="coverage" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
