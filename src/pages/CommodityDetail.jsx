@@ -33,7 +33,7 @@ const Detail = () => {
             const res = await fetchData(`/commoditydetailscatwise/${cat_id}/${commodity}/n/29-02-2024?pageno=${page}&pagesize=20`);
             
             const newCards = res?.data?.card || [];
-            const banLists = res?.data?.ban;            
+            const banLists = res?.data?.ban || [];            
 
             setBanList(banLists);
 
@@ -85,56 +85,6 @@ const Detail = () => {
             ) : (
                 <div style={{minHeight: 'calc(-56px + 100vh)', backgroundColor: 'var(--tertiary-bg)'}}>
                     <div className='d-flex flex-column gap-3 p-3' style={{backgroundColor: 'var(--primary-bg)'}}>
-                        {/* <p style={{ fontSize: '18px', fontWeight: '700', color: '#DA6901', backgroundColor: '#FFF2EA' }} className="m-0 py-2 text-center header-border rounded">
-                            Everything here is {commodityName} Exclusive
-                        </p>
-                        <div className='d-flex align-items-center justify-content-center mt-3'>
-                            <div style={{ width: '18px', height: '18px' }} className='d-flex align-items-center justify-content-center'>
-                                <img className='w-100 h-100' src={star} alt="star" />
-                            </div>
-                            <p className='m-0'><strong><i>Premium</i></strong> Member Offers for you</p>
-                            <div style={{ width: '18px', height: '18px', rotate: 'revert' }} className='d-flex align-items-center justify-content-center'>
-                                <img className='w-100 h-100' src={star} alt="star" />
-                            </div>
-                        </div>
-                        <p style={{ fontSize: "11px", fontWeight: '600' }} className='text-center mb-3'>
-                            Up to 50% extra off on crores of products using supercoins
-                        </p>
-
-                        <div className='d-flex justify-content-between'>
-                            <div style={{ width: '31%' }} onClick={() => handleNavigation(commodity, 'sentiment')}>
-                                <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{ border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)' }}>
-                                    <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
-                                        <img src={sentiments} alt="" />
-                                    </div>
-                                    <h6 className='text-center mt-2'>{commodityName} <br /> Sentiments</h6>
-                                    <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Check <img src={rightArrow} alt="right arrow" /></button>
-                                </div>
-                            </div>
-                            <div style={{ width: '31%' }} onClick={() => handleNavigation(commodity, 'time-line')}>
-                                <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{ border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)' }}>
-                                    <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
-                                        <img src={timeLine} alt="" />
-                                    </div>
-                                    <h6 className='text-center mt-2'>{commodityName} <br /> Time Line</h6>
-                                    <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Detail <img src={rightArrow} alt="right arrow" /></button>
-                                </div>
-                            </div>
-                            <div style={{ width: '31%' }} onClick={() => handleNavigation(commodity, 'coverage')}>
-                                <div className='d-flex flex-column align-items-center justify-content-center py-2' style={{ border: '2px solid #FFCDAE', borderRadius: '8px', backgroundColor: 'var(--secondary-bg)' }}>
-                                    <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#001D67', width: '58px', height: '58px', padding: '10px', borderRadius: '50%', border: '1px solid #FFD4B9' }}>
-                                        <img src={coverage} alt="" />
-                                    </div>
-                                    <h6 className='text-center mt-2'>{commodityName} <br /> Coverage</h6>
-                                    <button style={{ backgroundColor: 'rgba(218, 105, 1, 0.12)', color: '#DA6901', border: '1px solid #DA6901', borderRadius: '8px', fontSize: '12px', fontWeight: 700, display: 'flex', gap: '4px' }}>Read <img src={rightArrow} alt="right arrow" /></button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='text-center mt-3'>
-                            <img src={seperatorLine} alt="" />
-                        </div> */}
-
                         <div>
                             <h6>MANDI CENTRAL’S</h6>
                             <h4 className='fw-bold' style={{color: 'var(--dark-red)'}}>CURATED UPDATES</h4>
@@ -174,8 +124,8 @@ const Detail = () => {
                         </div>
                     </div>
 
-                    {banList.map((ban) => (
-                        <div className='w-100'>
+                    {Array.isArray(banList) && banList.map((ban, index) => (
+                        <div key={index} className='w-100'>
                             <img src={ban.i} alt="" className='w-100 h-100' />
                         </div>
                     ))}
@@ -185,7 +135,7 @@ const Detail = () => {
                             <h6 style={{color: 'var(--primary)'}}>MANDI CENTRAL’S</h6>
                             <h4 className='fw-bold' style={{color: 'var(--primary)'}}>CURATED UPDATES</h4>
                         </div>
-                        {reportList.map((report) => (
+                        {Array.isArray(reportList) && reportList.map((report) => (
                             <ReportCard key={report.card_id} report={report} />
                         ))}
 

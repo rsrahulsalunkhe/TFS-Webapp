@@ -1,37 +1,50 @@
 .top-header {
-    height: 180px;
-    position: relative;
-    background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
-    transition: height 0.3s ease-in-out;
-    overflow: hidden;
-  }
-  
-  .top-header.collapsed {
-    height: 0;
-  }
-  
-  .header-bg {
-    width: 100%;
-    height: 100%;
-    /* background: url('../../assets/rectangle.svg') no-repeat center center; */
-    background-size: cover;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .transition-navbar {
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .transition-navbar.invisible {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  .transition-navbar.visible {
-    opacity: 1;
-  }
-  
-  .sticky-top {
-    top: -1px !important;
+  height: 180px;
+  position: relative;
+  background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  overflow: hidden;
+  transition: height 0.4s ease, opacity 0.4s ease;
+  opacity: 1;
+  z-index: 10;
+}
+
+.top-header.collapsed {
+  height: 0;
+  opacity: 0;
+}
+
+.top-header.expanded {
+  opacity: 1;
+}
+
+.header-bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.sticky-navbar.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sticky-top {
+  top: -1px;
 }
