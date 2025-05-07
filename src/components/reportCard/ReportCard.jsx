@@ -18,7 +18,7 @@ const ReportCard = ({ report }) => {
 
   return (
     <div>
-        <div className='card1'>
+        <div className='card1 mx-3'>
             {report?.content?.img ? (
                 <div className='w-100'>
                     {report.content.img.i ? (

@@ -70,6 +70,9 @@ const OtpVerification = () => {
         localStorage.setItem('user_token', data.data.user_token);
         localStorage.setItem('user_uid', data.data.user_uid);
         localStorage.setItem('user_id', data.data.user_id);
+        localStorage.setItem('user_mobile', data.data.user_mobile);
+        localStorage.setItem('user_name', data.data.user_name);
+        localStorage.setItem('user_firm', data.data.user_firm);
 
         // Then navigate to OTP screen with mobile and language
         navigate("/home");

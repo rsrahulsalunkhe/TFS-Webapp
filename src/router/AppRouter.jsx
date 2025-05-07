@@ -1,5 +1,7 @@
-import { BrowserRouter as Router, Routes, Route, Outlet, Navigate  } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, Navigate} from 'react-router-dom';
+import { useEffect } from 'react';
 import { HeaderProvider } from '../components/HeaderContext';
+import { fetchData } from './../services/apiService';
 
 import Home from '../pages/Home';
 import Temp from '../pages/Temp';
@@ -49,6 +51,21 @@ const WithoutLayout = () => (
 );
 
 const AppRouter = () => {
+  useEffect(() => {
+    const fetchUserDetails = async () => {
+      const userId = localStorage.getItem('user_id');
+      const data = await fetchData(`/userdetails/${userId}`);
+      
+      if (data.status === 100) {
+        localStorage.removeItem('user_id');
+        localStorage.removeItem('user_token');
+        localStorage.removeItem('user_uid');
+      }
+    };
+  
+    fetchUserDetails();
+  }, []);  
+
   return (
     <HeaderProvider>
       <Router>
