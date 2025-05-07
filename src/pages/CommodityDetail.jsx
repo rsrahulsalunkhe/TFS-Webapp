@@ -84,7 +84,7 @@ const Detail = () => {
                 </Box>
             ) : (
                 <div style={{minHeight: 'calc(-56px + 100vh)', backgroundColor: 'var(--tertiary-bg)'}}>
-                    <div className='d-flex flex-column gap-3 py-3 mx-3'>
+                    <div className='d-flex flex-column gap-3 p-3' style={{backgroundColor: 'var(--primary-bg)'}}>
                         {/* <p style={{ fontSize: '18px', fontWeight: '700', color: '#DA6901', backgroundColor: '#FFF2EA' }} className="m-0 py-2 text-center header-border rounded">
                             Everything here is {commodityName} Exclusive
                         </p>
@@ -181,6 +181,10 @@ const Detail = () => {
                     ))}
 
                     <div className='d-flex flex-column gap-3 py-3'>
+                        <div className='px-3'>
+                            <h6 style={{color: 'var(--primary)'}}>MANDI CENTRAL’S</h6>
+                            <h4 className='fw-bold' style={{color: 'var(--primary)'}}>CURATED UPDATES</h4>
+                        </div>
                         {reportList.map((report) => (
                             <ReportCard key={report.card_id} report={report} />
                         ))}

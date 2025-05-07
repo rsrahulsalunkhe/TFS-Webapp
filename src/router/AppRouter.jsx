@@ -31,9 +31,12 @@ import OtpVerification from '../pages/signUpLogin/OtpVerification';
 import AccountDelete from '../pages/other/AccountDelete';
 import HelpAndSupport from '../pages/account/HelpAndSupport';
 
+import CollapsibleHeader from '../components/collapsibleHeader/CollapsibleHeader'
+
 const Layout = () => (
   <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
     <Header />
+    {/* <CollapsibleHeader /> */}
     <main style={{ marginBottom: '59px' }}>
       <Outlet />
     </main>
@@ -43,7 +46,18 @@ const Layout = () => (
 
 const WithoutLayout = () => (
   <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
+    {/* <Header /> */}
+    <CollapsibleHeader />
+    <main>
+      <Outlet />
+    </main>
+  </div>
+);
+
+const NewWithoutLayout = () => (
+  <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
     <Header />
+    {/* <CollapsibleHeader /> */}
     <main>
       <Outlet />
     </main>
@@ -86,7 +100,9 @@ const AppRouter = () => {
               <Route path=":commodity/time-line" element={<TimeLine />} />
               <Route path=":commodity/coverage" element={<Coverage />} />
             </Route>
+          </Route>
 
+          <Route element={<NewWithoutLayout />}>
             <Route path="/help-&-support" element={<HelpAndSupport />} />
             <Route path="/change-language" element={<ChangeLanguage />} />
             <Route path="/change-theme" element={<ChangeTheme />} />
