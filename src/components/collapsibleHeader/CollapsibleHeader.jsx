@@ -13,7 +13,7 @@ const CollapsibleHeader = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
-    setScrolled(offset > 100);
+    setScrolled(offset > 120);
   };
 
   useEffect(() => {

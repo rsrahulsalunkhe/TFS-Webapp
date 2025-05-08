@@ -8,14 +8,14 @@
   z-index: 10;
 }
 
-.top-header.collapsed {
+/* .top-header.collapsed {
   height: 0;
   opacity: 0;
 }
 
 .top-header.expanded {
   opacity: 1;
-}
+} */
 
 .header-bg {
   width: 100%;
