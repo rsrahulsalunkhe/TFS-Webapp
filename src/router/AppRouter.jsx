@@ -32,6 +32,7 @@ import AccountDelete from '../pages/other/AccountDelete';
 import HelpAndSupport from '../pages/account/HelpAndSupport';
 
 import CollapsibleHeader from '../components/collapsibleHeader/CollapsibleHeader'
+import ReportDetail from '../pages/ReportDetail';
 
 const Layout = () => (
   <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
@@ -113,6 +114,8 @@ const AppRouter = () => {
             <Route path="/account-delete" element={<AccountDelete />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path='/about-us' element={<AboutUs />} />
+
+            <Route path="/report-detail" element={<ReportDetail />} />
           </Route>
 
           {/* Routes WITH Layout */}

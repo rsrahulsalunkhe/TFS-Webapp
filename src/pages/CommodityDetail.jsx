@@ -83,7 +83,7 @@ const Detail = () => {
                     <CircularProgress color="warning" />
                 </Box>
             ) : (
-                <div style={{minHeight: 'calc(-56px + 100vh)', backgroundColor: 'var(--tertiary-bg)'}}>
+                <div style={{minHeight: 'calc(100vh - 180px)', backgroundColor: 'var(--tertiary-bg)'}}>
                     <div className='d-flex flex-column gap-3 p-3' style={{backgroundColor: 'var(--primary-bg)'}}>
                         <div>
                             <h6>MANDI CENTRAL’S</h6>
@@ -130,21 +130,23 @@ const Detail = () => {
                         </div>
                     ))}
 
-                    <div className='d-flex flex-column gap-3 py-3'>
-                        <div className='px-3'>
-                            <h6 style={{color: 'var(--primary)'}}>MANDI CENTRAL’S</h6>
-                            <h4 className='fw-bold' style={{color: 'var(--primary)'}}>CURATED UPDATES</h4>
-                        </div>
-                        {Array.isArray(reportList) && reportList.map((report) => (
-                            <ReportCard key={report.card_id} report={report} />
-                        ))}
+                    {reportList.length > 0 &&
+                        <div className='d-flex flex-column gap-3 py-3'>
+                            <div className='px-3'>
+                                <h6 style={{color: 'var(--primary)'}}>MANDI CENTRAL’S</h6>
+                                <h4 className='fw-bold' style={{color: 'var(--primary)'}}>CURATED UPDATES</h4>
+                            </div>
+                            {Array.isArray(reportList) && reportList.map((report) => (
+                                <ReportCard key={report.card_id} report={report} />
+                            ))}
 
-                        {isFetching && (
-                            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                                <CircularProgress color="warning" />
-                            </Box>
-                        )}
-                    </div>
+                            {isFetching && (
+                                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                                    <CircularProgress color="warning" />
+                                </Box>
+                            )}
+                        </div>
+                    }
                 </div>
             )}
         </>
