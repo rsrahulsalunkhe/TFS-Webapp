@@ -27,8 +27,8 @@ const AboutUs = () => {
                     <img className='w-100 h-100' src="https://pagarbook.com/assets/in-image/home-banner.jpg" alt="" />
                 </div>
 
-                <div className="d-flex flex-wrap justify-content-center gap-5 mt-5">
-                    <div className='d-flex align-items-center gap-3'>
+                <div className="d-flex flex-wrap justify-content-start gap-3 mt-5">
+                    <div className='d-flex align-items-center gap-3 p-3 w-100' style={{ backgroundColor: 'var(--tertiary-bg)', borderRadius: '8px'}}>
                         <div>
                             <img
                             src="https://pagarbook.com/assets/icons/person-green.svg"
@@ -41,7 +41,7 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    <div className="d-flex align-items-center gap-3">
+                    <div className="d-flex align-items-center gap-3 p-3 w-100" style={{ backgroundColor: 'var(--tertiary-bg)', borderRadius: '8px'}}>
                         <img
                         src="https://pagarbook.com/assets/icons/flag-blue.svg"
                         alt="Presence in India"
@@ -52,7 +52,7 @@ const AboutUs = () => {
                         </div>
                     </div>
 
-                    <div className="d-flex align-items-center gap-3">
+                    <div className="d-flex align-items-center gap-3 p-3 w-100" style={{ backgroundColor: 'var(--tertiary-bg)', borderRadius: '8px'}}>
                         <img
                         src="https://pagarbook.com/assets/icons/language-yellow.svg"
                         alt="Used across India"
