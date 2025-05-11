@@ -100,6 +100,7 @@ const AppRouter = () => {
               <Route path=":commodity/sentiment" element={<Sentiment />} />
               <Route path=":commodity/time-line" element={<TimeLine />} />
               <Route path=":commodity/coverage" element={<Coverage />} />
+              <Route path="/report-detail" element={<ReportDetail />} />
             </Route>
           </Route>
 
@@ -114,8 +115,6 @@ const AppRouter = () => {
             <Route path="/account-delete" element={<AccountDelete />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path='/about-us' element={<AboutUs />} />
-
-            <Route path="/report-detail" element={<ReportDetail />} />
           </Route>
 
           {/* Routes WITH Layout */}

@@ -53,7 +53,7 @@ const AccountDelete = () => {
             <img src={warning} alt="warning" />
           </div>
           <h5 className='text-center text-black'>Once you delete the account there’s no way to get it back. Make sure you want to <br /> delete it.</h5>
-          <Button className='rounded-btn my-3 px-4' variant="outlined" onClick={handleClickOpen}>
+          <Button className='rounded-btn my-3 px-4' variant="outlined" onClick={handleClickOpen} style={{minWidth: '230px'}}>
             YES, DELETE ACCOUNT
           </Button>
           <Button onClick={handleClose} style={{color: '#616161'}}>NO, KEEP IT</Button>

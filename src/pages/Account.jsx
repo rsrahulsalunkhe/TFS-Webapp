@@ -37,11 +37,21 @@ const Account = () => {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
-    setOpen(true);
+        setOpen(true);
     };
 
+    const handleLogout = () => {
+        setOpen(false);
+        localStorage.removeItem('user_uid');
+        localStorage.removeItem('user_token');
+        localStorage.removeItem('user_name');
+        localStorage.removeItem('user_mobile');
+        localStorage.removeItem('user_id');
+        localStorage.removeItem('user_firm');
+    }
+
     const handleClose = () => {
-    setOpen(false);
+        setOpen(false);
     };
     
     useEffect(() => {
@@ -64,7 +74,7 @@ const Account = () => {
     return (
         <div style={{backgroundColor: 'var(--tertiary-bg)', minHeight: '90vh'}} className="p-3 d-flex flex-column gap-3">
             <div className="bg-secondary b-rounded">
-                {user_firm != '' && 
+                {user_firm == '' && 
                     <div className="d-flex align-items-center pt-3 px-3">
                         <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
                             <img className="w-100 h-100" src={company} alt="company" />
@@ -73,19 +83,19 @@ const Account = () => {
                     </div>
                 }
 
-                <div className="d-flex align-items-center pt-3 px-3">
+                <div className="d-flex align-items-center py-3 px-3">
                     <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={profile} alt="profile" />
                     </div>
-                    {user_firm != '' ? (
+                    {user_firm == '' ? (
                         <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{user_name}</h6>
                     ) : (
                         <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>Hello Guest</h6>
                     )}
                 </div>
 
-                {user_firm != '' && 
-                    <div className="d-flex align-items-center py-3 px-3">
+                {user_firm == '' && 
+                    <div className="d-flex align-items-center pb-3 px-3">
                         <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
                             <img className="w-100 h-100" src={dialer} alt="dialer" />
                         </div>
@@ -248,9 +258,11 @@ const Account = () => {
                         <div className='text-center mb-4'>
                         <img src={warning} alt="warning" />
                         </div>
-                        <h5 className='text-center text-black'>Once you delete the account there’s no way to get it back. Make sure you want to <br /> delete it.</h5>
-                        <Button className='rounded-btn my-3 px-4' variant="outlined" onClick={handleClickOpen}>
-                        YES, DELETE ACCOUNT
+                        <h5 className='text-center text-black'>
+                            {/* Once you delete the account there’s no way to get it back.  */}
+                            Make sure you want to <br /> logout it.</h5>
+                        <Button className='rounded-btn mt-3 px-4' variant="outlined" onClick={handleLogout}>
+                        YES, Logout
                         </Button>
                         <Button onClick={handleClose} style={{color: '#616161'}}>NO, KEEP IT</Button>
                     </DialogContent>
