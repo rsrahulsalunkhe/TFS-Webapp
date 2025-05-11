@@ -16,6 +16,12 @@ import other from '../assets/other.svg'
 import rightArrowBlack from './../assets/right-arrow-black.svg'
 import rightArrowWhite from './../assets/right-arrow-white.svg'
 
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import warning from './../assets/warning.svg'
+
 import logout from '../assets/logout.svg'
 import Divider from '@mui/material/Divider';
 import { useNavigate } from 'react-router-dom';
@@ -27,7 +33,16 @@ const Account = () => {
     const [theme, setTheme] = useState('light');
     const [user_name, setUserName] = useState('');
     const [user_firm, setFirm] = useState('');
-    const [user_mobile, setMobile] = useState('');
+    const [user_mobile, setMobile] = useState('');    
+    const [open, setOpen] = React.useState(false);
+
+    const handleClickOpen = () => {
+    setOpen(true);
+    };
+
+    const handleClose = () => {
+    setOpen(false);
+    };
     
     useEffect(() => {
         const storedLang = localStorage.getItem('language') || 'hi';
@@ -203,7 +218,7 @@ const Account = () => {
 
                 <Divider variant="inset" component="div" />
 
-                <div className="d-flex align-items-center py-3 px-3">
+                <div className="d-flex align-items-center py-3 px-3" variant="outlined" onClick={handleClickOpen}>
                     <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
                         <img className="w-100 h-100" src={logout} alt="about us" />
                     </div>
@@ -214,6 +229,41 @@ const Account = () => {
                         <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
                     )}
                 </div>
+
+                <Dialog
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                    PaperProps={{
+                        sx: {
+                        borderRadius: '12px', // if you want rounded corners
+                        }
+                    }}
+                    >
+                    {/* <DialogTitle id="alert-dialog-title">
+                        {"Use Google's location service?"}
+                    </DialogTitle> */}
+                    <DialogContent className='d-flex flex-column justify-content-center align-items-center my-5'>
+                        <div className='text-center mb-4'>
+                        <img src={warning} alt="warning" />
+                        </div>
+                        <h5 className='text-center text-black'>Once you delete the account there’s no way to get it back. Make sure you want to <br /> delete it.</h5>
+                        <Button className='rounded-btn my-3 px-4' variant="outlined" onClick={handleClickOpen}>
+                        YES, DELETE ACCOUNT
+                        </Button>
+                        <Button onClick={handleClose} style={{color: '#616161'}}>NO, KEEP IT</Button>
+                    </DialogContent>
+                    <DialogActions>
+                        {/* <Button onClick={handleClose}>Disagree</Button>
+                        <Button onClick={handleClose} autoFocus>
+                        Agree
+                        </Button> */}
+                        {/* <Button className='rounded-btn my-3' variant="outlined" onClick={handleClickOpen}>
+                        DELETE ACCOUNT
+                        </Button> */}
+                    </DialogActions>
+                </Dialog>
             </div>
 
             <div>
