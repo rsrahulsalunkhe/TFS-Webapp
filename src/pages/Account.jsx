@@ -55,6 +55,7 @@ const Account = () => {
     };
     
     useEffect(() => {
+        window.scrollTo(0, 0);
         const storedLang = localStorage.getItem('language') || 'hi';
         setLang(storedLang);
 
@@ -99,11 +100,7 @@ const Account = () => {
                         <div style={{width: '16px'}} className="d-flex alig-items-center justify-content-center">
                             <img className="w-100 h-100" src={dialer} alt="dialer" />
                         </div>
-                        {user_firm != '' ? (
-                            <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{user_mobile}</h6>
-                        ) : (
-                            <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>Hello Guest</h6>
-                        )}
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{user_mobile}</h6>
                     </div>
                 }
             </div>
@@ -228,17 +225,33 @@ const Account = () => {
 
                 <Divider variant="inset" component="div" />
 
-                <div className="d-flex align-items-center py-3 px-3" variant="outlined" onClick={handleClickOpen}>
-                    <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
-                        <img className="w-100 h-100" src={logout} alt="about us" />
+                {user_firm && 
+                    <div className="d-flex align-items-center py-3 px-3" variant="outlined" onClick={handleClickOpen}>
+                        <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                            <img className="w-100 h-100" src={logout} alt="about us" />
+                        </div>
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.logout")}</h6>
+                        {theme === 'light' ? (
+                            <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                        ) : (
+                            <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                        )}
                     </div>
-                    <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.logout")}</h6>
-                    {theme === 'light' ? (
-                        <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
-                    ) : (
-                        <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
-                    )}
-                </div>
+                }
+
+                {!user_firm && 
+                    <div className="d-flex align-items-center py-3 px-3" onClick={() => navigate('/mobile-insertion')}>
+                        <div style={{backgroundColor: 'var(--tertiary-bg)', padding: '8px', width: '32px', height: '32px', borderRadius: '50%'}} className="d-flex alig-items-center justify-content-center">
+                            <img className="w-100 h-100" src={other} alt="about us" />
+                        </div>
+                        <h6 className="m-0 ms-3" style={{ fontSize: lang === 'hi' ? '18px' : '16px' }}>{t("account.about_mandi_central.logoutsingup")}</h6>
+                        {theme === 'light' ? (
+                            <img src={rightArrowBlack} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                        ) : (
+                            <img src={rightArrowWhite} alt="right arrow" style={{width: '8px', height: '12px'}} className="ms-auto me-2" />
+                        )}
+                    </div>
+                }
 
                 <Dialog
                     open={open}

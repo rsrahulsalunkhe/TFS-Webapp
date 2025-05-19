@@ -39,7 +39,22 @@ export default defineConfig({
             purpose: 'any maskable'
           }
         ]
-      }
-    })
-  ]
-})
+      },
+      workbox: {
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/grainmarket\.in\/.*$/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'api-cache',
+              expiration: {
+                maxEntries: 50,
+                maxAgeSeconds: 86400,
+              },
+            },
+          },
+        ],
+      },
+    }),
+  ],
+});

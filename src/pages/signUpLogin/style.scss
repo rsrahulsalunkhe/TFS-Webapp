@@ -6,8 +6,15 @@
 .css-16wblaj-MuiInputBase-input-MuiOutlinedInput-input {
     // padding: 12px 14px !important;
     font-size: 18px !important;
-    color: #000000 !important;
+    color: var(--black-87) !important;
+    background-color: var(--tertiary-bg) !important;
+    border-radius: 6px;
 }
+
+.css-19qnlrw-MuiFormLabel-root-MuiInputLabel-root {
+    color: var(--black-87) !important;
+}
+
 
 .css-113d811-MuiFormLabel-root-MuiInputLabel-root {
     color: #DA6901 !important;

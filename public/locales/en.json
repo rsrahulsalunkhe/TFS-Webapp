@@ -25,7 +25,8 @@
                 "delete_account": "Delete Account",
                 "frequently_asked_questions": "Frequently Asked Questions"
             },
-            "logout": "Logout"
+            "logout": "Logout",
+            "logoutsingup": "Logout / Sing Up"
         },
         "help_and_support" : {
             "help_and_support": "Help & Support",

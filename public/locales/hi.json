@@ -25,7 +25,8 @@
                 "delete_account": "खाता हटाएं",
                 "frequently_asked_questions": "अक्सर पूछे जाने वाले प्रश्न"
             },
-            "logout": "लॉग आउट"
+            "logout": "लॉग आउट",
+            "logoutsingup": "लॉग आउट / साइन अप"
         },
         "help_and_support": {
             "help_and_support": "मदद और समर्थन",

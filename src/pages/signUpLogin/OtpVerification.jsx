@@ -77,7 +77,7 @@ const OtpVerification = () => {
         // Then navigate to OTP screen with mobile and language
         navigate("/home");
       } else if (data.status === 100) {
-
+        navigate("/profile-selection");
       } else {
           console.error("OTP verification failed:", data);
         }
@@ -89,7 +89,7 @@ const OtpVerification = () => {
   return (
     <div style={styles.container}>
       <div style={{ width: '100%', height: '30px', backgroundColor: '#DA6901' }}></div>
-      <div style={{ width: '100%', height: '56px', backgroundColor: '#F5F5F5' }} className='d-flex align-items-center px-3'>
+      <div style={{ width: '100%', height: '56px', backgroundColor: '#F5F5F5' }} className='d-flex align-items-center px-3 mb-4'>
         <h5 className='m-0' style={{ color: '#DA6901' }}>OTP Verification</h5>
 
         <div className='ms-auto d-flex gap-3'>
@@ -102,31 +102,35 @@ const OtpVerification = () => {
       <p style={styles.phone}>+91-{mobile}</p>
       <p style={styles.subtext}>Check text messages for OTP</p>
 
-      <div style={styles.otpContainer} className='container'>
-        {otp.map((digit, i) => (
-          <input
-            key={i}
-            id={`otp-${i}`}
-            type="text"
-            maxLength="1"
-            value={digit}
-            onChange={(e) => handleChange(e.target.value, i)}
-            style={styles.otpInput}
-          />
-        ))}
+      <div className='mx-3'>
+        <div style={styles.otpContainer} className='container'>
+          {otp.map((digit, i) => (
+            <input
+              key={i}
+              id={`otp-${i}`}
+              type="text"
+              maxLength="1"
+              value={digit}
+              onChange={(e) => handleChange(e.target.value, i)}
+              style={styles.otpInput}
+            />
+          ))}
 
-        <p style={styles.resendText}>
-          Didn’t receive the OTP?{' '}
-          {!(isResendEnabled) && (
-            <span style={styles.resendTimer}>Resend in {timer}s</span>
+          <p style={styles.resendText}>
+            Didn’t receive the OTP?{' '}
+            {!(isResendEnabled) && (
+              <span style={styles.resendTimer}>Resend in {timer}s</span>
+            )}
+          </p>
+
+          {isResendEnabled && (
+            <div className='w-100 d-flex justify-content-center'>
+              <button style={styles.resendBtnActive} onClick={handleResend}>
+                Resend OTP
+              </button>
+            </div>
           )}
-        </p>
-
-        {isResendEnabled && (
-          <button style={styles.resendBtnActive} onClick={handleResend}>
-            Resend OTP
-          </button>
-        )}
+        </div>
       </div>
 
       <div className="d-flex justify-content-center mt-4">
@@ -162,7 +166,7 @@ const styles = {
     color: '#555',
   },
   otpContainer: {
-    backgroundColor: '#f6f6f6',
+    backgroundColor: 'var(--tertiary-bg)',
     padding: '1rem',
     borderRadius: '10px',
     marginBottom: '1rem',

@@ -168,3 +168,16 @@ h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
 .date-text {
   color: var(--date-text);
 }
+
+.css-1cmet5c-MuiInputBase-root-MuiInput-root::before {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.38) !important;
+}
+
+.css-1cmet5c-MuiInputBase-root-MuiInput-root {
+  color: var(--black-87) !important;
+  width: 100%;
+}
+
+.css-1cmet5c-MuiInputBase-root-MuiInput-root::after {
+  border-bottom: 2px solid #E5811E !important;
+}

@@ -33,6 +33,9 @@ import HelpAndSupport from '../pages/account/HelpAndSupport';
 
 import CollapsibleHeader from '../components/collapsibleHeader/CollapsibleHeader'
 import ReportDetail from '../pages/ReportDetail';
+import ProfileSelection from '../pages/signUpLogin/ProfileSelection';
+import ProfileDetail from '../pages/signUpLogin/ProfileDetail';
+import SelectCommodity from '../pages/signUpLogin/SelectCommodity';
 
 const Layout = () => (
   <div className="flex flex-col min-h-screen" style={{ maxWidth: '430px', margin: '0 auto' }}>
@@ -90,6 +93,10 @@ const AppRouter = () => {
             <Route path="/language-selection" element={<LanguageSelection />} />
             <Route path="/mobile-insertion" element={<MobileInsertion />} />
             <Route path="/otp-verification" element={<OtpVerification />} />
+
+            <Route path="/profile-selection" element={<ProfileSelection />} />
+            <Route path="/profile-detail" element={<ProfileDetail />} />
+            <Route path="/select-commodity" element={<SelectCommodity />} />
           </Route>
           <Route element={<WithoutLayout />}>
             <Route element={<UnAuthGuard />}>

@@ -1,6 +1,11 @@
 import phone from '../../assets/phone.svg'
+import { useEffect } from 'react';
 
 const AboutUs = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div style={{backgroundColor: 'var(--tertiary-bg)'}}>
             <div style={{backgroundColor: 'var(--secondary-bg)'}} className="mt-4 px-4 py-4">
